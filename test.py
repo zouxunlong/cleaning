@@ -1,6 +1,6 @@
 from sentence_transformers import SentenceTransformer, util
 
-model = SentenceTransformer("./models/LaBSE")
+model = SentenceTransformer("LaBSE")
 
 # Single list of sentences
 sentences = ['The cat sits outside',
@@ -15,7 +15,7 @@ sentences = ['The cat sits outside',
              '这电影很精彩']
 
 #Compute embeddings
-embeddings = model.encode(sentences, convert_to_tensor=True)
+embeddings = model.encode(sentences, convert_to_tensor=True, device='cuda')
 
 #Compute cosine-similarities for each sentence with each other sentence
 cosine_scores = util.cos_sim(embeddings, embeddings)

@@ -1,10 +1,10 @@
 import fasttext
 from sentence_transformers import SentenceTransformer, util
+import torch
 
 model_sentence_transformers = SentenceTransformer("LaBSE")
 
 model_fasttext = fasttext.load_model('./lid.176.bin')
-
 
 
 print("Write sentences to disc")
@@ -15,8 +15,8 @@ with open('parallel-sentences-cleaned_out.txt', 'wt', encoding='utf8') as fOut, 
         sentence_en=sentence_en.strip()
         
         if model_fasttext.predict(sentence_zh)[0][0]=="__label__zh" and model_fasttext.predict(sentence_en)[0][0]=="__label__en":
-            embedding1 = model_sentence_transformers.encode(sentence_zh, convert_to_tensor=True)
-            embedding2 = model_sentence_transformers.encode(sentence_en, convert_to_tensor=True)
+            embedding1 = model_sentence_transformers.encode(sentence_zh, convert_to_tensor=True,device = torch.device("cuda" if torch.cuda.is_available() else "cpu"))
+            embedding2 = model_sentence_transformers.encode(sentence_en, convert_to_tensor=True,device = torch.device("cuda" if torch.cuda.is_available() else "cpu"))
 
             # Compute cosine-similarities for each sentence with each other sentence
             cosine_score = util.cos_sim(embedding1, embedding2)
