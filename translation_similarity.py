@@ -7,7 +7,7 @@ model_fasttext = fasttext.load_model('./lid.176.bin')
 
 print("Write sentences to disc")
 sentences_written = 0
-with open('parallel-sentences-cleaned_out2.txt', 'at', encoding='utf8') as fOut, open("wikimedia.en-zh.zh", encoding='utf-8') as file_zh, open("wikimedia.en-zh.en", encoding='utf-8') as file_en:
+with open('wikimedia-cleaned.txt', 'at', encoding='utf8') as fOut, open("wikimedia.en-zh.zh", encoding='utf-8') as file_zh, open("wikimedia.en-zh.en", encoding='utf-8') as file_en:
     for (i, sentence_zh), (j, sentence_en) in zip(enumerate(file_zh), enumerate(file_en)):
         if i in range(0, 1000):
             ratio = len(sentence_en)/len(sentence_zh)
