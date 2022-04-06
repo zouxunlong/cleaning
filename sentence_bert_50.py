@@ -50,7 +50,6 @@ def clean(filepath_zh, filepath_en, filepath_out):
                                             "|", " "), sentences_en[j].replace("|", "")))
 
                                         sentences_written += 1
-                    print("|", end="")
 
                 sentences_zh = []
                 sentences_en = []
