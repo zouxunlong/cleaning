@@ -40,7 +40,7 @@ def clean(filepath_zh, filepath_en, filepath_out):
                         source_embeddings, target_embeddings)
 
 
-                    with open(filepath_out, 'w', encoding='utf8') as fOut:
+                    with open(filepath_out, 'a', encoding='utf8') as fOut:
                         for i in range(len(cosine_scores)):
                             for j in range(len(cosine_scores[0])):
                                 if cosine_scores[i][j] > 0.7:
@@ -58,4 +58,4 @@ def clean(filepath_zh, filepath_en, filepath_out):
     print("--- %s seconds ---" % (time.time() - start_time))
 
 
-clean('./noisy/ccmatrix/Chinese_0_to_10m.txt', './noisy/ccmatrix/English_0_to_10m.txt', './noisy/ccmatrix/Clean_0_to_10m.txt')
+clean('./noisy/ccmatrix/Chinese_10m_to_20m.txt', './noisy/ccmatrix/English_10m_to_20m.txt', './noisy/ccmatrix/Clean_10m_to_20m.txt')
