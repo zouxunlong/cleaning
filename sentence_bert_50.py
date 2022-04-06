@@ -52,7 +52,7 @@ with open("./noisy/wikimedia/wikimedia.en-zh.zh", encoding='utf-8') as file_zh, 
                                     fOut.write("{} | {}\n".format(sentences_zh[i].replace(
                                         "|", " "), sentences_en[j].replace("|", "")))
 
-                                sentences_written += 1
+                                    sentences_written += 1
 
             sentences_zh = []
             sentences_en = []
