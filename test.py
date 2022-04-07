@@ -1,34 +1,31 @@
+import pandas as pd
 from sentence_transformers import SentenceTransformer, util
+
 
 model = SentenceTransformer("LaBSE")
 
-# Single list of sentences
-sentences = ['The cat sits outside',
-             'A man is playing guitar',
-             'I love pasta',
-             'The new movie is awesome',
-             'The cat plays in the garden',
-             'A woman watches TV',
-             'The new movie is so great',
-             'Do you like pizza?',
-             '这猫坐在外边',
-             '这电影很精彩']
+df = pd.read_excel('english_to_chinese.xlsx', header=None)
 
-#Compute embeddings
-embeddings = model.encode(sentences, convert_to_tensor=True, device='cuda')
+col_list = list(df)
+print(df.head(5))
 
-#Compute cosine-similarities for each sentence with each other sentence
-cosine_scores = util.cos_sim(embeddings, embeddings)
+values = df.loc[0:].values
+dfList = []
+for i, [sentence0, sentence1, sentence2, sentence3] in enumerate(values):
 
-#Find the pairs with the highest cosine similarity scores
-pairs = []
-for i in range(len(cosine_scores)-1):
-    for j in range(i+1, len(cosine_scores)):
-        pairs.append({'index': [i, j], 'score': cosine_scores[i][j]})
+    # Compute embeddings
+    embedding0 = model.encode(sentence0, convert_to_tensor=True, device='cpu')
+    embedding1 = model.encode(sentence1, convert_to_tensor=True, device='cpu')
+    embedding2 = model.encode(sentence2, convert_to_tensor=True, device='cpu')
+    embedding3 = model.encode(sentence3, convert_to_tensor=True, device='cpu')
 
-#Sort scores in decreasing order
-pairs = sorted(pairs, key=lambda x: x['score'], reverse=True)
+    # Compute cosine-similarities for each sentence with each other sentence
+    cosine_score01 = util.cos_sim(embedding0, embedding1)
+    cosine_score02 = util.cos_sim(embedding0, embedding2)
+    cosine_score03 = util.cos_sim(embedding0, embedding3)
 
-for pair in pairs[0:10]:
-    i, j = pair['index']
-    print("{} \t\t {} \t\t Score: {:.4f}".format(sentences[i], sentences[j], pair['score']))
+    dfList.append([sentence0, sentence1, sentence2, sentence3, cosine_score01[0][0].item(
+    ), cosine_score02[0][0].item(), cosine_score03[0][0].item()])
+
+df_new =  pd.DataFrame(dfList)
+df_new.to_excel('output.xlsx', index=False, header=False)
