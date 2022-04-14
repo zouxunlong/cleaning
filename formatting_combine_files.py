@@ -6,12 +6,12 @@ start_time = time.time()
 
 
 def combine_files(file):
-    with open(file, encoding='utf8') as fIN, open('/home/xuanlong/dataclean/data_clean_and_extraction/zh_to_en/new_file.txt', 'a', encoding='utf8') as fOUT:
+    with open(file, encoding='utf8') as fIN, open('/home/xuanlong/dataclean/data_clean_and_extraction/noisy_cleaned.txt', 'a', encoding='utf8') as fOUT:
         for i, sentence in enumerate(fIN):
             fOUT.write(sentence)
-            print(i)
+        print('finished one file')
 
-rootdir = '/home/xuanlong/dataclean/data_clean_and_extraction/zh_to_en'
+rootdir = '/home/xuanlong/dataclean/data_clean_and_extraction/noisy_cleaned'
 
 for subdir, dirs, files in os.walk(rootdir):
     for file in files:
