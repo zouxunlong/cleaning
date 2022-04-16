@@ -1,10 +1,8 @@
 import re
 import time
-# import fasttext
 from docx import Document
 import os
 
-# model_fasttext = fasttext.load_model('../model/lid.176.bin')
 
 start_time = time.time()
 
@@ -48,7 +46,7 @@ def detect_unaligned(filepath):
                     print('detected')
 
 
-dir = "../WORK/batch11/Temasek Foundation/Tamil"
+dir = "../WORK/Batch7(CD7)/Temasek Foundation/Malay"
 
 
 files = os.listdir(dir)
