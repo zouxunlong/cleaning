@@ -1,4 +1,3 @@
-import re
 import time
 from docx import Document
 import os

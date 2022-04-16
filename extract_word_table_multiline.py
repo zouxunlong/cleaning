@@ -25,14 +25,14 @@ def extract(filepath, new_filepath):
                     if sentence and not sentence.isspace():
                         if sentence.strip()[:16].lower() == 'stayprepared.sg/':
                             sentences_en[-1] = sentences_en[-1]+sentence
-                        elif sentence.strip().lower()[:5] not in ["call-", "callo", "frame", "step ", "langk", "butto", "heade", "headl", "point", "title", "footn"]:
+                        elif sentence.strip().lower()[:5] not in ["call-", "callo", "frame", "step ", "butto", "heade", "headl", "point", "title", "footn"]:
                             sentences_en.append(sentence)
 
                 for sentence in sentences_pair[1]:
                     if sentence and not sentence.isspace():
                         if sentence.strip()[:16].lower() == 'stayprepared.sg/':
                             sentences_non_en[-1] = sentences_non_en[-1]+sentence
-                        elif sentence.strip().lower()[:5] not in ["call-", "callo", "frame", "step ", "langk", "butto", "heade", "headl", "point", "title", "footn"]:
+                        elif sentence.strip().lower()[:5] not in ["call-", "callo", "frame", "step ", "butto", "heade", "headl", "point", "title", "footn"]:
                             sentences_non_en.append(sentence)
 
             if len(sentences_en) != 0 and len(sentences_non_en) != 0:
@@ -44,8 +44,8 @@ def extract(filepath, new_filepath):
                                 "|", " "), sentences_non_en[i].replace("|", "")))
 
 
-path = '../WORK/Batch7(CD7)/Temasek Foundation/Malay'
-new_path = path.replace("Batch7(CD7)", "Batch7(CD7)_extracted")
+path = '../WORK/batch11/Temasek Foundation/ECMT'
+new_path = path.replace("batch11", "batch11_extracted")
 
 if not os.path.exists(new_path):
     os.makedirs(new_path)

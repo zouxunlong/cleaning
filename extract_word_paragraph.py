@@ -1,5 +1,4 @@
 import time
-# import cld3
 import pycld2 as cld2
 from sentence_transformers import SentenceTransformer, util
 from docx import Document
@@ -18,11 +17,10 @@ def extract(filepath,new_filepath):
     for paragraph in wordDoc.paragraphs:
         text=paragraph.text.replace("\n", "")
         if text:
-            # language_type=cld3.get_language(text).language
             language_type = cld2.detect(text)[2][0][1]
             if language_type=="en":
                 sentences_en.append(text)
-            elif language_type=="ms":
+            elif language_type=="ta":
                 sentences_non_en.append(text)
 
     if len(sentences_en) != 0 and len(sentences_non_en) != 0:
@@ -45,11 +43,11 @@ def extract(filepath,new_filepath):
 
 
 
-path = '../WORK/Batch7(CD7)/Retainers/Malay'
-new_path=path.replace("Batch7(CD7)", "Batch7(CD7)_extracted")
+path = '../WORK/batch11/Retainers/Tamil'
+new_path=path.replace("batch11", "batch11_extracted")
 
-# os.makedirs(new_path, exist_ok=False)
-# print("The new directory is created!")
+if not os.path.exists(new_path):
+    os.makedirs(new_path)
 
 files = os.listdir(path)
 for f in files:
