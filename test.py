@@ -1,3 +1,4 @@
 import os
-thisdir = os.path.split(__file__)[0]
-print(thisdir)
+set2={3,4,5}
+for a in set2:
+    print(a)

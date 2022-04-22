@@ -20,7 +20,7 @@ def extract(filepath,new_filepath):
             language_type = cld2.detect(text)[2][0][1]
             if language_type=="en":
                 sentences_en.append(text)
-            elif language_type=="ta":
+            elif language_type=="zh":
                 sentences_non_en.append(text)
 
     if len(sentences_en) != 0 and len(sentences_non_en) != 0:
@@ -51,6 +51,6 @@ if not os.path.exists(new_path):
 
 files = os.listdir(path)
 for f in files:
-	extract(os.path.join(path, f),os.path.join(new_path, f[:-5]+'.txt'))
+	extract(os.path.join(path, f),os.path.join(new_path, f[:-5]+'.EN-ZH'))
 
 print("--- %s seconds ---" % (time.time() - start_time))

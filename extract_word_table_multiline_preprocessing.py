@@ -17,20 +17,21 @@ def detect_unaligned(filepath):
 
             if len(row.cells) >= 2:
                 for cell in row.cells:
-                    sentences_pair.append([text for text in cell.text.split('\n')])
+                    sentences_pair.append(
+                        [text for text in cell.text.split('\n')])
 
                 for sentence in sentences_pair[0]:
                     if sentence and not sentence.isspace():
-                        if sentence.strip()[:16].lower()=='stayprepared.sg/':
-                            sentences_en[-1]=sentences_en[-1]+sentence
-                        elif sentence.strip().lower()[:5] not in ["call-","callo","frame","step ","butto","heade","headl","point","title","footn"]:
+                        if sentence.strip()[:16].lower() == 'stayprepared.sg/':
+                            sentences_en[-1] = sentences_en[-1]+sentence
+                        elif sentence.strip().lower()[:5] not in ["call-", "callo", "frame", "step ", "butto", "heade", "headl", "point", "title", "footn"]:
                             sentences_en.append(sentence)
-                        
+
                 for sentence in sentences_pair[1]:
                     if sentence and not sentence.isspace():
-                        if sentence.strip()[:16].lower()=='stayprepared.sg/':
-                            sentences_non_en[-1]=sentences_non_en[-1]+sentence
-                        elif sentence.strip().lower()[:5] not in ["call-","callo","frame","step ","butto","heade","headl","point","title","footn"]:
+                        if sentence.strip()[:16].lower() == 'stayprepared.sg/':
+                            sentences_non_en[-1] = sentences_non_en[-1]+sentence
+                        elif sentence.strip().lower()[:5] not in ["call-", "callo", "frame", "step ", "butto", "heade", "headl", "point", "title", "footn"]:
                             sentences_non_en.append(sentence)
 
             if len(sentences_en) != 0 and len(sentences_non_en) != 0:
