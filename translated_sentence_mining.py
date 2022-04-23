@@ -23,7 +23,7 @@ output_file = "parallel-sentences.en-ta"
 min_sent_len = 4
 
 # We base the scoring on k nearest neighbors for each element
-knn_neighbors = 2
+knn_neighbors = 4
 
 # Min score for text pairs. Note, score can be larger than 1
 min_threshold = 0.5
@@ -71,10 +71,10 @@ y = target_embeddings
 y = y / np.linalg.norm(y, axis=1, keepdims=True)
 
 # Perform kNN in both directions
-x2y_sim, x2y_ind = kNN(x, y, knn_neighbors)
+x2y_sim, x2y_ind = kNN(x, y, k=min([len(x),len(y),knn_neighbors]))
 x2y_mean = x2y_sim.mean(axis=1)
 
-y2x_sim, y2x_ind = kNN(y, x, knn_neighbors)
+y2x_sim, y2x_ind = kNN(y, x, k=min(([len(x),len(y),knn_neighbors])))
 y2x_mean = y2x_sim.mean(axis=1)
 
 # Compute forward and backward scores
