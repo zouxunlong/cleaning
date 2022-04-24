@@ -20,3 +20,34 @@
 #     t = " ".join(" ".join(p_element.xpath(".//text()").extract()).split())
 #     sentences.append(t)
 # print('dsa')
+
+# import pycld2 as cld2
+# import cld3
+# import fasttext
+# from googletrans import Translator
+
+# translator = Translator()
+# model_fasttext = fasttext.load_model('../model/lid.176.bin')
+
+# text_for_lang_detect = "选择“ID Card or"
+
+# lang_by_cld2 = cld2.detect(text_for_lang_detect)[2][0][1]
+# lang_by_cld3 = cld3.get_language(text_for_lang_detect)[0]
+# lang_by_fasttext = model_fasttext.predict(
+#     text_for_lang_detect)[0][0]
+# lang_by_google = translator.detect(text_for_lang_detect)
+
+# print(lang_by_cld2)
+# print(lang_by_cld3)
+# print(lang_by_fasttext)
+# print(lang_by_google)
+# lang_by_google=""
+
+a = [a-z]
+b = [A-Z]
+
+c = [*a,*b]
+
+
+print(a)
+print(c)

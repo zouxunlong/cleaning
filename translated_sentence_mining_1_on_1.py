@@ -16,8 +16,8 @@ model = SentenceTransformer(modelPath)
 
 #Input files. We interpret every line as sentence.
 source_file = "sentences.en"
-target_file = "sentences.ta"
-output_file = "parallel-sentences.en-ta"
+target_file = "sentences.zh"
+output_file = "parallel-sentences.en-zh"
 
 # Only consider sentences that are between min_sent_len and max_sent_len characters long
 min_sent_len = 4
@@ -33,16 +33,14 @@ source_sentences = set()
 with open(source_file) as fIn:
     for line in tqdm.tqdm(fIn):
         line = line.strip()
-        if len(line) >= min_sent_len:
-            source_sentences.add(line)
+        source_sentences.add(line)
 
 print("Read target file")
 target_sentences = set()
 with open(target_file) as fIn:
     for line in tqdm.tqdm(fIn):
         line = line.strip()
-        if len(line) >= min_sent_len:
-            target_sentences.add(line)
+        target_sentences.add(line)
 
 print("Source Sentences:", len(source_sentences))
 print("Target Sentences:", len(target_sentences))
