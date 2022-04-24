@@ -46,7 +46,7 @@ def allocate_text_by_lang(texts):
         text = re.sub("^[a-zA-Z0-9]{0,2}\.\s?", "", text).strip()
 
         trimed_text = re.sub(
-            "\w+@\S+\s?|http\S*\s?|www\.\S*\s?|[a-z\.]*\.sg\S*\s?", "", text)
+            "(?i)\w+@\S+\s?|http\S*\s?|www\.\S*\s?|[a-z\.]*\.sg\S*\s?", "", text)
 
         text_for_lang_detect = trimed_text.translate(
             str.maketrans('', '', string.punctuation)).strip().lower()
@@ -141,6 +141,6 @@ def extract(filepath):
             fOut.write("{}\n".format(sentence.replace("|", " ")))
 
 
-extract("LED Screen_Video Loop_User Guide_Master_0709  (ECMT).docx")
+extract("Temasek - CNY Visiting + Vaccinated PSA (Ad 46) EC.docx")
 
 print("--- %s seconds ---" % (time.time() - start_time))

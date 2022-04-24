@@ -18,12 +18,9 @@ file_src = "sentences.en"
 file_tgt = "sentences.zh"
 file_output = "parallel-sentences.en-zh"
 
-
-# We base the scoring on k nearest neighbors for each element
 knn_neighbors = 4
 
-# Min score for text pairs. Note, score can be larger than 1
-min_threshold = 0.5
+min_threshold = 1.05
 
 sentences_src = set()
 sentences_src_n_gram = set()
@@ -34,9 +31,10 @@ with open(file_src) as fIn:
         line1 = line2
         line2 = line.strip()
         sentences_src.add(line2)
-        if line1:
+        if line1 and not line1.endswith((".","?","!")):
             sentences_src_n_gram.add(line1+" "+line2)
-            sentences_src_n_gram.add(line0+" "+line1+" "+line2)
+            if line0 and not line0.endswith((".","?","!")):
+                sentences_src_n_gram.add(line0+" "+line1+" "+line2)
 
 sentences_tgt = set()
 sentences_tgt_n_gram = set()
@@ -47,9 +45,10 @@ with open(file_tgt) as fIn:
         line1 = line2
         line2 = line.strip()
         sentences_tgt.add(line2)
-        if line1:
+        if line1 and not line1.endswith((".","?","!","。","？","！")):
             sentences_tgt_n_gram.add(line1+line2)
-            sentences_tgt_n_gram.add(line0+line1+line2)
+            if line0 and not line0.endswith((".","?","!","。","？","！")):
+                sentences_tgt_n_gram.add(line0+line1+line2)
 
 
 print("Source Sentences:", len(sentences_src))
@@ -76,18 +75,18 @@ y = model.encode(
 
 
 # Perform kNN in both directions
-x2y_sim, x2y_ind = kNN(x, y, k=min([len(x), len(y), knn_neighbors]))
+x2y_sim, x2y_ind = kNN(x, y[:len(sentences_tgt)], k=min([len(x), len(sentences_tgt), knn_neighbors]))
 x2y_mean = x2y_sim.mean(axis=1)
 
-y2x_sim, y2x_ind = kNN(y, x, k=min([len(x), len(y), knn_neighbors]))
+y2x_sim, y2x_ind = kNN(y, x[:len(sentences_src)], k=min([len(sentences_src), len(y), knn_neighbors]))
 y2x_mean = y2x_sim.mean(axis=1)
 
 
 def margin(a, b): return a / b
 
 
-fwd_scores = score_candidates(x, y, x2y_ind, x2y_mean, y2x_mean, margin)
-bwd_scores = score_candidates(y, x, y2x_ind, y2x_mean, x2y_mean, margin)
+fwd_scores = score_candidates(x, y[:len(sentences_tgt)], x2y_ind, x2y_mean, y2x_mean, margin)
+bwd_scores = score_candidates(y, x[:len(sentences_src)], y2x_ind, y2x_mean, x2y_mean, margin)
 fwd_best = x2y_ind[np.arange(x.shape[0]), fwd_scores.argmax(axis=1)]
 bwd_best = y2x_ind[np.arange(y.shape[0]), bwd_scores.argmax(axis=1)]
 

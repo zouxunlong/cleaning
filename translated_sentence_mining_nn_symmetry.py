@@ -1,4 +1,4 @@
-from sentence_transformers import SentenceTransformer, models
+from sentence_transformers import SentenceTransformer, util
 from bitext_mining_utils import *
 import numpy as np
 import gzip
@@ -16,13 +16,14 @@ model = SentenceTransformer(modelPath)
 # Input files. We interpret every line as sentence.
 file_src = "sentences.en"
 file_tgt = "sentences.zh"
-file_output = "parallel-sentences_cos.en-zh"
+file_output = "parallel-sentences.en-zh"
+
 
 # We base the scoring on k nearest neighbors for each element
-knn_neighbors = 4
+knn_neighbors = 6
 
 # Min score for text pairs. Note, score can be larger than 1
-min_threshold = 0.5
+min_threshold = 1.06
 
 sentences_src = set()
 sentences_src_n_gram = set()
@@ -36,10 +37,6 @@ with open(file_src) as fIn:
         if line1:
             sentences_src_n_gram.add(line1+" "+line2)
             sentences_src_n_gram.add(line0+" "+line1+" "+line2)
-        # if line1 and not line1.endswith((".",".","?","!")):
-        #     sentences_src_n_gram.add(line1+" "+line2)
-        #     if line0 and not line0.endswith((".","?","!")):
-        #         sentences_src_n_gram.add(line0+" "+line1+" "+line2)
 
 sentences_tgt = set()
 sentences_tgt_n_gram = set()
@@ -79,22 +76,27 @@ y = model.encode(
 
 
 # Perform kNN in both directions
-x2y_sim, x2y_ind = kNN(x, y[:len(sentences_tgt)], k=min([len(x), len(sentences_tgt), knn_neighbors]))
-y2x_sim, y2x_ind = kNN(y, x[:len(sentences_src)], k=min([len(sentences_src), len(y), knn_neighbors]))
+x2y_sim, x2y_ind = kNN(x, y, k=min([len(x), len(y), knn_neighbors]))
+x2y_mean = x2y_sim.mean(axis=1)
+
+y2x_sim, y2x_ind = kNN(y, x, k=min([len(x), len(y), knn_neighbors]))
+y2x_mean = y2x_sim.mean(axis=1)
 
 
-fwd_scores = x2y_sim
-bwd_scores = y2x_sim
+def margin(a, b): return a / b
 
-fwd_best = x2y_ind[np.arange(x.shape[0]), x2y_sim.argmax(axis=1)]
-bwd_best = y2x_ind[np.arange(y.shape[0]), y2x_sim.argmax(axis=1)]
+
+fwd_scores = score_candidates(x, y, x2y_ind, x2y_mean, y2x_mean, margin)
+bwd_scores = score_candidates(y, x, y2x_ind, y2x_mean, x2y_mean, margin)
+fwd_best = x2y_ind[np.arange(x.shape[0]), fwd_scores.argmax(axis=1)]
+bwd_best = y2x_ind[np.arange(y.shape[0]), bwd_scores.argmax(axis=1)]
 
 indices = np.stack([np.concatenate([np.arange(x.shape[0]), bwd_best]),
                    np.concatenate([fwd_best, np.arange(y.shape[0])])], axis=1)
 scores = np.concatenate([fwd_scores.max(axis=1), bwd_scores.max(axis=1)])
 seen_src, seen_trg = set(), set()
 
-
+# Extact list of parallel sentences
 print("Write sentences to disc")
 sentences_written = 0
 with open(file_output, 'w', encoding='utf8') as fOut:
@@ -107,11 +109,13 @@ with open(file_output, 'w', encoding='utf8') as fOut:
             break
 
         if src_ind not in seen_src and trg_ind not in seen_trg:
-            seen_src.add(src_ind)
-            seen_trg.add(trg_ind)
-            fOut.write("{:.4f} | {} | {}\n".format(scores[i], sentences_src_extended[src_ind].replace(
-                "|", " "), sentences_tgt_extended[trg_ind].replace("|", " ")))
-            sentences_written += 1
+            if src_ind in range(len(sentences_src)) or trg_ind in range(len(sentences_tgt)):
+                if x[src_ind].dot(y[trg_ind]) > 0.5:
+                    seen_src.add(src_ind)
+                    seen_trg.add(trg_ind)
+                    fOut.write("{:.4f} | {} | {}\n".format(scores[i], sentences_src_extended[src_ind].replace(
+                        "|", " "), sentences_tgt_extended[trg_ind].replace("|", " ")))
+                    sentences_written += 1
 
 print("Done. {} sentences written".format(sentences_written))
 print("--- %s seconds ---" % (time.time() - start_time))
