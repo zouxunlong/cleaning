@@ -22,7 +22,7 @@ file_output = "parallel-sentences.en-zh"
 knn_neighbors = 4
 
 # Min score for text pairs. Note, score can be larger than 1
-min_threshold = 0.7
+min_threshold = 0.5
 
 sentences_src = set()
 sentences_src_n_gram = set()
@@ -86,17 +86,13 @@ y2x_sim, y2x_ind = kNN(y, x[:len(sentences_src)], k=min([len(sentences_src), len
 y2x_mean = y2x_sim.mean(axis=1)
 
 
-# def margin(a, b): return a / b
+def margin(a, b): return a / b
 
-# fwd_scores = score_candidates(x, y[:len(sentences_tgt)], x2y_ind, x2y_mean, y2x_mean, margin)
-# bwd_scores = score_candidates(y, x[:len(sentences_src)], y2x_ind, y2x_mean, x2y_mean, margin)
-# fwd_best = x2y_ind[np.arange(x.shape[0]), fwd_scores.argmax(axis=1)]
-# bwd_best = y2x_ind[np.arange(y.shape[0]), bwd_scores.argmax(axis=1)]
 
-fwd_scores = x2y_sim
-bwd_scores = y2x_sim
-fwd_best = x2y_ind[np.arange(x.shape[0]), x2y_sim.argmax(axis=1)]
-bwd_best = y2x_ind[np.arange(y.shape[0]), y2x_sim.argmax(axis=1)]
+fwd_scores = score_candidates(x, y[:len(sentences_tgt)], x2y_ind, x2y_mean, y2x_mean, margin)
+bwd_scores = score_candidates(y, x[:len(sentences_src)], y2x_ind, y2x_mean, x2y_mean, margin)
+fwd_best = x2y_ind[np.arange(x.shape[0]), fwd_scores.argmax(axis=1)]
+bwd_best = y2x_ind[np.arange(y.shape[0]), bwd_scores.argmax(axis=1)]
 
 indices = np.stack([np.concatenate([np.arange(x.shape[0]), bwd_best]),
                    np.concatenate([fwd_best, np.arange(y.shape[0])])], axis=1)

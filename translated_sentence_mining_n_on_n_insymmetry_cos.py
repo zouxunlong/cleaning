@@ -16,7 +16,7 @@ model = SentenceTransformer(modelPath)
 # Input files. We interpret every line as sentence.
 file_src = "sentences.en"
 file_tgt = "sentences.zh"
-file_output = "parallel-sentences.en-zh"
+file_output = "parallel-sentences_cos.en-zh"
 
 # We base the scoring on k nearest neighbors for each element
 knn_neighbors = 4
@@ -80,26 +80,21 @@ y = model.encode(
 
 # Perform kNN in both directions
 x2y_sim, x2y_ind = kNN(x, y[:len(sentences_tgt)], k=min([len(x), len(sentences_tgt), knn_neighbors]))
-x2y_mean = x2y_sim.mean(axis=1)
-
 y2x_sim, y2x_ind = kNN(y, x[:len(sentences_src)], k=min([len(sentences_src), len(y), knn_neighbors]))
-y2x_mean = y2x_sim.mean(axis=1)
 
 
-def margin(a, b): return a / b
+fwd_scores = x2y_sim
+bwd_scores = y2x_sim
 
-
-fwd_scores = score_candidates(x, y[:len(sentences_tgt)], x2y_ind, x2y_mean, y2x_mean, margin)
-bwd_scores = score_candidates(y, x[:len(sentences_src)], y2x_ind, y2x_mean, x2y_mean, margin)
-fwd_best = x2y_ind[np.arange(x.shape[0]), fwd_scores.argmax(axis=1)]
-bwd_best = y2x_ind[np.arange(y.shape[0]), bwd_scores.argmax(axis=1)]
+fwd_best = x2y_ind[np.arange(x.shape[0]), x2y_sim.argmax(axis=1)]
+bwd_best = y2x_ind[np.arange(y.shape[0]), y2x_sim.argmax(axis=1)]
 
 indices = np.stack([np.concatenate([np.arange(x.shape[0]), bwd_best]),
                    np.concatenate([fwd_best, np.arange(y.shape[0])])], axis=1)
 scores = np.concatenate([fwd_scores.max(axis=1), bwd_scores.max(axis=1)])
 seen_src, seen_trg = set(), set()
 
-# Extact list of parallel sentences
+
 print("Write sentences to disc")
 sentences_written = 0
 with open(file_output, 'w', encoding='utf8') as fOut:

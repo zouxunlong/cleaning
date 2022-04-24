@@ -141,6 +141,6 @@ def extract(filepath):
             fOut.write("{}\n".format(sentence.replace("|", " ")))
 
 
-extract("Step by Step Posters EC.docx")
+extract("LED Screen_Video Loop_User Guide_Master_0709  (ECMT).docx")
 
 print("--- %s seconds ---" % (time.time() - start_time))
