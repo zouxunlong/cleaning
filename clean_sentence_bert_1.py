@@ -6,7 +6,6 @@ model_sentence_transformers = SentenceTransformer("LaBSE")
 
 model_fasttext = fasttext.load_model('./model/lid.176.bin')
 
-
 start_time=time.time()
 
 with open("./noisy/wikimedia/wikimedia.en-zh.zh", encoding='utf-8') as file_zh, open("./noisy/wikimedia/wikimedia.en-zh.en", encoding='utf-8') as file_en:
