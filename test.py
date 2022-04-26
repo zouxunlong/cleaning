@@ -29,7 +29,7 @@
 # translator = Translator()
 # model_fasttext = fasttext.load_model('../model/lid.176.bin')
 
-# text_for_lang_detect = "选择“ID Card or"
+# text_for_lang_detect = "领取ர் 21, 2020, "
 
 # lang_by_cld2 = cld2.detect(text_for_lang_detect)[2][0][1]
 # lang_by_cld3 = cld3.get_language(text_for_lang_detect)[0]
@@ -41,13 +41,13 @@
 # print(lang_by_cld3)
 # print(lang_by_fasttext)
 # print(lang_by_google)
-# lang_by_google=""
-
-a = [a-z]
-b = [A-Z]
-
-c = [*a,*b]
+# if re.search('[\u4e00-\u9fff]', text_for_lang_detect):
+#     print('chinese detect')
+# if re.search('[\u0B80-\u0BFF]', text_for_lang_detect):
+#     print('tamil detect')
 
 
-print(a)
-print(c)
+s = sum([True,True,True,False])
+
+print(s)
+
