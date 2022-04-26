@@ -66,7 +66,7 @@ def allocate_text_by_lang(texts):
     texts_ms = []
     texts_zh = []
     texts_ta = []
-
+    lang_detected = ""
     for text in texts:
 
         text = re.sub("^[a-zA-Z]?\.\s?|^[0-9]{0,2}\.\s?", "", text).strip()
@@ -152,8 +152,8 @@ def extend_texts_from_file(file_path, texts):
         extend_texts_from_docx(file_path, texts)
 
 
-# rootdir = '/home/zxl/ssd/WORK/data_clean/data_clean_and_extraction/MOH1'
-rootdir = './'
+rootdir = '/home/zxl/ssd/WORK/data_clean/data_clean_and_extraction/MOH'
+# rootdir = './'
 
 for root, dirs, files in os.walk(rootdir):
     files.sort()
