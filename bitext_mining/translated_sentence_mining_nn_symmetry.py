@@ -1,13 +1,11 @@
-from sentence_transformers import SentenceTransformer, util
+from sentence_transformers import SentenceTransformer
 from bitext_mining_utils import *
 import numpy as np
-import gzip
-from sklearn.decomposition import PCA
 
 
 class Bi_text_miner:
 
-    def __init__(self, knn_neighbors=6, min_matching_score=1.0, min_cos_sim=0.6, model_path_or_name='LaBSE', sort_by_cos=False):
+    def __init__(self, knn_neighbors=6, min_matching_score=0.9999, min_cos_sim=0.6, model_path_or_name='LaBSE', sort_by_cos=False):
         self.knn_neighbors = knn_neighbors
         self.min_matching_score = min_matching_score
         self.min_cos_sim = min_cos_sim
@@ -79,12 +77,12 @@ class Bi_text_miner:
                     src_ind = int(src_ind)
                     trg_ind = int(trg_ind)
 
-                    if scores_cos_sim[i] < self.min_cos_sim:
+                    if scores_cos_sim[i] <= self.min_cos_sim:
                         break
 
                     if src_ind not in seen_src and trg_ind not in seen_trg:
                         if src_ind in range(len(tuple_src[0])) or trg_ind in range(len(tuple_tgt[0])):
-                            if scores[i] > self.min_matching_score:
+                            if scores[i] >= self.min_matching_score:
                                 seen_src.add(src_ind)
                                 seen_trg.add(trg_ind)
                                 sentence_pair.append((sentences_src_extended[src_ind].replace(
@@ -96,12 +94,12 @@ class Bi_text_miner:
                     src_ind = int(src_ind)
                     trg_ind = int(trg_ind)
 
-                    if scores[i] < self.min_matching_score:
+                    if scores[i] <= self.min_matching_score:
                         break
 
                     if src_ind not in seen_src and trg_ind not in seen_trg:
                         if src_ind in range(len(tuple_src[0])) or trg_ind in range(len(tuple_tgt[0])):
-                            if scores_cos_sim[i] > self.min_cos_sim:
+                            if scores_cos_sim[i] >= self.min_cos_sim:
                                 seen_src.add(src_ind)
                                 seen_trg.add(trg_ind)
                                 sentence_pair.append((sentences_src_extended[src_ind].replace(
