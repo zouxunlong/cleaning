@@ -80,7 +80,6 @@ y = model.encode(
 x2y_sim, x2y_ind = kNN(x, y[:len(sentences_tgt)], k=min([len(x), len(sentences_tgt), knn_neighbors]))
 y2x_sim, y2x_ind = kNN(y, x[:len(sentences_src)], k=min([len(sentences_src), len(y), knn_neighbors]))
 
-
 fwd_scores = x2y_sim
 bwd_scores = y2x_sim
 
@@ -91,7 +90,6 @@ indices = np.stack([np.concatenate([np.arange(x.shape[0]), bwd_best]),
                    np.concatenate([fwd_best, np.arange(y.shape[0])])], axis=1)
 scores = np.concatenate([fwd_scores.max(axis=1), bwd_scores.max(axis=1)])
 seen_src, seen_trg = set(), set()
-
 
 print("Write sentences to disc")
 sentences_written = 0
