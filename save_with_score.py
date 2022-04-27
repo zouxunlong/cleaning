@@ -19,7 +19,7 @@ for path in ["../data/noisy_4.en-zh","../data/noisy_5.en-zh","../data/noisy_2.en
             sentences_en.append(sentences[0].strip())
             sentences_zh.append(sentences[1].strip())
 
-            if i > 0 and (i+1) % 100000 == 0:
+            if (i+1) % 100000 == 0:
                 source_embedding = model_sentence_transformers.encode(
                     sentences_en, convert_to_numpy=True, normalize_embeddings=True)
                 target_embedding = model_sentence_transformers.encode(
