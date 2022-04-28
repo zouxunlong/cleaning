@@ -22,7 +22,8 @@ for file in ["../data/noisy_3.en-zh","../data/noisy_4.en-zh","../data/noisy_5.en
                     sentences_en, convert_to_numpy=True, normalize_embeddings=True)
                 target_embedding = model_sentence_transformers.encode(
                     sentences_zh, convert_to_numpy=True, normalize_embeddings=True)
-                assert len(source_embedding)==len(target_embedding)
+                assert len(source_embedding)==len(target_embedding), "length of src and target don't match"
+                
                 for j in range(len(source_embedding)):
                     cosine = source_embedding[j].dot(target_embedding[j])
                     if cosine > 0.7:

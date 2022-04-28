@@ -1,14 +1,14 @@
 with open("../data/noisy_cleaned.en-zh", encoding='utf8') as fin, \
-    open("../data/noisy_1.en-zh", 'w', encoding='utf8') as fOUT_1, \
-        open("../data/noisy_2.en-zh", 'w', encoding='utf8') as fOUT_2, \
-            open("../data/noisy_3.en-zh", 'w', encoding='utf8') as fOUT_3, \
-                open("../data/noisy_4.en-zh", 'w', encoding='utf8') as fOUT_4,\
-                     open("../data/noisy_5.en-zh", 'w', encoding='utf8') as fOUT_5, \
-                         open("../data/noisy_6.en-zh", 'w', encoding='utf8') as fOUT_6, \
-                             open("../data/noisy_7.en-zh", 'w', encoding='utf8') as fOUT_7, \
-                                 open("../data/noisy_8.en-zh", 'w', encoding='utf8') as fOUT_8,\
-                                      open("../data/noisy_9.en-zh", 'w', encoding='utf8') as fOUT_9,\
-                                           open("../data/noisy_10.en-zh", 'w', encoding='utf8') as fOUT_10:
+        open("../data/noisy_1.en-zh", 'w', encoding='utf8') as fOUT_1, \
+    open("../data/noisy_2.en-zh", 'w', encoding='utf8') as fOUT_2, \
+        open("../data/noisy_3.en-zh", 'w', encoding='utf8') as fOUT_3, \
+        open("../data/noisy_4.en-zh", 'w', encoding='utf8') as fOUT_4,\
+        open("../data/noisy_5.en-zh", 'w', encoding='utf8') as fOUT_5, \
+        open("../data/noisy_6.en-zh", 'w', encoding='utf8') as fOUT_6, \
+        open("../data/noisy_7.en-zh", 'w', encoding='utf8') as fOUT_7, \
+        open("../data/noisy_8.en-zh", 'w', encoding='utf8') as fOUT_8,\
+        open("../data/noisy_9.en-zh", 'w', encoding='utf8') as fOUT_9,\
+        open("../data/noisy_10.en-zh", 'w', encoding='utf8') as fOUT_10:
     for i, sentence in enumerate(fin):
         if i in range(10000000):
             fOUT_1.write(sentence)
