@@ -46,8 +46,8 @@ def clean_with_score(filepath_en, filepath_ms, filepath_out):
         embedding_saving(sentences_en, sentences_tgt, filepath_out)
         print("finished "+str(len(sentences_en)))
 
-clean_with_score("/home/xuanlong/dataclean/data/ccaligned/CCAligned.en-ms.en",
-                 "/home/xuanlong/dataclean/data/ccaligned/CCAligned.en-ms.ms", "/home/xuanlong/dataclean/data/ccaligned/CCAligned.en-ms.en-ms")
+clean_with_score("/home/xuanlong/dataclean/data/ccmatrix/CCMatrix.en-ms.en",
+                 "/home/xuanlong/dataclean/data/ccmatrix/CCMatrix.en-ms.ms", "/home/xuanlong/dataclean/data/ccmatrix/CCMatrix.en-ms")
 
 
 print("--- %s seconds ---" % (time.time() - start_time))
