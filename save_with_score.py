@@ -10,10 +10,10 @@ start_time = time.time()
 
 def embedding_saving(sentences_en, sentences_tgt, filepath_out):
     source_embedding = model_sentence_transformers.encode(
-        sentences_en, show_progress_bar=True, convert_to_numpy=True, normalize_embeddings=True)
+        sentences_en, convert_to_numpy=True, normalize_embeddings=True)
 
     target_embedding = model_sentence_transformers.encode(
-        sentences_tgt, show_progress_bar=True, convert_to_numpy=True, normalize_embeddings=True)
+        sentences_tgt, convert_to_numpy=True, normalize_embeddings=True)
 
     assert len(source_embedding) == len(
         target_embedding), "length of src and target don't match"
