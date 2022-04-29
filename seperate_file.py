@@ -1,6 +1,6 @@
 with open("../data/noisy_cleaned.en-zh", encoding='utf8') as fin, \
         open("../data/noisy_1.en-zh", 'w', encoding='utf8') as fOUT_1, \
-    open("../data/noisy_2.en-zh", 'w', encoding='utf8') as fOUT_2, \
+        open("../data/noisy_2.en-zh", 'w', encoding='utf8') as fOUT_2, \
         open("../data/noisy_3.en-zh", 'w', encoding='utf8') as fOUT_3, \
         open("../data/noisy_4.en-zh", 'w', encoding='utf8') as fOUT_4,\
         open("../data/noisy_5.en-zh", 'w', encoding='utf8') as fOUT_5, \

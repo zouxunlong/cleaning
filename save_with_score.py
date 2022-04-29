@@ -1,3 +1,4 @@
+import os
 import time
 from sentence_transformers import SentenceTransformer
 
@@ -5,45 +6,48 @@ from sentence_transformers import SentenceTransformer
 model_sentence_transformers = SentenceTransformer('../model/labse_bert_model')
 
 start_time = time.time()
-for path in ["../data/noisy_4.en-zh","../data/noisy_5.en-zh","../data/noisy_2.en-zh","../data/noisy_1.en-zh"]:
-    with open(path, encoding='utf-8') as fIN,\
-            open("../data/clean_0_9.en-zh", 'a', encoding='utf8') as fOUT_9, \
-            open("../data/clean_0_85.en-zh", 'a', encoding='utf8') as fOUT_85, \
-            open("../data/clean_0_8.en-zh", 'a', encoding='utf8') as fOUT_8, \
-            open("../data/clean_0_75.en-zh", 'a', encoding='utf8') as fOUT_75, \
-            open("../data/clean_0_7.en-zh", 'a', encoding='utf8') as fOUT_7:
+
+
+def embedding_saving(sentences_en, sentences_tgt, filepath_out):
+    source_embedding = model_sentence_transformers.encode(
+        sentences_en, show_progress_bar=True, convert_to_numpy=True, normalize_embeddings=True)
+
+    target_embedding = model_sentence_transformers.encode(
+        sentences_tgt, show_progress_bar=True, convert_to_numpy=True, normalize_embeddings=True)
+
+    assert len(source_embedding) == len(
+        target_embedding), "length of src and target don't match"
+
+    with open(filepath_out, 'a', encoding='utf8') as fOUT:
+        for k in range(len(source_embedding)):
+            cosine = source_embedding[k].dot(target_embedding[k])
+            if cosine >= 0.7:
+                fOUT.write("{:.4f} | {} | {}\n".format(
+                    cosine, sentences_en[k].replace("|", " "), sentences_tgt[k].replace("|", " ")))
+
+
+def clean_with_score(filepath_en, filepath_ms, filepath_out):
+    with open(filepath_en, encoding='utf-8') as file_en, \
+            open(filepath_ms, encoding='utf-8') as file_ms:
+
         sentences_en = []
-        sentences_zh = []
-        for i, sentence in enumerate(fIN):
-            sentences = sentence.split('|')
-            sentences_en.append(sentences[0].strip())
-            sentences_zh.append(sentences[1].strip())
+        sentences_tgt = []
+        for (i, sentence_en), (j, sentence_ms) in zip(enumerate(file_en), enumerate(file_ms)):
+            if len(sentence_en.strip()) > 10 and len(sentence_ms.strip()) > 10:
+                sentences_en.append(sentence_en.strip())
+                sentences_tgt.append(sentence_ms.strip())
 
             if (i+1) % 100000 == 0:
-                source_embedding = model_sentence_transformers.encode(
-                    sentences_en, convert_to_numpy=True, normalize_embeddings=True)
-                target_embedding = model_sentence_transformers.encode(
-                    sentences_zh, convert_to_numpy=True, normalize_embeddings=True)
-                assert len(source_embedding)==len(target_embedding), "length of src and target don't match"
-                
-                for j in range(len(source_embedding)):
-                    cosine = source_embedding[j].dot(target_embedding[j])
-                    if cosine >= 0.9:
-                        fOUT_9.write("{:.4f} | {} | {}\n".format(
-                            cosine, sentences_en[j].replace("|", " "), sentences_zh[j].replace("|", " ")))
-                    elif cosine >= 0.85:
-                        fOUT_85.write("{:.4f} | {} | {}\n".format(
-                            cosine, sentences_en[j].replace("|", " "), sentences_zh[j].replace("|", " ")))
-                    elif cosine >= 0.8:
-                        fOUT_8.write("{:.4f} | {} | {}\n".format(
-                            cosine, sentences_en[j].replace("|", " "), sentences_zh[j].replace("|", " ")))
-                    elif cosine >= 0.75:
-                        fOUT_75.write("{:.4f} | {} | {}\n".format(
-                            cosine, sentences_en[j].replace("|", " "), sentences_zh[j].replace("|", " ")))
-                    elif cosine >= 0.7:
-                        fOUT_7.write("{:.4f} | {} | {}\n".format(
-                            cosine, sentences_en[j].replace("|", " "), sentences_zh[j].replace("|", " ")))
+                embedding_saving(sentences_en, sentences_tgt, filepath_out)
                 sentences_en.clear()
-                sentences_zh.clear()
+                sentences_tgt.clear()
                 print("finished "+str(i))
+
+        embedding_saving(sentences_en, sentences_tgt, filepath_out)
+        print("finished "+str(len(sentences_en)))
+
+clean_with_score("/home/xuanlong/dataclean/data/ccaligned/CCAligned.en-ms.en",
+                 "/home/xuanlong/dataclean/data/ccaligned/CCAligned.en-ms.ms", "/home/xuanlong/dataclean/data/ccaligned/CCAligned.en-ms.en-ms")
+
+
 print("--- %s seconds ---" % (time.time() - start_time))
