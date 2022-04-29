@@ -1,2 +1,2 @@
-28772
-nohup: ignoring input
+1880543
+nohup: ignorin--- 5152.8480978012085 seconds ---
