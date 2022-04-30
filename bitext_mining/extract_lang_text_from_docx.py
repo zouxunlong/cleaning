@@ -14,7 +14,8 @@ from file_convert import doc_to_docx, rtf_to_docx
 from combine_files import combine_files_in_dir
 
 translator = Translator()
-bi_text_miner = Bi_text_miner(knn_neighbors=6, min_matching_score=0.9999, min_cos_sim=0.6, model_path_or_name='../model/labse_bert_model', sort_by_cos=False)
+bi_text_miner = Bi_text_miner(knn_neighbors=6, min_matching_score=0.9999, min_cos_sim=0.6,
+                              model_path_or_name='../model/labse_bert_model', sort_by_cos=False)
 
 
 def get_paragraph_runs(paragraph):
@@ -38,24 +39,23 @@ def lang_detect(text_for_lang_detect):
     elif re.search('[\u0B80-\u0BFF]', text_for_lang_detect):
         lang_detected = 'ta'
     else:
+        try:
+            lang_by_cld2 = cld2.detect(text_for_lang_detect)[2][0][1]
+            lang_by_cld3 = cld3.get_language(text_for_lang_detect)[0]
+            lang_by_fasttext = model_fasttext.predict(
+                text_for_lang_detect)[0][0][-2:]
 
-        lang_by_cld2 = cld2.detect(text_for_lang_detect)[2][0][1]
-        lang_by_cld3 = cld3.get_language(text_for_lang_detect)[0]
-        lang_by_fasttext = model_fasttext.predict(
-            text_for_lang_detect)[0][0][-2:]
-
-        if {"en", "ms", "id"} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
-            if 'en' in [lang_by_cld2, lang_by_cld3, lang_by_fasttext]:
-                lang_detected = 'en'
-            elif {'ms', 'id'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
-                lang_detected = 'ms'
-        else:
-            try:
+            if {"en", "ms", "id"} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
+                if 'en' in [lang_by_cld2, lang_by_cld3, lang_by_fasttext]:
+                    lang_detected = 'en'
+                elif {'ms', 'id'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
+                    lang_detected = 'ms'
+            else:
                 lang_by_google = translator.detect(
                     text_for_lang_detect).lang[:2]
                 lang_detected = lang_by_google
-            except:
-                lang_detected = 'un'
+        except:
+            lang_detected = 'un'
     return lang_detected
 
 

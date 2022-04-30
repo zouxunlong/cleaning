@@ -1,10 +1,10 @@
 import time
 start_time = time.time()
 
-with open("/home/xuanlong/dataclean/data/wikimedia/wikimedia.en-ms") as file, open("/home/xuanlong/dataclean/data/wikimedia/wikimedia_sorted.en-ms", 'w', encoding='utf8') as fOUT:
+with open("/home/xuanlong/dataclean/data/ccaligned/CCAligned.en-ms") as file, open("/home/xuanlong/dataclean/data/ccaligned/CCAligned_sorted.en-ms", 'w', encoding='utf8') as fOUT:
     list=[]
     for line in file:
-        if float(line[:6]) < 0.997:
+        if float(line[:6]) < 1:
             list.append(line)
     list.sort(reverse=True)
     for sentence in list:
