@@ -3,7 +3,7 @@ import fasttext
 from sentence_transformers import SentenceTransformer, util
 
 
-def clean(filepath_zh, filepath_en, filepath_out):
+def clean(filepath_zh:str, filepath_en:str, filepath_out):
     model_sentence_transformers = SentenceTransformer("LaBSE")
 
     model_fasttext = fasttext.load_model('./model/lid.176.bin')
@@ -51,11 +51,11 @@ def clean(filepath_zh, filepath_en, filepath_out):
 
                                         sentences_written += 1
 
-                sentences_zh = []
-                sentences_en = []
+                sentences_zh.clear()
+                sentences_en.clear()
 
     print("Done. {} sentences written".format(sentences_written))
     print("--- %s seconds ---" % (time.time() - start_time))
 
-
-clean('./noisy/ccmatrix/Chinese_10m_to_20m.txt', './noisy/ccmatrix/English_10m_to_20m.txt', './noisy/ccmatrix/Clean_10m_to_20m.txt')
+print(clean.__annotations__)
+# clean('./noisy/ccmatrix/Chinese_10m_to_20m.txt', './noisy/ccmatrix/English_10m_to_20m.txt', './noisy/ccmatrix/Clean_10m_to_20m.txt')

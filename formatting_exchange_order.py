@@ -7,8 +7,8 @@ start_time = time.time()
 
 def exhange_order(filepath):
     with open(filepath, encoding='utf8') as fIN, open('/home/xuanlong/dataclean/data_clean_and_extraction/en_to_zh/en_to_zh.txt', 'a', encoding='utf8') as fOUT:
-        for i, sentence in enumerate(fIN):
-            sentences=sentence.split('|')
+        for i, line in enumerate(fIN):
+            sentences=line.split('|')
             fOUT.write("{} | {}\n".format(sentences[1].strip(), sentences[0].strip()))
             print(i)
 
