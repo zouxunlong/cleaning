@@ -5,12 +5,10 @@ from sentence_transformers import SentenceTransformer, util
 import pycld2 as cld2
 import cld3
 import fasttext
-from googletrans import Translator
 
 
 model_fasttext = fasttext.load_model('../model/lid.176.bin')
 model_sentence_transformers = SentenceTransformer('../model/labse_bert_model')
-translator = Translator()
 
 
 def get_dp(M):
