@@ -67,19 +67,21 @@ def lang_detect(text_for_lang_detect):
             lang_detected.add('vi')
 
         if len(lang_detected) == 0:
+            try:
+                lang_by_cld2 = cld2.detect(text_for_lang_detect)[2][0][1]
+                lang_by_cld3 = cld3.get_language(text_for_lang_detect)[0]
+                lang_by_fasttext = model_fasttext.predict(
+                    text_for_lang_detect)[0][0][-2:]
 
-            lang_by_cld2 = cld2.detect(text_for_lang_detect)[2][0][1]
-            lang_by_cld3 = cld3.get_language(text_for_lang_detect)[0]
-            lang_by_fasttext = model_fasttext.predict(
-                text_for_lang_detect)[0][0][-2:]
-
-            if {"en"} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
-                lang_detected.add('en')
-            if {'ms', 'id'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
-                lang_detected.add('ms')
-                lang_detected.add('id')
-            if {'vi'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
-                lang_detected.add('vi')
+                if {"en"} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
+                    lang_detected.add('en')
+                if {'ms', 'id'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
+                    lang_detected.add('ms')
+                    lang_detected.add('id')
+                if {'vi'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
+                    lang_detected.add('vi')
+            except BaseException as err:
+                print(err)
 
     return lang_detected
 
@@ -121,12 +123,10 @@ def clean_with_score(file_path_src, file_path_tgt, file_path_out, src_lang, tgt_
                 embedding_saving(sentences_src, sentences_tgt, file_path_out)
                 sentences_src.clear()
                 sentences_tgt.clear()
-                print("finished "+str(i))
 
         embedding_saving(sentences_src, sentences_tgt, file_path_out)
-        print("finished "+str(len(sentences_src)))
-
-    print("finished "+file_path_out)
+        
+    print("finished " + file_path_out)
 
 
 if __name__ == '__main__':
