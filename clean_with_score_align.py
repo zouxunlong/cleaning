@@ -1,8 +1,7 @@
 import os
 import re
 import string
-import time
-from sentence_transformers import SentenceTransformer
+from sentence_transformers import SentenceTransformer, util
 import pycld2 as cld2
 import cld3
 import fasttext
@@ -14,7 +13,42 @@ model_sentence_transformers = SentenceTransformer('../model/labse_bert_model')
 translator = Translator()
 
 
-start_time = time.time()
+def get_dp(M):
+    m = len(M)
+    n = len(M[0])
+    dp = [[0]*n for i in range(m)]
+    dp[0] = [sum(M[0][:i+1]) for i in range(n)]
+    for i in range(1, m):
+        dp[i][0] = dp[i-1][0] + M[i][0]
+
+    for i in range(1, m):
+        for j in range(1, n):
+            dp[i][j] = max(dp[i-1][j], dp[i][j-1]) + M[i][j]
+    return dp
+
+
+def retrieve_coordinate(dp, coordinate):
+    if coordinate[0] == 0:
+        return (coordinate[0], coordinate[1]-1)
+    elif coordinate[1] == 0:
+        return (coordinate[0]-1, coordinate[1])
+    elif dp[coordinate[0]-1][coordinate[1]] >= dp[coordinate[0]][coordinate[1]-1]:
+        return (coordinate[0]-1, coordinate[1])
+    else:
+        return (coordinate[0], coordinate[1]-1)
+
+
+def get_path(M):
+
+    coordinate = (len(M)-1, len(M[0])-1)
+    path = [coordinate]
+    dp = get_dp(M)
+
+    while coordinate != (0, 0):
+        coordinate = retrieve_coordinate(dp, coordinate)
+        path.append(coordinate)
+    path.reverse()
+    return path
 
 
 def lang_detect(text_for_lang_detect):
@@ -36,11 +70,13 @@ def lang_detect(text_for_lang_detect):
                 lang_by_fasttext = model_fasttext.predict(
                     text_for_lang_detect)[0][0][-2:]
 
-                if {"en", "ms", "id"} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
+                if {"en", "ms", "id",'vi'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
                     if 'en' in [lang_by_cld2, lang_by_cld3, lang_by_fasttext]:
                         lang_detected = 'en'
                     elif {'ms', 'id'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
-                        lang_detected = 'ms'
+                        lang_detected = 'id'
+                    elif {'vi'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
+                        lang_detected = 'vi'
                 else:
                     lang_by_google = translator.detect(
                         text_for_lang_detect).lang[:2]
@@ -66,31 +102,33 @@ def embedding_saving(sentences_en, sentences_tgt, filepath_out):
     target_embedding = model_sentence_transformers.encode_multi_process(
         sentences_tgt, pool)
 
-    assert len(source_embedding) == len(
-        target_embedding), "length of src and target don't match"
+    cosine_scores = util.cos_sim(source_embedding, target_embedding)
+
+    path = get_path(cosine_scores)
 
     with open(filepath_out, 'a', encoding='utf-8') as fOUT:
-        for k in range(len(source_embedding)):
-            cosine = source_embedding[k].dot(target_embedding[k])
+        for k in range(len(path)):
+            cosine = source_embedding[path[k][0]].dot(
+                target_embedding[path[k][1]])
             if cosine >= 0.7:
                 fOUT.write("{:.4f} | {} | {}\n".format(
-                    cosine, sentences_en[k].replace("|", " "), sentences_tgt[k].replace("|", " ")))
+                    cosine, sentences_en[path[k][0]].replace("|", " "), sentences_tgt[path[k][1]].replace("|", " ")))
 
 
-def clean_with_score(filepath_en, filepath_ms, filepath_out):
+def clean_with_score(filepath_en, file_path_tgt, filepath_out):
     with open(filepath_en, encoding='utf-8') as file_en, \
-            open(filepath_ms, encoding='utf-8') as file_ms:
+            open(file_path_tgt, encoding='utf-8') as file_ms:
 
         sentences_en = []
         sentences_tgt = []
-        for (i, sentence_en), (j, sentence_ms) in zip(enumerate(file_en), enumerate(file_ms)):
-            if len(sentence_en.strip()) > 10 and len(sentence_ms.strip()) > 10:
-                language_detect = lang_detect(sentence_ms.strip())
-                if language_detect == 'ms':
+        for (i, sentence_en), (j, sentence_tgt) in zip(enumerate(file_en), enumerate(file_ms)):
+            if len(sentence_en.strip()) > 10 and len(sentence_tgt.strip()) > 10:
+                language_detect = lang_detect(sentence_tgt.strip())
+                if language_detect == file_path_tgt[-2:]:
                     sentences_en.append(sentence_en.strip())
-                    sentences_tgt.append(sentence_ms.strip())
+                    sentences_tgt.append(sentence_tgt.strip())
 
-            if (i+1) % 50000 == 0:
+            if (i+1) % 500 == 0:
                 embedding_saving(sentences_en, sentences_tgt, filepath_out)
                 sentences_en.clear()
                 sentences_tgt.clear()
@@ -98,12 +136,24 @@ def clean_with_score(filepath_en, filepath_ms, filepath_out):
 
         embedding_saving(sentences_en, sentences_tgt, filepath_out)
         print("finished "+str(len(sentences_en)))
+    print("finished "+str(filepath_out))
 
 
 if __name__ == '__main__':
     pool = model_sentence_transformers.start_multi_process_pool()
-    clean_with_score("/home/xuanlong/dataclean/data/opensubtitle/OpenSubtitles.en-ms.en",
-                     "/home/xuanlong/dataclean/data/opensubtitle/OpenSubtitles.en-ms.ms", "/home/xuanlong/dataclean/data/opensubtitle/OpenSubtitles.en-ms")
+
+    rootdir = '/home/xuanlong/dataclean/data'
+
+    for root, dirs, files in os.walk(rootdir):
+        for file in files:
+            if root.split(r'/')[-1] not in ['ccaligned', 'ccmatrix', 'wikimatrix', 'wikimedia']:
+                a = os.path.splitext(file)
+                if os.path.splitext(file)[1] == '.en':
+                    file_path_en = os.path.join(root, file)
+                    file_path_tgt = os.path.join(root, os.path.splitext(
+                        file)[0]+'.'+os.path.splitext(file)[0][-2:])
+                    filepath_out = os.path.join(root, os.path.splitext(
+                        file)[0])
+                    clean_with_score(file_path_en, file_path_tgt, filepath_out)
 
     model_sentence_transformers.stop_multi_process_pool(pool)
-    print("--- %s seconds ---" % (time.time() - start_time))

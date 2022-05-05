@@ -47,7 +47,49 @@
 #     print('tamil detect')
 
 
-s = sum([True,True,True,False])
+# def get_dp(M):
+#     m = len(M)
+#     n = len(M[0])
+#     dp = [[0]*n for i in range(m)]
+#     dp[0] = [sum(M[0][:i+1]) for i in range(n)]
+#     for i in range(1, m):
+#         dp[i][0] = dp[i-1][0] + M[i][0]
 
-print(s)
+#     for i in range(1, m):
+#         for j in range(1, n):
+#             dp[i][j] = max(dp[i-1][j], dp[i][j-1]) + M[i][j]
+#     return dp
 
+
+
+# def yield_coordinate(dp,coordinate):
+
+#     if coordinate[0] == 0:
+#         return (coordinate[0], coordinate[1]-1)
+#     elif coordinate[1] == 0:
+#         return (coordinate[0]-1, coordinate[1])
+#     elif dp[coordinate[0]-1][coordinate[1]] >= dp[coordinate[0]][coordinate[1]-1]:
+#         return (coordinate[0]-1, coordinate[1])
+#     else:
+#         return (coordinate[0], coordinate[1]-1)
+
+
+
+# M = [[3, 2, 1], [5, 2, 1], [4, 12, 2], [10, 9, 3]]
+
+# def get_path(M):
+
+#     coordinate=(len(M)-1,len(M[0])-1)
+#     path=[coordinate]
+#     dp=get_dp(M)
+
+#     while coordinate!=(0,0):
+#         coordinate=yield_coordinate(dp,coordinate)
+#         path.append(coordinate)
+#     return path
+
+
+# print(get_path(M))
+
+a={3}
+print(2 in a)
