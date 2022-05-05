@@ -29,7 +29,9 @@ def lang_detect(text_for_lang_detect):
             lang_detected.add('ta')
         if re.search('[àáãạảăắằẳẵặâấầẩẫậèéẹẻẽêềếểễệđìíĩỉịòóõọỏôốồổỗộơớờởỡợùúũụủưứừửữựỳỵỷỹýÀÁÃẠẢĂẮẰẲẴẶÂẤẦẨẪẬÈÉẸẺẼÊỀẾỂỄỆĐÌÍĨỈỊÒÓÕỌỎÔỐỒỔỖỘƠỚỜỞỠỢÙÚŨỤỦƯỨỪỬỮỰỲỴỶỸÝ]', text_for_lang_detect):
             lang_detected.add('vi')
-        try:
+
+        if len(lang_detected) == 0:
+
             lang_by_cld2 = cld2.detect(text_for_lang_detect)[2][0][1]
             lang_by_cld3 = cld3.get_language(text_for_lang_detect)[0]
             lang_by_fasttext = model_fasttext.predict(
@@ -40,12 +42,14 @@ def lang_detect(text_for_lang_detect):
             if {'ms', 'id'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
                 lang_detected.add('ms')
                 lang_detected.add('id')
+
             if len(lang_detected) == 0:
-                lang_by_google = translator.detect(
-                    text_for_lang_detect).lang[:2]
-                lang_detected.add(lang_by_google)
-        except:
-            pass
+                try:
+                    lang_by_google = translator.detect(
+                        text_for_lang_detect).lang[:2]
+                    lang_detected.add(lang_by_google)
+                except BaseException as err:
+                    print(err)
 
     return lang_detected
 
@@ -78,10 +82,9 @@ def clean_with_score(file_path_src, file_path_tgt, file_path_out, src_lang, tgt_
         sentences_src = []
         sentences_tgt = []
         for (i, sentence_src), (j, sentence_tgt) in zip(enumerate(file_src), enumerate(file_tgt)):
-            if len(sentence_src.strip()) > 10 and len(sentence_tgt.strip()) > 2:
-                src_language_detect = lang_detect(sentence_src.strip())
-                tgt_language_detect = lang_detect(sentence_tgt.strip())
-                if src_lang in src_language_detect and tgt_lang in tgt_language_detect:
+            if len(sentence_src.strip()) > 20 and len(sentence_tgt.strip()) > 2:
+
+                if tgt_lang in lang_detect(sentence_tgt.strip()):
                     sentences_src.append(sentence_src.strip())
                     sentences_tgt.append(sentence_tgt.strip())
 
@@ -92,7 +95,7 @@ def clean_with_score(file_path_src, file_path_tgt, file_path_out, src_lang, tgt_
                 print("finished "+str(i))
 
         embedding_saving(sentences_src, sentences_tgt, file_path_out)
-        print("finished "+ file_path_out)
+    print("finished "+ file_path_out)
 
 
 if __name__ == '__main__':
