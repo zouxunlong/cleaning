@@ -5,10 +5,50 @@ from sentence_transformers import SentenceTransformer, util
 import pycld2 as cld2
 import cld3
 import fasttext
+from googletrans import Translator
 
 
 model_fasttext = fasttext.load_model('../model/lid.176.bin')
 model_sentence_transformers = SentenceTransformer('../model/labse_bert_model')
+translator = Translator()
+
+
+def get_dp(M):
+    m = len(M)
+    n = len(M[0])
+    dp = [[0]*n for i in range(m)]
+    dp[0] = [sum(M[0][:i+1]) for i in range(n)]
+    for i in range(1, m):
+        dp[i][0] = dp[i-1][0] + M[i][0]
+
+    for i in range(1, m):
+        for j in range(1, n):
+            dp[i][j] = max(dp[i-1][j], dp[i][j-1]) + M[i][j]
+    return dp
+
+
+def retrieve_coordinate(dp, coordinate):
+    if coordinate[0] == 0:
+        return (coordinate[0], coordinate[1]-1)
+    elif coordinate[1] == 0:
+        return (coordinate[0]-1, coordinate[1])
+    elif dp[coordinate[0]-1][coordinate[1]] >= dp[coordinate[0]][coordinate[1]-1]:
+        return (coordinate[0]-1, coordinate[1])
+    else:
+        return (coordinate[0], coordinate[1]-1)
+
+
+def get_path(M):
+
+    coordinate = (len(M)-1, len(M[0])-1)
+    path = [coordinate]
+    dp = get_dp(M)
+
+    while coordinate != (0, 0):
+        coordinate = retrieve_coordinate(dp, coordinate)
+        path.append(coordinate)
+    path.reverse()
+    return path
 
 
 def lang_detect(text_for_lang_detect):
@@ -47,24 +87,22 @@ def lang_detect(text_for_lang_detect):
 
 
 def embedding_saving(sentences_src, sentences_tgt, file_path_out):
+    source_embedding = model_sentence_transformers.encode(
+        sentences_src, convert_to_numpy=True, normalize_embeddings=True)
 
-    source_embedding = model_sentence_transformers.encode_multi_process(
-        sentences_src, pool)
-
-    target_embedding = model_sentence_transformers.encode_multi_process(
-        sentences_tgt, pool)
-
-    assert len(source_embedding) == len(
-        target_embedding), "length of src and target don't match"
+    target_embedding = model_sentence_transformers.encode(
+        sentences_tgt, convert_to_numpy=True, normalize_embeddings=True)
 
     cosine_scores = util.cos_sim(source_embedding, target_embedding)
 
+    path = get_path(cosine_scores)
+
     with open(file_path_out, 'a', encoding='utf-8') as fOUT:
-        for k in range(len(cosine_scores)):
-            cosine_score = cosine_scores[k][k]
-            if cosine_score >= 0.7:
+        for k in range(len(path)):
+            cosine = cosine_scores[path[k][0]][path[k][1]]
+            if cosine >= 0.7:
                 fOUT.write("{:.4f} | {} | {}\n".format(
-                    cosine_score, sentences_src[k].replace("|", " "), sentences_tgt[k].replace("|", " ")))
+                    cosine, sentences_src[path[k][0]].replace("|", " "), sentences_tgt[path[k][1]].replace("|", " ")))
 
 
 def clean_with_score(file_path_src, file_path_tgt, file_path_out, src_lang, tgt_lang):
@@ -81,7 +119,7 @@ def clean_with_score(file_path_src, file_path_tgt, file_path_out, src_lang, tgt_
                     sentences_src.append(sentence_src.strip())
                     sentences_tgt.append(sentence_tgt.strip())
 
-            if (i+1) % 50000 == 0:
+            if (i+1) % 500 == 0:
                 embedding_saving(sentences_src, sentences_tgt, file_path_out)
                 sentences_src.clear()
                 sentences_tgt.clear()
@@ -90,17 +128,17 @@ def clean_with_score(file_path_src, file_path_tgt, file_path_out, src_lang, tgt_
         embedding_saving(sentences_src, sentences_tgt, file_path_out)
         print("finished "+str(len(sentences_src)))
 
-    print("finished " + file_path_out)
+    print("finished "+file_path_out)
 
 
 if __name__ == '__main__':
-    pool = model_sentence_transformers.start_multi_process_pool()
 
     rootdir = '/home/xuanlong/dataclean/data'
 
     for root, dirs, files in os.walk(rootdir):
         for file in files:
-            if root.split(r'/')[-1] in ['ccaligned', 'ccmatrix', 'wikimatrix', 'wikimedia', 'wikimedia_v1', 'wikimedia_v20210402']:
+            if root.split(r'/')[-1] not in ['ccaligned', 'ccmatrix', 'wikimatrix', 'wikimedia', 'wikimedia_v1', 'wikimedia_v20210402']:
+
                 if os.path.splitext(file)[1] in {'.ta', '.zh', '.vi', '.ms', '.id'}:
                     file_path_src = os.path.join(
                         root, os.path.splitext(file)[0]+'.en')
@@ -109,6 +147,5 @@ if __name__ == '__main__':
                         root, os.path.splitext(file)[0])
                     src_lang = 'en'
                     tgt_lang = file.split('.')[-1]
-                    clean_with_score(
-                        file_path_src, file_path_tgt, file_path_out, src_lang, tgt_lang)
-    model_sentence_transformers.stop_multi_process_pool(pool)
+                    clean_with_score(file_path_src, file_path_tgt,
+                                     file_path_out, src_lang, tgt_lang)
