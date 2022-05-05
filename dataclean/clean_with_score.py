@@ -5,12 +5,10 @@ from sentence_transformers import SentenceTransformer, util
 import pycld2 as cld2
 import cld3
 import fasttext
-from googletrans import Translator
 
 
 model_fasttext = fasttext.load_model('../model/lid.176.bin')
 model_sentence_transformers = SentenceTransformer('../model/labse_bert_model')
-translator = Translator()
 
 
 def lang_detect(text_for_lang_detect):
@@ -42,14 +40,9 @@ def lang_detect(text_for_lang_detect):
             if {'ms', 'id'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
                 lang_detected.add('ms')
                 lang_detected.add('id')
+            if {'vi'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
+                lang_detected.add('vi')
 
-            if len(lang_detected) == 0:
-                try:
-                    lang_by_google = translator.detect(
-                        text_for_lang_detect).lang[:2]
-                    lang_detected.add(lang_by_google)
-                except BaseException as err:
-                    print(err)
 
     return lang_detected
 
