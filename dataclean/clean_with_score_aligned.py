@@ -82,6 +82,13 @@ def lang_detect(text_for_lang_detect):
                 if {'vi'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
                     lang_detected.add('vi')
             except BaseException as err:
+                exception_type, exception_object, exception_traceback = sys.exc_info()
+                filename = exception_traceback.tb_frame.f_code.co_filename
+                line_number = exception_traceback.tb_lineno
+
+                print("Exception type: ", exception_type, flush=True)
+                print("File name: ", filename, flush=True)
+                print("Line number: ", line_number, flush=True)
                 print(err)
 
     return lang_detected
