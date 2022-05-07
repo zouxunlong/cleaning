@@ -28,22 +28,21 @@ def lang_detect(text_for_lang_detect):
         if re.search('[àáãạảăắằẳẵặâấầẩẫậèéẹẻẽêềếểễệđìíĩỉịòóõọỏôốồổỗộơớờởỡợùúũụủưứừửữựỳỵỷỹýÀÁÃẠẢĂẮẰẲẴẶÂẤẦẨẪẬÈÉẸẺẼÊỀẾỂỄỆĐÌÍĨỈỊÒÓÕỌỎÔỐỒỔỖỘƠỚỜỞỠỢÙÚŨỤỦƯỨỪỬỮỰỲỴỶỸÝ]', text_for_lang_detect):
             lang_detected.add('vi')
 
-        if len(lang_detected) == 0:
-            try:
-                lang_by_cld2 = cld2.detect(text_for_lang_detect)[2][0][1]
-                lang_by_cld3 = cld3.get_language(text_for_lang_detect)[0]
-                lang_by_fasttext = model_fasttext.predict(
-                    text_for_lang_detect)[0][0][-2:]
+        try:
+            lang_by_cld2 = cld2.detect(text_for_lang_detect)[2][0][1]
+            lang_by_cld3 = cld3.get_language(text_for_lang_detect)[0]
+            lang_by_fasttext = model_fasttext.predict(
+                text_for_lang_detect)[0][0][-2:]
 
-                if {"en"} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
-                    lang_detected.add('en')
-                if {'ms', 'id'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
-                    lang_detected.add('ms')
-                    lang_detected.add('id')
-                if {'vi'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
-                    lang_detected.add('vi')
-            except BaseException as err:
-                print(err)
+            if {"en"} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
+                lang_detected.add('en')
+            if {'ms', 'id'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
+                lang_detected.add('ms')
+                lang_detected.add('id')
+            if {'vi'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
+                lang_detected.add('vi')
+        except BaseException as err:
+            print(err)
 
     return lang_detected
 
@@ -79,7 +78,9 @@ def clean_with_score(file_path_src, file_path_tgt, file_path_out, src_lang, tgt_
         for (i, sentence_src), (j, sentence_tgt) in zip(enumerate(file_src), enumerate(file_tgt)):
             if len(sentence_src.strip()) > 20 and len(sentence_tgt.strip()) > 2:
 
-                if tgt_lang in lang_detect(sentence_tgt.strip()):
+                if (lang_detect(sentence_src.strip()) == {src_lang}) and (
+                    (tgt_lang in {'zh', 'ta', 'vi'} and lang_detect(sentence_tgt.strip()) == {tgt_lang}) or (
+                        tgt_lang in {'ms', 'id'} and tgt_lang in lang_detect(sentence_tgt.strip()))):
                     sentences_src.append(sentence_src.strip())
                     sentences_tgt.append(sentence_tgt.strip())
 

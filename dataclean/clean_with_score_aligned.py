@@ -115,7 +115,9 @@ def clean_with_score(file_path_src, file_path_tgt, file_path_out, src_lang, tgt_
         for (i, sentence_src), (j, sentence_tgt) in zip(enumerate(file_src), enumerate(file_tgt)):
             if len(sentence_src.strip()) > 20 and len(sentence_tgt.strip()) > 2:
 
-                if tgt_lang in lang_detect(sentence_tgt.strip()):
+                if (lang_detect(sentence_src.strip()) == {src_lang}) and (
+                    (tgt_lang in {'zh', 'ta', 'vi'} and lang_detect(sentence_tgt.strip()) == {tgt_lang}) or (
+                        tgt_lang in {'ms', 'id'} and tgt_lang in lang_detect(sentence_tgt.strip()))):
                     sentences_src.append(sentence_src.strip())
                     sentences_tgt.append(sentence_tgt.strip())
 
@@ -125,7 +127,7 @@ def clean_with_score(file_path_src, file_path_tgt, file_path_out, src_lang, tgt_
                 sentences_tgt.clear()
 
         embedding_saving(sentences_src, sentences_tgt, file_path_out)
-        
+
     print("finished " + file_path_out)
 
 

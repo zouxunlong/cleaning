@@ -21,31 +21,6 @@
 #     sentences.append(t)
 # print('dsa')
 
-# import pycld2 as cld2
-# import cld3
-# import fasttext
-# from googletrans import Translator
-
-# translator = Translator()
-# model_fasttext = fasttext.load_model('../model/lid.176.bin')
-
-# text_for_lang_detect = "领取ர் 21, 2020, "
-
-# lang_by_cld2 = cld2.detect(text_for_lang_detect)[2][0][1]
-# lang_by_cld3 = cld3.get_language(text_for_lang_detect)[0]
-# lang_by_fasttext = model_fasttext.predict(
-#     text_for_lang_detect)[0][0]
-# lang_by_google = translator.detect(text_for_lang_detect)
-
-# print(lang_by_cld2)
-# print(lang_by_cld3)
-# print(lang_by_fasttext)
-# print(lang_by_google)
-# if re.search('[\u4e00-\u9fff]', text_for_lang_detect):
-#     print('chinese detect')
-# if re.search('[\u0B80-\u0BFF]', text_for_lang_detect):
-#     print('tamil detect')
-
 
 # def get_dp(M):
 #     m = len(M)
@@ -91,5 +66,52 @@
 
 # print(get_path(M))
 
-a={3}
-print(2 in a)
+
+
+# import re
+# import string
+# import pycld2 as cld2
+# import cld3
+# import fasttext
+# model_fasttext = fasttext.load_model('../model/lid.176.bin')
+
+# def lang_detect(text_for_lang_detect):
+
+#     lang_detected = set()
+
+#     text_for_lang_detect = re.sub(
+#         "(?i)\w+@\S+\s?|http\S*\s?|www\.\S*\s?|[a-z\.]*\.sg\S*\s?|[0-9]+\s?", "", text_for_lang_detect)
+#     text_for_lang_detect = text_for_lang_detect.translate(
+#         str.maketrans('-', ' ', string.punctuation.replace('-', ''))).strip().lower()
+
+#     if text_for_lang_detect:
+#         if re.search('[\u4e00-\u9fff]', text_for_lang_detect):
+#             lang_detected.add('zh')
+#         if re.search('[\u0B80-\u0BFF]', text_for_lang_detect):
+#             lang_detected.add('ta')
+#         if re.search('[àáãạảăắằẳẵặâấầẩẫậèéẹẻẽêềếểễệđìíĩỉịòóõọỏôốồổỗộơớờởỡợùúũụủưứừửữựỳỵỷỹýÀÁÃẠẢĂẮẰẲẴẶÂẤẦẨẪẬÈÉẸẺẼÊỀẾỂỄỆĐÌÍĨỈỊÒÓÕỌỎÔỐỒỔỖỘƠỚỜỞỠỢÙÚŨỤỦƯỨỪỬỮỰỲỴỶỸÝ]', text_for_lang_detect):
+#             lang_detected.add('vi')
+
+#         try:
+#             lang_by_cld2 = cld2.detect(text_for_lang_detect)[2][0][1]
+#             lang_by_cld3 = cld3.get_language(text_for_lang_detect)[0]
+#             lang_by_fasttext = model_fasttext.predict(
+#                 text_for_lang_detect)[0][0][-2:]
+
+#             if {"en"} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
+#                 lang_detected.add('en')
+#             if {'ms', 'id'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
+#                 lang_detected.add('ms')
+#                 lang_detected.add('id')
+#             if {'vi'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
+#                 lang_detected.add('vi')
+#         except Exception as err:
+#             print(err)
+
+#     return lang_detected
+
+
+# lang_detect('Pseudoryx nghetinhensis')
+
+if (True) and ((True and False) or (True and False)):
+    print('hello')
