@@ -117,7 +117,7 @@ def clean_with_score(file_path_src, file_path_tgt, file_path_out, src_lang, tgt_
 
                 if (lang_detect(sentence_src.strip()) == {src_lang}) and (
                     (tgt_lang in {'zh', 'ta', 'vi'} and lang_detect(sentence_tgt.strip()) == {tgt_lang}) or (
-                        tgt_lang in {'ms', 'id'} and tgt_lang in lang_detect(sentence_tgt.strip()))):
+                        tgt_lang in {'ms', 'id'} and not lang_detect(sentence_tgt.strip())-{'ms', 'id'} )):
                     sentences_src.append(sentence_src.strip())
                     sentences_tgt.append(sentence_tgt.strip())
 

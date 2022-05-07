@@ -36,7 +36,6 @@
 #     return dp
 
 
-
 # def yield_coordinate(dp,coordinate):
 
 #     if coordinate[0] == 0:
@@ -47,7 +46,6 @@
 #         return (coordinate[0]-1, coordinate[1])
 #     else:
 #         return (coordinate[0], coordinate[1]-1)
-
 
 
 # M = [[3, 2, 1], [5, 2, 1], [4, 12, 2], [10, 9, 3]]
@@ -65,7 +63,6 @@
 
 
 # print(get_path(M))
-
 
 
 # import re
@@ -113,5 +110,10 @@
 
 # lang_detect('Pseudoryx nghetinhensis')
 
-if (True) and ((True and False) or (True and False)):
+
+if (('ms' in {'zh', 'ta', 'vi'} and {'zh'} == {'ms'}) or (
+        'ms' in {'ms', 'id'} and not {'ms'}-{'ms', 'id'})):
+    print('hello')
+
+if {}:
     print('hello')
