@@ -75,8 +75,9 @@ def lang_detect(text_for_lang_detect):
 
                 if {"en"} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
                     lang_detected.add('en')
-                if {'ms', 'id'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
+                if {'ms'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
                     lang_detected.add('ms')
+                if {'id'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
                     lang_detected.add('id')
                 if {'vi'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
                     lang_detected.add('vi')
