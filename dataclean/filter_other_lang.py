@@ -49,11 +49,16 @@ def other_lang_detect(text_for_lang_detect):
 
 def filter(file_path):
     start_time = time.time()
-    with open(file_path) as fIN, open(file_path+'.filtered', 'w', encoding='utf8') as fOUT:
+    with open(file_path) as fIN:
+        list = []
         for line in fIN:
             en_sent = line.split('|')[1].strip()
             if not other_lang_detect(en_sent):
-                fOUT.write(line)
+                list.append(line)
+    with open(file_path, 'w', encoding='utf8') as fOUT:
+        for sentence in list:
+            fOUT.write(sentence)
+    list.clear()
     print("finished " + file_path)
     print("--- %s seconds ---" % (time.time() - start_time))
 
