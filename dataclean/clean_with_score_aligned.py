@@ -1,6 +1,7 @@
 import os
 import re
 import string
+import sys
 from sentence_transformers import SentenceTransformer, util
 import pycld2 as cld2
 import cld3
@@ -63,6 +64,14 @@ def lang_detect(text_for_lang_detect):
             lang_detected.add('zh')
         if re.search('[\u0B80-\u0BFF]', text_for_lang_detect):
             lang_detected.add('ta')
+        if re.search('[\u0400-\u04FF]', text_for_lang_detect):
+            lang_detected.add('ru')
+        if re.search('[\uac00-\ud7a3]', text_for_lang_detect):
+            lang_detected.add('ko')
+        if re.search('[\u3040-\u30ff\u31f0-\u31ff]', text_for_lang_detect):
+            lang_detected.add('ja')
+        if re.search('[\u0A00-\u0A7F]', text_for_lang_detect):
+            lang_detected.add('pa')
         if re.search('[àáãạảăắằẳẵặâấầẩẫậèéẹẻẽêềếểễệđìíĩỉịòóõọỏôốồổỗộơớờởỡợùúũụủưứừửữựỳỵỷỹýÀÁÃẠẢĂẮẰẲẴẶÂẤẦẨẪẬÈÉẸẺẼÊỀẾỂỄỆĐÌÍĨỈỊÒÓÕỌỎÔỐỒỔỖỘƠỚỜỞỠỢÙÚŨỤỦƯỨỪỬỮỰỲỴỶỸÝ]', text_for_lang_detect):
             lang_detected.add('vi')
 

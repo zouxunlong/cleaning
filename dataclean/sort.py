@@ -20,7 +20,7 @@ def sort(file_path):
 
 if __name__ == '__main__':
 
-    rootdir = '/home/xuanlong/dataclean/data'
+    rootdir = '/home/xuanlong/dataclean/data/indo/parallel/wikimedia'
 
     for root, dirs, files in os.walk(rootdir):
         for file in files:

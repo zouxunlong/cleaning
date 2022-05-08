@@ -1,15 +1,11 @@
+import os
 import re
 import string
-import sys
-import pycld2 as cld2
-import cld3
-import fasttext
+import time
 
-model_fasttext = fasttext.load_model('../model/lid.176.bin')
 
 
 def lang_detect(text_for_lang_detect):
-    original_len=len(text_for_lang_detect)
 
     lang_detected = set()
 
@@ -17,8 +13,6 @@ def lang_detect(text_for_lang_detect):
         "(?i)\w+@\S+\s?|http\S*\s?|www\.\S*\s?|[a-z\.]*\.sg\S*\s?|[0-9]+\s?", "", text_for_lang_detect)
     text_for_lang_detect = text_for_lang_detect.translate(
         str.maketrans('-', ' ', string.punctuation.replace('-', ''))).strip().lower()
-
-    trimmed_len=len(text_for_lang_detect)
 
     if text_for_lang_detect:
         if re.search('[\u4e00-\u9fff]', text_for_lang_detect):
@@ -36,31 +30,31 @@ def lang_detect(text_for_lang_detect):
         if re.search('[àáãạảăắằẳẵặâấầẩẫậèéẹẻẽêềếểễệđìíĩỉịòóõọỏôốồổỗộơớờởỡợùúũụủưứừửữựỳỵỷỹýÀÁÃẠẢĂẮẰẲẴẶÂẤẦẨẪẬÈÉẸẺẼÊỀẾỂỄỆĐÌÍĨỈỊÒÓÕỌỎÔỐỒỔỖỘƠỚỜỞỠỢÙÚŨỤỦƯỨỪỬỮỰỲỴỶỸÝ]', text_for_lang_detect):
             lang_detected.add('vi')
 
-        try:
-            lang_by_cld2 = cld2.detect(text_for_lang_detect)[2][0][1]
-            lang_by_cld3 = cld3.get_language(text_for_lang_detect)[0]
-            lang_by_fasttext = model_fasttext.predict(
-                text_for_lang_detect)[0][0][-2:]
-
-            if {"en"} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
-                lang_detected.add('en')
-            if {'ms'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
-                lang_detected.add('ms')
-            if {'id'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
-                lang_detected.add('id')
-            if {'vi'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
-                lang_detected.add('vi')
-                
-        except BaseException as err:
-            exception_type, exception_object, exception_traceback = sys.exc_info()
-            filename = exception_traceback.tb_frame.f_code.co_filename
-            line_number = exception_traceback.tb_lineno
-
-            print("Exception type: ", exception_type, flush=True)
-            print("File name: ", filename, flush=True)
-            print("Line number: ", line_number, flush=True)
-            print(err)
-
     return lang_detected
 
-lang_detect('ਜਰਾਈਲੁ ਯਾਰੁ ਬੰਦੇ ਜਿਸੁ ਤੇਰਾ ਆ')
+
+def filter(file_path):
+    start_time = time.time()
+    with open(file_path) as fIN:
+        list = []
+        for line in fIN:
+            en_sent=line.split('|')[1].strip()
+            if len(lang_detect(en_sent)) == 0:
+                list.append(line)
+    with open(file_path, 'w', encoding='utf8') as fOUT:
+        for sentence in list:
+            fOUT.write(sentence)
+    list.clear()
+    print("finished " + file_path)
+    print("--- %s seconds ---" % (time.time() - start_time))
+
+
+if __name__ == '__main__':
+
+    rootdir = '/home/xuanlong/dataclean/data'
+
+    for root, dirs, files in os.walk(rootdir):
+        for file in files:
+            if os.path.splitext(file)[1] in {'.en-ta', '.en-zh', '.en-vi', '.en-ms', '.en-id'}:
+                file_path = os.path.join(root, file)
+                filter(file_path)
