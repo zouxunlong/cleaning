@@ -12,9 +12,10 @@ from googletrans import Translator
 from translated_sentence_mining_nn_symmetry import Bi_text_miner
 from file_convert import doc_to_docx, rtf_to_docx
 from combine_files import combine_files_in_dir
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 translator = Translator()
-bi_text_miner = Bi_text_miner(knn_neighbors=6, min_matching_score=0.9999, min_cos_sim=0.6,
+bi_text_miner = Bi_text_miner(knn_neighbors=6, min_matching_score=1.06, min_cos_sim=0.7,
                               model_path_or_name='../model/labse_bert_model', sort_by_cos=False)
 
 
@@ -151,8 +152,8 @@ def extend_texts_from_file(file_path, texts):
         extend_texts_from_docx(file_path, texts)
 
 
-rootdir = '/home/zxl/ssd/WORK/data_clean/data_clean_and_extraction/batch11'
-# rootdir = './'
+rootdir = '/home/zxl/ssd/WORK/data_clean/data/redo'
+
 
 for root, dirs, files in os.walk(rootdir):
     files.sort()
