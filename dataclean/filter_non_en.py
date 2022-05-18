@@ -32,7 +32,7 @@ def lang_detect(text_for_lang_detect):
     return lang_detected
 
 
-def other_lang_detect(text_for_lang_detect):
+def non_en_detect(text_for_lang_detect):
 
     other_lang_detected = False
 
@@ -53,7 +53,7 @@ def filter(file_path):
         list = []
         for line in fIN:
             en_sent = line.split('|')[1].strip()
-            if not other_lang_detect(en_sent):
+            if not non_en_detect(en_sent):
                 list.append(line)
     with open(file_path, 'w', encoding='utf8') as fOUT:
         for sentence in list:
