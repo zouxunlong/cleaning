@@ -50,7 +50,7 @@
 #                 lang_detected.add('id')
 #             if {'vi'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
 #                 lang_detected.add('vi')
-                
+
 #         except BaseException as err:
 #             exception_type, exception_object, exception_traceback = sys.exc_info()
 #             filename = exception_traceback.tb_frame.f_code.co_filename
@@ -66,9 +66,32 @@
 # lang_detect('ਜਰਾਈਲੁ ਯਾਰੁ ਬੰਦੇ ਜਿਸੁ ਤੇਰਾ ਆ')
 
 
-import re
+# import re
+# import time
 
-lines=['This platform was launched in response to growing health, and social and emotional wellbeing concerns related to the pandemic\\n\nWe will continue to develop the content and resources made available to encourage self-help and self-management of stress and coping issues faced by the population | 推出此平台是为了应对因大流行病而与日俱增的健康、社会和心理健康问题\n\n我们将继续推出各种服务和资源，以鼓励民众在面对压力和问题时自助及进行自我管理']
-for line in lines:
-    en_sent = ' '.join(re.sub("(?i)\\\\n", " ", line).strip().split())
-    print(' '.join(en_sent.split()))
+# start_time = time.time()
+
+
+# def chaotic_detected(text_for_chaotic_detect):
+#     alphabetic_text = ''.join(
+#         re.sub('[^a-zA-Z]', '', text_for_chaotic_detect).split())
+
+#     if len(alphabetic_text)/len(text_for_chaotic_detect) < 0.8:
+#         return True
+#     return False
+
+
+# with open('/home/xuanlong/dataclean/data/parallel/en-ms/CCAligned.en-ms.filtered.filtered2', encoding='utf8') as f_in, \
+#         open('test', 'w', encoding='utf8') as f_out:
+#     for line in f_in:
+#         en_sent = line.split('|')[1].strip()
+#         if not chaotic_detected(en_sent):
+#             f_out.write(line)
+
+# print("--- %s seconds ---" % (time.time() - start_time), flush=True)
+
+print(hex(ord('�')))
+print(hex(ord('�')))
+print(hex(ord('�')))
+print(hex(ord('�')))
+print('\ufffd')

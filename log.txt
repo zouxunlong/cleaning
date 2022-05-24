@@ -1,0 +1,12 @@
+nohup: ignoring input
+finished /home/xuanlong/dataclean/data/parallel/en-ta/wikimedia.en-ta.filtered.filtered2.filtered3
+finished /home/xuanlong/dataclean/data/parallel/en-ta/OpenSubtitles.en-ta.filtered.filtered2.filtered3
+finished /home/xuanlong/dataclean/data/parallel/en-ta/Tanzil.en-ta.filtered.filtered2.filtered3
+finished /home/xuanlong/dataclean/data/parallel/en-ta/WikiMatrix.en-ta.filtered.filtered2.filtered3
+finished /home/xuanlong/dataclean/data/parallel/en-ta/tico-19.en-ta.filtered.filtered2.filtered3
+finished /home/xuanlong/dataclean/data/parallel/en-ta/CCMatrix.en-ta.filtered.filtered2.filtered3
+finished /home/xuanlong/dataclean/data/parallel/en-ta/TED2020.en-ta.filtered.filtered2.filtered3
+finished /home/xuanlong/dataclean/data/parallel/en-ta/CCAligned.en-ta.filtered.filtered2.filtered3
+finished /home/xuanlong/dataclean/data/parallel/en-ta/Tatoeba.en-ta.filtered.filtered2.filtered3
+finished /home/xuanlong/dataclean/data/parallel/en-ta/ELRC_2922.en-ta.filtered.filtered2.filtered3
+--- 4.113663196563721 seconds ---

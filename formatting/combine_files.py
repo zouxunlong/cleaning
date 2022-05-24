@@ -32,7 +32,6 @@ def combine_files_in_dir(rootdir):
             if file.endswith('.zh-en') or file.endswith('.ZH-EN'):
                 inject_from_file(os.path.join(root, file), rootdir+'.zh-en')
                 file_combined+=1
-
     print("Done. {} file combined".format(file_combined))
 
 rootdir='/home/xuanlong/dataclean/data/MCI'
