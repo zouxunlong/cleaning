@@ -45,7 +45,7 @@ def non_en_detected(text_for_lang_detect):
 def filter_line(line,sentence_pair_set):
 
     sentences = line.strip().split('|')
-    if len(sentences) < 2:
+    if len(sentences) != 2:
         return
 
     en_sent = ' '.join(re.sub(
@@ -105,4 +105,4 @@ if __name__ == '__main__':
     start_time = time.time()
     rootdir = '/home/xuanlong/dataclean/data/MCI_combined'
     main(rootdir)
-    print("--- %s seconds ---" % (time.time() - start_time))
+    print("--- %s seconds ---" % (time.time() - start_time), flush=True)
