@@ -44,5 +44,5 @@ def combine_files_in_dir(rootdir):
     print("Done. {} file splited".format(file_splited))
 
 
-rootdir = '/home/xuanlong/dataclean/data/parallel_combined'
+rootdir = '/home/xuanlong/dataclean/data/parallel_seleted'
 combine_files_in_dir(rootdir)
