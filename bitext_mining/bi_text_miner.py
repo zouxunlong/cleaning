@@ -15,18 +15,22 @@ class Bi_text_miner:
     def list_to_set(self, text_list_dict):
         text_set_dict = {}
         for lang, text_list in text_list_dict.items():
-            if lang in ['en', 'ms', 'ta']:
+            if lang in ['en', 'ms', 'ta', 'id']:
                 _2_gram_list = [' '.join(text_list[i:i+2])
                                 for i in range(len(text_list)-1)]
                 _3_gram_list = [' '.join(text_list[i:i+3])
+                                for i in range(len(text_list)-1)]
+                _4_gram_list = [' '.join(text_list[i:i+4])
                                 for i in range(len(text_list)-1)]
             if lang in ['zh']:
                 _2_gram_list = [''.join(text_list[i:i+2])
                                 for i in range(len(text_list)-1)]
                 _3_gram_list = [''.join(text_list[i:i+3])
                                 for i in range(len(text_list)-1)]
+                _4_gram_list = [''.join(text_list[i:i+4])
+                                for i in range(len(text_list)-1)]
             text_set = set(text_list)
-            text_set_n_gram = set([*_2_gram_list, *_3_gram_list]) - text_set
+            text_set_n_gram = set([*_2_gram_list, *_3_gram_list, *_4_gram_list]) - text_set
 
             text_set_dict[lang] = (text_set, text_set_n_gram)
         return text_set_dict
