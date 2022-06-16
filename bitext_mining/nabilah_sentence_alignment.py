@@ -15,14 +15,14 @@ def allocate_text_by_lang(file_en, file_id):
 
 
 text_list_dict = allocate_text_by_lang(
-    '/home/xuanlong/dataclean/data/first50k_split.en', '/home/xuanlong/dataclean/data/first50k_split.id')
+    '/home/zxl/ssd/WORK/data_clean/data/first50k_split.en', '/home/zxl/ssd/WORK/data_clean/data/first50k_split.id')
 text_set_dict = bi_text_miner.list_to_set(text_list_dict)
 en_zh_sentence_pair = bi_text_miner.sentence_matching(
     text_set_dict['en'], text_set_dict['id'])
 
 
-with open('/home/xuanlong/dataclean/data/first50k_split.aligned.en', 'w', encoding='utf8') as f_out_en, \
-        open('/home/xuanlong/dataclean/data/first50k_split.aligned.id', 'w', encoding='utf8') as f_out_id:
+with open('/home/zxl/ssd/WORK/data_clean/data/first50k_split.aligned.en', 'w', encoding='utf8') as f_out_en, \
+        open('/home/zxl/ssd/WORK/data_clean/data/first50k_split.aligned.id', 'w', encoding='utf8') as f_out_id:
     for sentence_pair in en_zh_sentence_pair:
         f_out_en.write(sentence_pair[0])
         f_out_id.write(sentence_pair[1])
