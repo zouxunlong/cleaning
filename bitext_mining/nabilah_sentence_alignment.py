@@ -24,6 +24,6 @@ en_zh_sentence_pair = bi_text_miner.sentence_matching(
 with open('/home/xuanlong/dataclean/data/first50k_split.aligned.en', 'w', encoding='utf8') as f_out_en, \
         open('/home/xuanlong/dataclean/data/first50k_split.aligned.id', 'w', encoding='utf8') as f_out_id:
     for sentence_pair in en_zh_sentence_pair:
-        f_out_en.write(sentence_pair[0])
-        f_out_id.write(sentence_pair[1])
+        f_out_en.write(sentence_pair[0]+'\n')
+        f_out_id.write(sentence_pair[1]+'\n')
 
