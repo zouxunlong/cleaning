@@ -6,8 +6,10 @@ from transquest.algo.sentence_level.monotransquest.run_model import MonoTransQue
 
 
 print("loading model...")
+
 # For siamese transquest framework 
-siamese_model_path = "En2Zh_30k_S/EED"
+
+siamese_model_path = "./EED"
 model = SiameseTransQuestModel(siamese_model_path)
 
 # For mono transquest framework
@@ -26,7 +28,7 @@ while True:
         break
     source, mt = line.split('||')
     inputs = [[source.strip(), mt.strip()]]
-    predictions = model.predict(inputs)
+    predictions = model.predict(inputs, verbose=False)
     if (type(predictions) == tuple):
         print(predictions[0])
     else:
