@@ -1,0 +1,19 @@
+22823
+nohup: ignoring input
+2022-06-19 11:37:45.264 | INFO     | sentsplit.segment:__init__:47 - SentSplit for EN loaded:
+{ 'handle_multiple_spaces': True,
+  'maxcut': 500,
+  'mincut': 7,
+  'model': 'crf_models/en-default-25032021.model',
+  'ngram': 5,
+  'prevent_regexes': [ { 'name': 'liberal_url',
+                         'regex': '\\b((?:[a-z][\\w\\-]+:(?:\\/{1,3}|[a-z0-9%])|www\\d{0,3}[.]|[a-z0-9.\\-]+[.][a-z]{2,4}\\/)(?:[^\\s()<>]|\\((?:[^\\s()<>]|(?:\\([^\\s()<>]+\\)))*\\))+(?:\\((?:[^\\s()<>]|(?:\\([^\\s()<>]+\\)))*\\)|[^\\s`!()\\[\\]{};:\\\'".,<>?«»“”‘’]))'},
+                       { 'name': 'period_followed_by_lowercase',
+                         'regex': '\\.(?= *[a-z])'}],
+  'prevent_word_split': True,
+  'segment_regexes': [ {'at': 'end', 'name': 'after_semicolon', 'regex': ' *;'},
+                       { 'at': 'end',
+                         'name': 'ellipsis',
+                         'regex': '…(?![\\!\\?\\.．？！])'},
+                       {'at': 'end', 'name': 'newline', 'regex': '\\n'}],
+  'strip_spaces': True}

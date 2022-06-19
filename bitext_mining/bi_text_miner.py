@@ -43,10 +43,10 @@ class Bi_text_miner:
 
         if sentences_src_extended and sentences_tgt_extended:
             x = self.model.encode(
-                sentences_src_extended, show_progress_bar=True, convert_to_numpy=True, normalize_embeddings=True)
+                sentences_src_extended, show_progress_bar=False, convert_to_numpy=True, normalize_embeddings=True)
 
             y = self.model.encode(
-                sentences_tgt_extended, show_progress_bar=True, convert_to_numpy=True, normalize_embeddings=True)
+                sentences_tgt_extended, show_progress_bar=False, convert_to_numpy=True, normalize_embeddings=True)
 
             x2y_sim, x2y_ind = kNN(x, y, k=min(
                 [len(x), len(y), self.knn_neighbors]))
