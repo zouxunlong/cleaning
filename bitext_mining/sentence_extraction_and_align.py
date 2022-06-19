@@ -32,8 +32,11 @@ def main(file_in_1='/home/xuanlong/dataclean/data/500K sentences/milestone1.en',
             sentences_tgt = extract_sentences(sentence_tgt)
 
             text_list_dict = {'en': sentences_src, 'id': sentences_tgt}
-
-            text_set_dict = bi_text_miner.list_to_set(text_list_dict)
+            try:
+                text_set_dict = bi_text_miner.list_to_set(text_list_dict)
+            except:
+                print('Error Occurs while list to set')
+                continue
             en_id_sentence_pair = bi_text_miner.sentence_matching(
                 text_set_dict['en'], text_set_dict['id'])
 
@@ -44,7 +47,8 @@ def main(file_in_1='/home/xuanlong/dataclean/data/500K sentences/milestone1.en',
 
 
 if __name__ == "__main__":
-    main('/home/xuanlong/dataclean/data/500K sentences/milestone1.en','/home/xuanlong/dataclean/data/500K sentences/milestone1.id')
-    main('/home/xuanlong/dataclean/data/500K sentences/milestone2.en','/home/xuanlong/dataclean/data/500K sentences/milestone2.id')
+    # main('/home/xuanlong/dataclean/data/500K sentences/milestone1.en','/home/xuanlong/dataclean/data/500K sentences/milestone1.id')
+    # main('/home/xuanlong/dataclean/data/500K sentences/milestone2.en','/home/xuanlong/dataclean/data/500K sentences/milestone2.id')
     main('/home/xuanlong/dataclean/data/500K sentences/milestone3.en','/home/xuanlong/dataclean/data/500K sentences/milestone3.id')
     main('/home/xuanlong/dataclean/data/500K sentences/milestone4.en','/home/xuanlong/dataclean/data/500K sentences/milestone4.id')
+    # main('/home/xuanlong/dataclean/data/500K sentences/milestone5.en','/home/xuanlong/dataclean/data/500K sentences/milestone5.id')

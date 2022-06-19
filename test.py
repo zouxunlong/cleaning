@@ -1,1 +1,1 @@
-print('147'<'8')
+text_set = set([])

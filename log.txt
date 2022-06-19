@@ -1,6 +1,5 @@
-22823
-nohup: ignoring input
-2022-06-19 11:37:45.264 | INFO     | sentsplit.segment:__init__:47 - SentSplit for EN loaded:
+31943
+nohup: ignoring 2022-06-19 14:06:50.581 | INFO     | sentsplit.segment:__init__:47 - SentSplit for EN loaded:
 { 'handle_multiple_spaces': True,
   'maxcut': 500,
   'mincut': 7,
