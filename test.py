@@ -1,3 +1,1 @@
-punctuation = r"""!"\#$%&'()*+,-./:;<=>?@[]^_`{|}~，。、‘’“”：；【】·！￥★…《》？！（）—"""
-
-print(punctuation)
+open('c_output', 'w').writelines(['a','b','c','d'])
