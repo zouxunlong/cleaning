@@ -4,7 +4,7 @@ from transquest.algo.sentence_level.siamesetransquest.run_model import SiameseTr
 # torch.cuda.set_device(1)
 
 print("loading model...", flush=True)
-siamese_model_path = "./EED"
+siamese_model_path = "./En2Zh_30k_S/EED"
 model = SiameseTransQuestModel(siamese_model_path)
 print("loading model success", flush=True)
 

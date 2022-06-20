@@ -7,9 +7,9 @@ from transquest.algo.sentence_level.monotransquest.run_model import MonoTransQue
 
 print("loading model...")
 # For siamese transquest framework 
-siamese_model_path = "En2Zh_30k_S/EED"
+siamese_model_path = "./En2Zh_30k_S/EED"
 model = SiameseTransQuestModel(siamese_model_path)
-print("loading model success")
+print("loading model:{} success".format(siamese_model_path))
 
 # For mono transquest framework
 
@@ -19,7 +19,7 @@ print("loading model success")
 
 while True:
   try:
-#    print("Input source sentence and machine translation, seperated by ||, e.g hello || 你好, input 'exit' to quit")
+#    print("Input source sentence and machine translation, seperated by ||, e.g where are you? || 你在哪里？, input 'exit' to quit")
     sys.stdout.flush()
     
     line=sys.stdin.readline()
