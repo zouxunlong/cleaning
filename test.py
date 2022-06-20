@@ -1,1 +1,3 @@
-text_set = set([])
+punctuation = r"""!"\#$%&'()*+,-./:;<=>?@[]^_`{|}~，。、‘’“”：；【】·！￥★…《》？！（）—"""
+
+print(punctuation)

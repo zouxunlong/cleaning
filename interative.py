@@ -24,7 +24,7 @@ while True:
     sys.stdout.flush()
     
     line=sys.stdin.readline()
-    if (line == "exit"):
+    if (line == "exit\n"):
         break
     source, mt = line.split('||')
     inputs = [[source.strip(), mt.strip()]]
