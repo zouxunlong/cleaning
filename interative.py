@@ -6,11 +6,10 @@ from transquest.algo.sentence_level.monotransquest.run_model import MonoTransQue
 
 
 print("loading model...")
-
 # For siamese transquest framework 
-
-siamese_model_path = "./EED"
+siamese_model_path = "En2Zh_30k_S/EED"
 model = SiameseTransQuestModel(siamese_model_path)
+print("loading model success")
 
 # For mono transquest framework
 
