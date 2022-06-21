@@ -4,8 +4,8 @@ import os
 def inject_from_file(file, output_filepath):
     with open(file, encoding='utf8') as fIN, open(output_filepath, 'a', encoding='utf8') as fOUT:
         for i, sentence in enumerate(fIN):
-            fOUT.write(sentence)
-        fOUT.write('\n')
+            if sentence.strip():
+                fOUT.write(sentence.strip()+'\n')
 
 
 def combine_files_in_dir(rootdir):
