@@ -7,7 +7,6 @@ from simhash import Simhash, SimhashIndex
 def load_words():
     with open('/home/xuanlong/dataclean/cleaning/dataclean_stage2/words_alpha.txt') as word_file:
         valid_words = set(word_file.read().split())
-
     return valid_words
 
 

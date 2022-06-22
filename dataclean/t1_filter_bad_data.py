@@ -11,7 +11,7 @@ pattern_url = r"[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\
 pattern_email = r"[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}"
 pattern_html = r"""<("[^"]*"|'[^']*'|[^'">])*>"""
 pattern_special_charactors = r"[\x00-\x08\x0a-\x1f\x7f-\x9f\xa0]|[\ufffd\ufeff\u2000-\u200f\u2028-\u202f\u205f-\u206e]|[\↑√§¶†‡‖▪●•·]"
-
+pattern_emoji=r'[\U0001F1E0-\U0001F1FF\U0001F300-\U0001F64F\U0001F680-\U0001FAFF\U00002702-\U000027B0]'
 
 def chaotic_detected(text_for_chaotic_detect):
     alphabetic_text = re.sub('[^a-zA-Z]', '', text_for_chaotic_detect)
@@ -68,7 +68,7 @@ def main(input_1,
 
 
 if __name__ == '__main__':
-    main('/home/xuanlong/dataclean/data/Total/train.en',
-         '/home/xuanlong/dataclean/data/Total/train.id',
-         '/home/xuanlong/dataclean/data/Total/train.filtered.en',
-         '/home/xuanlong/dataclean/data/Total/train.filtered.id')
+    main('/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.en',
+         '/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.id',
+         '/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.filtered.en',
+         '/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.filtered.id')

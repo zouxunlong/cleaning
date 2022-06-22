@@ -30,7 +30,7 @@ def main(input_1,
 
 
 if __name__ == '__main__':
-    main('/home/xuanlong/dataclean/data/Total/train.filtered.en',
-         '/home/xuanlong/dataclean/data/Total/train.filtered.id',
-         '/home/xuanlong/dataclean/data/Total/train.filtered2.en',
-         '/home/xuanlong/dataclean/data/Total/train.filtered2.id')
+    main('/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.filtered.en',
+         '/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.filtered.id',
+         '/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.filtered.en',
+         '/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.filtered.id')

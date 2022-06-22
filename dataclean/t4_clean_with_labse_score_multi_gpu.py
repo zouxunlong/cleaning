@@ -52,9 +52,9 @@ def clean_with_score(file_path_src, file_path_tgt, file_path_out, pool):
 def main():
     pool = model_sentence_transformers.start_multi_process_pool()
 
-    clean_with_score('/home/xuanlong/dataclean/data/Total/train.filtered3.en',
-                     '/home/xuanlong/dataclean/data/Total/train.filtered3.id',
-                     '/home/xuanlong/dataclean/data/Total/train.filtered3.labse.en-id', pool)
+    clean_with_score('/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.filtered3.en',
+                     '/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.filtered3.id',
+                     '/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.labse.id', pool)
 
     model_sentence_transformers.stop_multi_process_pool(pool)
 
