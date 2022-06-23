@@ -83,15 +83,6 @@ def is_filtered(sentence_src, sentence_tgt):
     if emoji_detected(sentence_src+' '+sentence_tgt):
         return True
 
-    # if len(sentence_src) < 2:
-    #     return True
-
-    # if len(sentence_tgt) < 2:
-    #     return True
-
-    # if len(sentence_src.split()) < 4:
-    #     return True
-
     if re.search("{}|{}|{}".format(pattern_special_charactors, pattern_html, pattern_email), sentence_src+' '+sentence_tgt, re.I):
         return True
 
