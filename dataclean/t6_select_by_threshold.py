@@ -1,7 +1,7 @@
 import time
 
 
-def sort(file_path):
+def select(file_path):
     start_time = time.time()
 
     with open(file_path, encoding='utf8') as f_in, \
@@ -21,4 +21,4 @@ def sort(file_path):
 
 if __name__ == '__main__':
 
-    sort('/home/xuanlong/dataclean/data/Total/train.filtered.LaBSE.en-id')
+    select('/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.labse.en-id')

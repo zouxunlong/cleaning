@@ -91,8 +91,8 @@ def main(a_input,
 
 if __name__ == '__main__':
     # plac.call(main)
-    main('/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.filtered.en',
-         '/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.filtered.id',
+    main('/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.filtered2.en',
+         '/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.filtered2.id',
          '/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.filtered3.en',
          '/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.filtered3.id',
          'en',

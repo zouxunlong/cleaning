@@ -13,7 +13,6 @@ def combine_files_in_dir(rootdir):
     file_combined=0
 
     for root, dirs, files in os.walk(rootdir):
-        files.sort()
         for file in files:
             if file.endswith('.en-ta') or file.endswith('.EN-TA'):
                 inject_from_file(os.path.join(root, file), rootdir+'.en-ta')

@@ -86,16 +86,20 @@ def main(input_1,
          output_1):
 
     start_time = time.time()
+
     with open(input_1, 'r', encoding='utf8') as f_in_1, \
             open(output_1, 'w', encoding='utf8') as f_out_1:
         for line in f_in_1:
             sentences = line.split('|')
+
             if is_filtered(sentences[1].strip(), sentences[2].strip(), ):
                 continue
+            
             f_out_1.write(line)
+
     print("finished: --- {} seconds".format(time.time() - start_time), flush=True)
 
 
 if __name__ == '__main__':
-    main('/home/xuanlong/dataclean/data/Total/train1.filtered.LaBSE.en-id',
-         '/home/xuanlong/dataclean/data/Total/train2.filtered.LaBSE.en-id')
+    main('/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.labse.seleted.en-id',
+         '/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.labse.seleted.formal.en-id')

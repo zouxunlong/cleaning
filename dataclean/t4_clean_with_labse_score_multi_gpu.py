@@ -54,7 +54,7 @@ def main():
 
     clean_with_score('/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.filtered3.en',
                      '/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.filtered3.id',
-                     '/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.labse.id', pool)
+                     '/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.labse.en-id', pool)
 
     model_sentence_transformers.stop_multi_process_pool(pool)
 
