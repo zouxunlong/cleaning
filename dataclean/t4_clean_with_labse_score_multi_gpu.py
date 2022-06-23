@@ -1,3 +1,4 @@
+import time
 from sentence_transformers import SentenceTransformer, util
 
 
@@ -50,14 +51,19 @@ def clean_with_score(file_path_src, file_path_tgt, file_path_out, pool):
 
 
 def main():
+
+    start_time = time.time()
+
     pool = model_sentence_transformers.start_multi_process_pool()
 
-    clean_with_score('/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.filtered3.en',
-                     '/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.filtered3.id',
-                     '/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.labse.en-id', pool)
+    clean_with_score('/home/xuanlong/dataclean/data.t3.en',
+                     '/home/xuanlong/dataclean/data.t3.id',
+                     '/home/xuanlong/dataclean/data.t4.id', pool)
 
     model_sentence_transformers.stop_multi_process_pool(pool)
-
+    
+    print("finished ")
+    print("--- %s seconds ---" % (time.time() - start_time))
 
 if __name__ == '__main__':
     main()

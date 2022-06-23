@@ -91,10 +91,11 @@ def main(a_input,
 
 if __name__ == '__main__':
     # plac.call(main)
-    main('/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.filtered2.en',
-         '/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.filtered2.id',
-         '/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.filtered3.en',
-         '/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.filtered3.id',
+    main('/home/xuanlong/dataclean/data.t2.en',
+         '/home/xuanlong/dataclean/data.t2.id',
+         '/home/xuanlong/dataclean/data.t3.en',
+         '/home/xuanlong/dataclean/data.t3.id',
          'en',
          'id',
-         1)
+         1,
+         True)
