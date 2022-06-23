@@ -16,4 +16,4 @@ def sort(file_path):
 
 if __name__ == '__main__':
 
-    sort('/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.labse.en-id')
+    sort('/home/xuanlong/dataclean/data.t4.en-id')

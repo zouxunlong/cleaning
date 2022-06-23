@@ -58,7 +58,7 @@ def main():
 
     clean_with_score('/home/xuanlong/dataclean/data.t3.en',
                      '/home/xuanlong/dataclean/data.t3.id',
-                     '/home/xuanlong/dataclean/data.t4.id', pool)
+                     '/home/xuanlong/dataclean/data.t4.en-id', pool)
 
     model_sentence_transformers.stop_multi_process_pool(pool)
     

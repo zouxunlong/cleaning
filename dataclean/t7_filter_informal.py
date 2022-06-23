@@ -101,5 +101,5 @@ def main(input_1,
 
 
 if __name__ == '__main__':
-    main('/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.labse.seleted.en-id',
-         '/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.labse.seleted.formal.en-id')
+    main('/home/xuanlong/dataclean/data.t4.en-id.seleted',
+         '/home/xuanlong/dataclean/data.t7.en-id')

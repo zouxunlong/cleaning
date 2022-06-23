@@ -21,4 +21,4 @@ def select(file_path):
 
 if __name__ == '__main__':
 
-    select('/home/xuanlong/dataclean/data/500K sentences/combined/500K sentences.labse.en-id')
+    select('/home/xuanlong/dataclean/data.t4.en-id')
