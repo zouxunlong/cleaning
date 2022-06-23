@@ -3,15 +3,17 @@ import time
 import plac
 from pathlib import Path
 
+
 def split_file_by_lang(file, output_file1, output_file2):
-    with open(file, encoding='utf8') as f_in, open(output_file1, 'w', encoding='utf8') as f_out1, open(output_file2, 'w', encoding='utf8') as f_out2:
+    with open(file, encoding='utf8') as f_in, \
+            open(output_file1, 'w', encoding='utf8') as f_out1, \
+            open(output_file2, 'w', encoding='utf8') as f_out2:
         for i, line in enumerate(f_in):
             sentences = line.split('|')
             if len(sentences) != 3:
                 return
             f_out1.write(sentences[1].strip()+'\n')
             f_out2.write(sentences[2].strip()+'\n')
-
 
 
 @plac.opt('rootdir', "Src Input File", type=Path)
@@ -70,4 +72,4 @@ def main(rootdir):
 
 
 if __name__ == '__main__':
-    main('/home/xuanlong/dataclean/data/500K sentences/combined')
+    main('/home/xuanlong/dataclean/data')
