@@ -11,7 +11,7 @@ def split_file_by_lang(file, output_file1, output_file2):
         for i, line in enumerate(f_in):
             sentences = line.split('|')
             if len(sentences) != 3:
-                return
+                continue
             f_out1.write(sentences[1].strip()+'\n')
             f_out2.write(sentences[2].strip()+'\n')
 
@@ -72,4 +72,4 @@ def main(rootdir):
 
 
 if __name__ == '__main__':
-    main('/home/xuanlong/dataclean/data')
+    main('/home/xuanlong/dataclean/data/VMT')

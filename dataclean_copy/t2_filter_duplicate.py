@@ -4,8 +4,8 @@ import plac
 from pathlib import Path
 
 
-@plac.opt('file_in', "Src Input File", type=Path)
-@plac.opt('file_out', "Src Output File", type=Path)
+@plac.opt('file_in', "Input File", type=Path)
+@plac.opt('file_out', "Output File", type=Path)
 def filter_duplicate(file_in, file_out):
 
     start_time = time.time()
@@ -25,7 +25,7 @@ def filter_duplicate(file_in, file_out):
         sentences_tuple_set.clear()
 
     print("finished " + file_in, flush=True)
-    print("--- %s seconds ---" % (time.time() - start_time))
+    print("--- {} seconds ---".format(time.time() - start_time))
 
 
 def main():
@@ -34,7 +34,7 @@ def main():
         files.sort()
         for file in files:
             filter_duplicate(os.path.join(folder, file),
-                        os.path.join(folder, file+'.select'))
+                        os.path.join(folder, file))
 
 
 if __name__ == '__main__':
