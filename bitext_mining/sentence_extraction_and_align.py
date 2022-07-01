@@ -21,11 +21,11 @@ def main(file_in_1='/home/xuanlong/dataclean/data/500K sentences/milestone1.en',
     os.chdir(os.path.dirname(__file__))
 
     with open(file_in_1, 'r', encoding='utf8') as f_in_en, \
-            open(file_in_2, 'r', encoding='utf8') as f_in_id, \
+            open(file_in_2, 'r', encoding='utf8') as f_in_zh, \
             open(os.path.splitext(file_in_1)[0]+'.aligned'+os.path.splitext(file_in_1)[1], 'a', encoding='utf8') as f_out_en, \
-            open(os.path.splitext(file_in_2)[0]+'.aligned'+os.path.splitext(file_in_2)[1], 'a', encoding='utf8') as f_out_id:
+            open(os.path.splitext(file_in_2)[0]+'.aligned'+os.path.splitext(file_in_2)[1], 'a', encoding='utf8') as f_out_zh:
 
-        for (i, sentence_src), (j, sentence_tgt) in zip(enumerate(f_in_en), enumerate(f_in_id)):
+        for (i, sentence_src), (j, sentence_tgt) in zip(enumerate(f_in_en), enumerate(f_in_zh)):
             sentence_src = sentence_src.strip()
             sentence_tgt = sentence_tgt.strip()
             sentences_src = extract_sentences(sentence_src)
@@ -42,7 +42,7 @@ def main(file_in_1='/home/xuanlong/dataclean/data/500K sentences/milestone1.en',
 
             for sentence_pair in en_id_sentence_pair:
                 f_out_en.write(sentence_pair[0]+'\n')
-                f_out_id.write(sentence_pair[1]+'\n')
+                f_out_zh.write(sentence_pair[1]+'\n')
             
 
 
