@@ -63,7 +63,7 @@ def main():
     model_sentence_transformers.stop_multi_process_pool(pool)
     
     print("finished ")
-    print("--- %s seconds ---" % (time.time() - start_time))
+    print("--- {} seconds ---".format(time.time() - start_time))
 
 if __name__ == '__main__':
     main()
