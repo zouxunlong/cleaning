@@ -54,7 +54,7 @@ def unprintable_detected(text_for_detect):
 
 def long_detected(text_for_detect):
 
-    if len(text_for_detect.split()) > 18:
+    if len(text_for_detect.split()) > 10:
         return True
     return False
 

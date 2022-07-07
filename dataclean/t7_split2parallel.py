@@ -72,4 +72,4 @@ def main(rootdir):
 
 
 if __name__ == '__main__':
-    main('/home/xuanlong/dataclean/data')
+    main('/home/xuanlong/dataclean/data/cleaned')
