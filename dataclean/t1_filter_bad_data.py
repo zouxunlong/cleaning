@@ -52,6 +52,13 @@ def unprintable_detected(text_for_detect):
     return False
 
 
+def long_detected(text_for_detect):
+
+    if len(text_for_detect.split()) > 18:
+        return True
+    return False
+
+
 def short_detected(text_for_detect):
     sub_strings = re.split(pattern_punctuation, text_for_detect)
     if max([len(substring.split()) for substring in sub_strings]) < 7:
@@ -67,42 +74,45 @@ def chaotic_detected(text_for_chaotic_detect):
 
 
 def is_filtered(sentence_src, sentence_tgt):
-    
-    if short_detected(sentence_src):
+
+    if long_detected(sentence_src):
         return True
 
-    if informal_detected(sentence_src):
-        return True
+    # if short_detected(sentence_src):
+    #     return True
 
-    if mis_spelling_detected(sentence_src):
-        return True
+    # if informal_detected(sentence_src):
+    #     return True
 
-    if unprintable_detected(sentence_src+' '+sentence_tgt):
-        return True
+    # if mis_spelling_detected(sentence_src):
+    #     return True
 
-    if emoji_detected(sentence_src+' '+sentence_tgt):
-        return True
+    # if unprintable_detected(sentence_src+' '+sentence_tgt):
+    #     return True
 
-    if re.search("{}|{}|{}".format(pattern_special_charactors, pattern_html, pattern_email), sentence_src+' '+sentence_tgt, re.I):
-        return True
+    # if emoji_detected(sentence_src+' '+sentence_tgt):
+    #     return True
 
-    if len(re.findall(':', sentence_src, re.I)) != len(re.findall(':', sentence_tgt, re.I)):
-        return True
+    # if re.search("{}|{}|{}".format(pattern_special_charactors, pattern_html, pattern_email), sentence_src+' '+sentence_tgt, re.I):
+    #     return True
 
-    if len(re.findall('\/', sentence_src, re.I)) != len(re.findall('\/', sentence_tgt, re.I)):
-        return True
+    # if len(re.findall(':', sentence_src, re.I)) != len(re.findall(':', sentence_tgt, re.I)):
+    #     return True
 
-    if len(re.findall(r'\\', sentence_src, re.I)) != len(re.findall(r'\\', sentence_tgt, re.I)):
-        return True
+    # if len(re.findall('\/', sentence_src, re.I)) != len(re.findall('\/', sentence_tgt, re.I)):
+    #     return True
 
-    if len(re.findall('@', sentence_src, re.I)) != len(re.findall('@', sentence_tgt, re.I)):
-        return True
+    # if len(re.findall(r'\\', sentence_src, re.I)) != len(re.findall(r'\\', sentence_tgt, re.I)):
+    #     return True
 
-    if len(re.findall('#', sentence_src, re.I)) != len(re.findall('#', sentence_tgt, re.I)):
-        return True
+    # if len(re.findall('@', sentence_src, re.I)) != len(re.findall('@', sentence_tgt, re.I)):
+    #     return True
 
-    if chaotic_detected(sentence_src):
-        return True
+    # if len(re.findall('#', sentence_src, re.I)) != len(re.findall('#', sentence_tgt, re.I)):
+    #     return True
+
+    # if chaotic_detected(sentence_src):
+    #     return True
 
     return False
 
@@ -129,7 +139,7 @@ def main(input_1,
 
 
 if __name__ == '__main__':
-    main('/home/xuanlong/dataclean/data.en',
-         '/home/xuanlong/dataclean/data.id',
-         '/home/xuanlong/dataclean/data.t1.en',
-         '/home/xuanlong/dataclean/data.t1.id')
+    main('/home/xuanlong/dataclean/data/cleaned/clean_sorted2.en-zh.en',
+         '/home/xuanlong/dataclean/data/cleaned/clean_sorted2.en-zh.zh',
+         '/home/xuanlong/dataclean/data/cleaned/clean_sorted3.en-zh.en',
+         '/home/xuanlong/dataclean/data/cleaned/clean_sorted3.en-zh.zh')

@@ -30,7 +30,7 @@ def main(input_1,
 
 
 if __name__ == '__main__':
-    main('/home/xuanlong/dataclean/data.t1.en',
-         '/home/xuanlong/dataclean/data.t1.id',
-         '/home/xuanlong/dataclean/data.t2.en',
-         '/home/xuanlong/dataclean/data.t2.id')
+    main('/home/xuanlong/dataclean/data/cleaned/clean_sorted.en-zh.en',
+         '/home/xuanlong/dataclean/data/cleaned/clean_sorted.en-zh.zh',
+         '/home/xuanlong/dataclean/data/cleaned/clean_sorted2.en-zh.en',
+         '/home/xuanlong/dataclean/data/cleaned/clean_sorted2.en-zh.zh')
