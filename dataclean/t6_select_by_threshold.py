@@ -10,7 +10,7 @@ def select(file_path):
             sentences=line.split('|')
             if len(sentences)!=3:
                 continue
-            if float(sentences[0]) > 0.8191:
+            if float(sentences[0]) > 0.9:
                 f_out.write(line)
             else:
                 break
@@ -21,4 +21,4 @@ def select(file_path):
 
 if __name__ == '__main__':
 
-    select('/home/xuanlong/dataclean/data.t4.en-id')
+    select('/home/xuanlong/dataclean/data/cleaned/clean_sorted.en-zh')
