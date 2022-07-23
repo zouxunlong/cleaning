@@ -14,7 +14,7 @@ def extract_sentences(input_path, output_path):
     with open(output_path, "w", encoding="utf8") as fOut:
         for i, [sentence0, sentence1, sentence2, sentence3] in enumerate(df.loc[:,[0,1,2,3]].values):
             if i > 0:
-                fOut.write('{} ||| {}'.format(sentence1, sentence2)+"\n")
+                fOut.write('{} ||| {}'.format(' '.join(sentence1.split('\n')), ' '.join(sentence2.split('\n')))+"\n")
 
 
 def main(input_path):
