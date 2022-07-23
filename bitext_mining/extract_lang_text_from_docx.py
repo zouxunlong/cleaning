@@ -10,7 +10,7 @@ from docx.text.paragraph import Paragraph
 from docx.text.run import Run
 from googletrans import Translator
 from bi_text_miner import Bi_text_miner
-from file_convert import doc_to_docx, rtf_to_docx
+from file_convert import doc2docx, rtf2docx
 from combine_files import combine_files_in_dir
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 

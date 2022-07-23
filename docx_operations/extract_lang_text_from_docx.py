@@ -1,91 +1,136 @@
-from docx import Document
 import os
+from pathlib import Path
+import socket
+import plac
 import re
-import string
+from docx import Document
 from docx.oxml.shared import qn
 from docx.text.paragraph import Paragraph
-from docx.text.run import Run
-from googletrans import Translator
+from docx.text.run import Run, _Text
 
-translator = Translator()
+
+pattern_punctuation = r"""[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~，。、‘’“”：；【】·！￥★…《》？！（）—]"""
+pattern_url = r"[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"
+pattern_email = r"[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}"
+pattern_arabic = r"[\u0600-\u06FF]"
+pattern_chinese = r"[\u4e00-\u9fff]"
+pattern_tamil = r"[\u0B80-\u0BFF]"
+pattern_russian = r"[\u0400-\u04FF]"
+pattern_korean = r"[\uac00-\ud7a3]"
+pattern_japanese = r"[\u3040-\u30ff\u31f0-\u31ff]"
+pattern_vietnamese = r"[àáãạảăắằẳẵặâấầẩẫậèéẹẻẽêềếểễệđìíĩỉịòóõọỏôốồổỗộơớờởỡợùúũụủưứừửữựỳỵỷỹýÀÁÃẠẢĂẮẰẲẴẶÂẤẦẨẪẬÈÉẸẺẼÊỀẾỂỄỆĐÌÍĨỈỊÒÓÕỌỎÔỐỒỔỖỘƠỚỜỞỠỢÙÚŨỤỦƯỨỪỬỮỰỲỴỶỸÝ]"
+
+
+def non_en_detect(text_for_lang_detect):
+
+    lang_detected = set()
+
+    text_for_lang_detect = ' '.join(re.sub("{}|{}|{}".format(
+        pattern_url, pattern_email, pattern_punctuation), " ", text_for_lang_detect, 0, re.I).split()).strip().lower()
+
+    if text_for_lang_detect:
+        if re.search(pattern_arabic, text_for_lang_detect):
+            lang_detected.add('ar')
+        if re.search(pattern_chinese, text_for_lang_detect):
+            lang_detected.add('zh')
+        if re.search(pattern_tamil, text_for_lang_detect):
+            lang_detected.add('ta')
+        if re.search(pattern_russian, text_for_lang_detect):
+            lang_detected.add('ru')
+        if re.search(pattern_korean, text_for_lang_detect):
+            lang_detected.add('ko')
+        if re.search(pattern_japanese, text_for_lang_detect):
+            lang_detected.add('ja')
+        if re.search(pattern_vietnamese, text_for_lang_detect):
+            lang_detected.add('vi')
+
+    return lang_detected
+
+
+def get_all_texts(node):
+    def _get(node):
+        for child in node:
+            if child.tag == qn('w:t'):
+                yield _Text(child)._t
+            yield from _get(child)
+    return list(_get(node._element))
+
+
+def get_all_runs(node):
+    def _get(node):
+        for child in node:
+            if child.tag == qn('w:r'):
+                yield Run(child, node)
+            yield from _get(child)
+    return list(_get(node._element))
+
+
+def get_all_paragraphs(node):
+    def _get(node):
+        for child in node:
+            if child.tag == qn('w:p'):
+                yield Paragraph(child, node)
+            yield from _get(child)
+    return list(_get(node._element))
 
 
 def get_paragraph_runs(paragraph):
-    def _get(node, parent):
+    def _get(node):
         for child in node:
-            if child.tag == qn('w:r'):
-                yield Run(child, parent)
-            if child.tag == qn('w:hyperlink'):
-                yield from _get(child, parent)
-    return list(_get(paragraph._element, paragraph))
+            if not (child.tag == qn('w:drawing') or child.tag == qn('w:pict')):
+                if child.tag == qn('w:r'):
+                    yield Run(child, node)
+                yield from _get(child)
+    return list(_get(paragraph._element))
 
 
-Paragraph.runs = property(lambda self: get_paragraph_runs(self))
+def get_paragraph_text(paragraph):
+    text = ''
+    for run in paragraph.runs:
+        text += run.text
+    return text
 
 
-def texts_from_tables(tables):
-    def yield_texts(_tables):
-        for table in _tables:
-            for column in table.columns:
-                for cell in column.cells:
-                    texts = [text.strip() for text in cell.text.split('\n')]
-                    for text in texts:
-                        yield text
-                    if cell.tables:
-                        yield from yield_texts(cell.tables)
-    return [text for text in list(yield_texts(tables)) if text]
+def set_paragraph_text(paragraph, text):
+    runs = paragraph.runs
+    for run in runs:
+        if run.text.strip():
+            run._r.getparent().remove(run._r)
+    for child in paragraph._element:
+        if child.tag == qn('w:hyperlink'):
+            if len(child) == 0:
+                child.getparent().remove(child)
+    paragraph.add_run(text)
 
 
-def texts_from_paragraphs(paragraphs):
-    texts = [text.strip() for p in paragraphs for text in p.text.split('\n')]
-    return [text for text in texts if text]
+Paragraph.runs = property(fget=lambda self: get_paragraph_runs(self))
+Paragraph.text = property(fget=lambda self: get_paragraph_text(self),
+                          fset=lambda self, text: set_paragraph_text(self, text))
 
 
-def texts_from_textboxs(root_element):
-    textbox_elements = root_element.xpath('.//w:drawing//w:txbxContent')
-    texts = [" ".join(" ".join(textbox_element.xpath(".//text()")).split())
-             for textbox_element in textbox_elements]
-    return [text for text in texts if text]
+def do_extraction(file_path, src2tgt):
+
+    try:
+        wordDoc = Document(file_path)
+        items = get_all_paragraphs(wordDoc)
+        for section in wordDoc.sections:
+            header = section.header
+            footer = section.footer
+            items += get_all_paragraphs(header)
+            items += get_all_paragraphs(footer)
+
+        texts = [item.text for item in items if item.text.strip()]
+
+        print(texts, flush=True)
+
+    except Exception as err:
+        print(err,flush=True)
 
 
-def extend_texts_from_docx(docx_path, texts):
-
-    wordDoc = Document(docx_path)
-    for section in wordDoc.sections:
-        header = section.header
-        footer = section.footer
-        texts.extend(texts_from_paragraphs(header.paragraphs))
-        texts.extend(texts_from_paragraphs(footer.paragraphs))
-    texts.extend(texts_from_tables(wordDoc.tables))
-    texts.extend(texts_from_paragraphs(wordDoc.paragraphs))
-    texts.extend(texts_from_textboxs(wordDoc.element))
+@ plac.pos('file_path', "file path", type=str)
+def main(file_path='./demo.docx'):
+    do_extraction(file_path, 'en2zh')
 
 
-def extend_texts_from_file(file_path, texts):
-
-    if file.endswith('.docx'):
-        extend_texts_from_docx(file_path, texts)
-
-
-rootdir = './'
-
-
-for root, dirs, files in os.walk(rootdir):
-    files.sort()
-    texts = []
-    for i, file in enumerate(files):
-
-        file_path = os.path.join(root, file)
-
-        extend_texts_from_file(file_path, texts)
-
-        if texts:
-
-            print(texts)
-
-            texts.clear()
-
-
-print('finished translated sentences mining')
-
-
+if __name__ == "__main__":
+    plac.call(main)
