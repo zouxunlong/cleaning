@@ -1,7 +1,7 @@
 from docx import Document
 
-wordDoc = Document("demo1.docx")
+wordDoc = Document("demo.docx")
 doc_body = wordDoc.element.xml
 
-with open('file1.xml', 'w') as file:
+with open('demo.xml', 'w') as file:
     file.write(doc_body)

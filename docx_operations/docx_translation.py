@@ -1,16 +1,13 @@
+import os
+from pathlib import Path
 import socket
+import plac
+import re
 from docx import Document
 from docx.oxml.shared import qn
 from docx.text.paragraph import Paragraph
 from docx.text.run import Run, _Text
-import re
-import sys
-import pycld2 as cld2
-import cld3
-import fasttext
 
-
-model_fasttext = fasttext.load_model('../model/lid.176.bin')
 
 pattern_punctuation = r"""[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~，。、‘’“”：；【】·！￥★…《》？！（）—]"""
 pattern_url = r"[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"
@@ -24,7 +21,7 @@ pattern_japanese = r"[\u3040-\u30ff\u31f0-\u31ff]"
 pattern_vietnamese = r"[àáãạảăắằẳẵặâấầẩẫậèéẹẻẽêềếểễệđìíĩỉịòóõọỏôốồổỗộơớờởỡợùúũụủưứừửữựỳỵỷỹýÀÁÃẠẢĂẮẰẲẴẶÂẤẦẨẪẬÈÉẸẺẼÊỀẾỂỄỆĐÌÍĨỈỊÒÓÕỌỎÔỐỒỔỖỘƠỚỜỞỠỢÙÚŨỤỦƯỨỪỬỮỰỲỴỶỸÝ]"
 
 
-def lang_detect(text_for_lang_detect):
+def non_en_detect(text_for_lang_detect):
 
     lang_detected = set()
 
@@ -47,29 +44,6 @@ def lang_detect(text_for_lang_detect):
         if re.search(pattern_vietnamese, text_for_lang_detect):
             lang_detected.add('vi')
 
-        try:
-            lang_by_fasttext = model_fasttext.predict(
-                text_for_lang_detect)[0][0][-2:]
-
-            if {"en"} & {lang_by_fasttext}:
-                lang_detected.add('en')
-            if {'ms'} & {lang_by_fasttext}:
-                lang_detected.add('ms')
-            if {'id'} & {lang_by_fasttext}:
-                lang_detected.add('id')
-            if {'vi'} & {lang_by_fasttext}:
-                lang_detected.add('vi')
-
-        except Exception as err:
-            exception_type, exception_object, exception_traceback = sys.exc_info()
-            filename = exception_traceback.tb_frame.f_code.co_filename
-            line_number = exception_traceback.tb_lineno
-
-            print("Exception type: ", exception_type, flush=True)
-            print("File name: ", filename, flush=True)
-            print("Line number: ", line_number, flush=True)
-            print(err)
-
     return lang_detected
 
 
@@ -79,22 +53,10 @@ def wh_2022_6_14_api(src_sent, s):
     return tgt_sent
 
 
-def translate(src):
-    lang=lang_detect(src)
-    tgt = ''
-    if src:
-        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-            s.connect(('10.2.56.190', 10228))
-            tgt = ''.join([wh_2022_6_14_api(src_sent, s)
-                            for src_sent in src.split('\n')]).strip()
-
-        # if 'zh' in lang:
-        #     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        #         s.connect(('10.2.56.190', 10177))
-        #         tgt = ''.join([wh_2022_6_14_api(src_sent, s)
-        #                       for src_sent in src.split('\n')])
+def translate(src, s):
+    tgt = ''.join([wh_2022_6_14_api(line, s)
+                  for line in src.split('\n')]).strip()
     return tgt
-
 
 
 def get_all_texts(node):
@@ -148,7 +110,7 @@ def set_paragraph_text(paragraph, text):
             run._r.getparent().remove(run._r)
     for child in paragraph._element:
         if child.tag == qn('w:hyperlink'):
-            if len(child)==0:
+            if len(child) == 0:
                 child.getparent().remove(child)
     paragraph.add_run(text)
 
@@ -158,22 +120,47 @@ Paragraph.text = property(fget=lambda self: get_paragraph_text(self),
                           fset=lambda self, text: set_paragraph_text(self, text))
 
 
-def get_all_text(file_path):
+def do_translation(file_path, src2tgt):
 
-    if file_path.endswith('.docx'):
+    try:
         wordDoc = Document(file_path)
-
-        # items=get_all_texts(wordDoc)
-        items=get_all_runs(wordDoc)
-        # items = get_all_paragraphs(wordDoc)
+        items = get_all_paragraphs(wordDoc)
+        for section in wordDoc.sections:
+            header = section.header
+            footer = section.footer
+            items += get_all_paragraphs(header)
+            items += get_all_paragraphs(footer)
 
         texts = [item.text for item in items if item.text.strip()]
-        print(texts)
 
-        for item in items:
-            if item.text.strip():
-                item.text = translate(item.text)
-        wordDoc.save('demo1.docx')
+        print(texts, flush=True)
+
+        if src2tgt == 'en2zh':
+            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as socket_en2zh:
+                socket_en2zh.connect(('10.2.56.190', 10228))
+                for item in items:
+                    if not non_en_detect(item.text.strip()):
+                        item.text = translate(item.text, socket_en2zh)
+
+        elif src2tgt == 'zh2en':
+            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as socket_zh2en:
+                socket_zh2en.connect(('10.2.56.190', 10177))
+                for item in items:
+                    if 'zh' in non_en_detect(item.text.strip()):
+                        item.text = translate(item.text, socket_zh2en)
+
+        wordDoc.save(file_path)
+        print('docx translation finished')
+        return 0
+
+    except Exception as err:
+        return err
 
 
-print(get_all_text('/home/xuanlong/dataclean/cleaning/demo.docx'))
+@ plac.pos('file_path', "file path", type=str)
+def main(file_path='./demo.docx'):
+    do_translation(file_path, 'en2zh')
+
+
+if __name__ == "__main__":
+    plac.call(main)
