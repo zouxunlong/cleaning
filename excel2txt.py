@@ -1,0 +1,39 @@
+import os
+import json
+import plac
+from pathlib import Path
+from sentsplit.segment import SentSplit
+import html
+import pandas as pd
+
+
+def extract_sentences(input_path, output_path):
+
+    df = pd.read_excel(input_path, header=None)
+
+    with open(output_path, "w", encoding="utf8") as fOut:
+        for i, [sentence0, sentence1, sentence2, sentence3] in enumerate(df.loc[:,[0,1,2,3]].values):
+            if i > 0:
+                fOut.write('{} ||| {}'.format(sentence1, sentence2)+"\n")
+
+
+def main(input_path):
+
+    if os.path.isfile(input_path):
+        if input_path.endswith('.xlsx'):
+            output_file = input_path.replace('.xlsx', '.txt')
+            extract_sentences(str(input_path), str(output_path))
+
+    elif os.path.isdir(input_path):
+        for rootdir, dirs, files in os.walk(input_path):
+            for file in files:
+                if file.endswith('.xlsx'):
+                    input_file = os.path.join(rootdir, file)
+                    output_file = os.path.join(
+                        rootdir, file.replace('.xlsx', '.txt'))
+                    extract_sentences(str(input_file), str(output_file))
+    else:
+        print("invalid input_file")
+
+
+main(input_path="/home/xuanlong/dataclean/data")
