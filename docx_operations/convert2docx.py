@@ -112,4 +112,4 @@ def convert_files_in_dir(rootdir):
 # rootdir = '/home/xuanlong/dataclean/data'
 # convert_files_in_dir(rootdir)
 
-extractpdf('/home/xuanlong/dataclean/data/PUB_AMI Brochure_EN&CH_r15_ocr.pdf')
+pdf2docx_with_english_ocr_adobe('/home/xuanlong/dataclean/data/PUB_AMI Brochure_TM.pdf')

@@ -108,7 +108,7 @@ Paragraph.text = property(fget=lambda self: get_paragraph_text(self),
                           fset=lambda self, text: set_paragraph_text(self, text))
 
 
-def do_extraction(file_path, src2tgt):
+def do_extraction(file_path):
 
     try:
         wordDoc = Document(file_path)

@@ -40,5 +40,6 @@ def combine_files_in_dir(rootdir):
                 file_combined+=1
     print("Done. {} file combined".format(file_combined))
 
-rootdir='/home/xuanlong/dataclean/data/500K sentences'
-combine_files_in_dir(rootdir)
+if __name__ == '__main__':
+    rootdir='/home/xuanlong/dataclean/data/500K sentences'
+    combine_files_in_dir(rootdir)
