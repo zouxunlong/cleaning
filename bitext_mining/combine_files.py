@@ -38,7 +38,7 @@ def combine_files_in_dir(rootdir):
             if file.endswith('.id') or file.endswith('.ID'):
                 inject_from_file(os.path.join(root, file), rootdir+'.id')
                 file_combined+=1
-    print("Done. {} file combined".format(file_combined))
+    print("Done. {} file combined".format(file_combined),flush=True)
 
 if __name__ == '__main__':
     rootdir='/home/xuanlong/dataclean/data/500K sentences'

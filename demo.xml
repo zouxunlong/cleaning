@@ -1,2665 +1,411 @@
-<w:document xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex" xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex" xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex" xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex" xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex" xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex" xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex" xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex" xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink" xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex" xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid" xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml" xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash" xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh wp14">
+<w:document xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" mc:Ignorable="w14 wp14">
   <w:body>
-    <w:p w14:paraId="694C65E7" w14:textId="702AE31F" w:rsidR="00D563B1" w:rsidRPr="005B026B" w:rsidRDefault="00D563B1" w:rsidP="005B026B">
+    <w:p w14:paraId="2B906444" w14:textId="4F6A66D8" w:rsidR="00BE5D35" w:rsidRPr="00D73BE5" w:rsidRDefault="00AA7C31">
       <w:pPr>
-        <w:tabs>
-          <w:tab w:val="num" w:pos="720"/>
-        </w:tabs>
-        <w:spacing w:line="360" w:lineRule="auto"/>
-        <w:ind w:left="720" w:hanging="360"/>
-        <w:jc w:val="center"/>
         <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
           <w:b/>
           <w:bCs/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
         </w:rPr>
       </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:b/>
-          <w:bCs/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>Proposed Talking Points for SPS for Interview</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="4C9CD2F9" w14:textId="32EE4D2C" w:rsidR="00D563B1" w:rsidRPr="005B026B" w:rsidRDefault="00D563B1" w:rsidP="005B026B">
-      <w:pPr>
-        <w:tabs>
-          <w:tab w:val="num" w:pos="720"/>
-        </w:tabs>
-        <w:spacing w:line="360" w:lineRule="auto"/>
-        <w:ind w:left="720" w:hanging="360"/>
-        <w:jc w:val="center"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:b/>
-          <w:bCs/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:b/>
-          <w:bCs/>
-          <w:i/>
-          <w:iCs/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>City Spotlight,</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:b/>
-          <w:bCs/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> </w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:b/>
-          <w:bCs/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>城事真相</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="605DE1A3" w14:textId="75831BB9" w:rsidR="002E07FB" w:rsidRPr="005B026B" w:rsidRDefault="002E07FB" w:rsidP="005B026B">
-      <w:pPr>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="1"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="DengXian" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>近年来，涉及脚车骑士和自动代步工具的交通意外时有听闻，网上也经常看到相关的负面消息和评论。根据你的理解，造成这些意外的原因是什么？</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="211A7893" w14:textId="406C56B6" w:rsidR="00E91393" w:rsidRPr="005B026B" w:rsidRDefault="00E91393" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="3"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rStyle w:val="CommentReference"/>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rStyle w:val="CommentReference"/>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>Different road users tend to see things from their own perspective</w:t>
-      </w:r>
-      <w:r w:rsidR="00407F60" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rStyle w:val="CommentReference"/>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>s</w:t>
-      </w:r>
-      <w:r w:rsidR="00FE7720" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rStyle w:val="CommentReference"/>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>.</w:t>
-      </w:r>
-      <w:r w:rsidR="00407F60" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rStyle w:val="CommentReference"/>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> </w:t>
-      </w:r>
-      <w:r w:rsidR="00FE7720" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rStyle w:val="CommentReference"/>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>F</w:t>
-      </w:r>
-      <w:r w:rsidR="00407F60" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rStyle w:val="CommentReference"/>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">or instance, it is difficult for a motorist to </w:t>
-      </w:r>
-      <w:r w:rsidR="00FE7720" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rStyle w:val="CommentReference"/>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">understand </w:t>
-      </w:r>
-      <w:r w:rsidR="00407F60" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rStyle w:val="CommentReference"/>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">the vulnerability of a cyclist on </w:t>
-      </w:r>
-      <w:r w:rsidR="00FE7720" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rStyle w:val="CommentReference"/>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">just </w:t>
-      </w:r>
-      <w:r w:rsidR="00407F60" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rStyle w:val="CommentReference"/>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>two wheels on roads.</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="43BB69D6" w14:textId="62DF7CC1" w:rsidR="00407F60" w:rsidRPr="005B026B" w:rsidRDefault="00FE7720" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="3"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:proofErr w:type="gramStart"/>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rStyle w:val="CommentReference"/>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>T</w:t>
-      </w:r>
-      <w:r w:rsidR="007C5A58" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rStyle w:val="CommentReference"/>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>he majority of</w:t>
-      </w:r>
-      <w:proofErr w:type="gramEnd"/>
-      <w:r w:rsidR="007C5A58" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rStyle w:val="CommentReference"/>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> road users are law abiding</w:t>
-      </w:r>
-      <w:r w:rsidR="000220CB" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（奉公守法</w:t>
-      </w:r>
-      <w:r w:rsidR="006921FA" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>）</w:t>
-      </w:r>
-      <w:r w:rsidR="007C5A58" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rStyle w:val="CommentReference"/>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>,</w:t>
-      </w:r>
-      <w:r w:rsidR="00407F60" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rStyle w:val="CommentReference"/>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> </w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rStyle w:val="CommentReference"/>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>but there is still a minority of errant road users</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（违例公路使用者/害群之马）</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="SimSun" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">, both cyclists and motorists. </w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rStyle w:val="CommentReference"/>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">With </w:t>
-      </w:r>
-      <w:r w:rsidR="00407F60" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rStyle w:val="CommentReference"/>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">social media </w:t>
-      </w:r>
-      <w:r w:rsidR="00407F60" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（社交媒体）</w:t>
-      </w:r>
-      <w:r w:rsidR="007D20FC" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="SimSun" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>，</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="SimSun" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">their bad behaviour often </w:t>
-      </w:r>
-      <w:r w:rsidR="005B026B" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="SimSun" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>goes</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="SimSun" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> viral </w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsia="SimSun" w:hAnsiTheme="minorHAnsi" w:cstheme="minorHAnsi"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>(</w:t>
-      </w:r>
-      <w:r w:rsidR="004A61DD" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsia="SimSun" w:hAnsiTheme="minorHAnsi" w:cstheme="minorHAnsi"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>爆红</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsia="SimSun" w:hAnsiTheme="minorHAnsi" w:cstheme="minorHAnsi"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>)</w:t>
-      </w:r>
-      <w:r w:rsidR="007D20FC" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rStyle w:val="CommentReference"/>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>.</w:t>
-      </w:r>
-      <w:r w:rsidR="007C5A58" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rStyle w:val="CommentReference"/>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> </w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="1608A64C" w14:textId="77777777" w:rsidR="007223F7" w:rsidRPr="005B026B" w:rsidRDefault="007223F7" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:ind w:left="1440"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-    </w:p>
-    <w:p w14:paraId="0A2694CE" w14:textId="64E06DED" w:rsidR="007223F7" w:rsidRPr="005B026B" w:rsidRDefault="007223F7" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="1"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="DengXian" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>您觉得，在某种程度上是否表示，本地骑士对于公路使用的品德和行为有待提升？</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="10E5FF68" w14:textId="77777777" w:rsidR="007223F7" w:rsidRPr="005B026B" w:rsidRDefault="007223F7" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-    </w:p>
-    <w:p w14:paraId="449EE533" w14:textId="174759EA" w:rsidR="005F70EE" w:rsidRPr="005B026B" w:rsidRDefault="00FE7720" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="5"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>M</w:t>
-      </w:r>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>ost road and path users are considerate and will look out for one another, but t</w:t>
-      </w:r>
-      <w:r w:rsidR="007223F7" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>here’s always room for improvement, whenever we are talking about ensuring safety for all</w:t>
-      </w:r>
-      <w:r w:rsidR="005F70EE" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> and building a gracious active mobility landscape </w:t>
-      </w:r>
-      <w:r w:rsidR="000220CB" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（优雅的骑行文化）</w:t>
-      </w:r>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="SimSun" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>.</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="7AB33D11" w14:textId="2198AE01" w:rsidR="004A61DD" w:rsidRPr="005B026B" w:rsidRDefault="00FE7720" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="5"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">Having </w:t>
-      </w:r>
-      <w:r w:rsidR="004A61DD" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">rules </w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">and </w:t>
-      </w:r>
-      <w:r w:rsidR="004A61DD" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">a set of common </w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>guidelines</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（条例）</w:t>
-      </w:r>
-      <w:r w:rsidR="004A61DD" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="SimSun" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">help to improve safety. </w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="34E6ED96" w14:textId="2CC4D90A" w:rsidR="00FE7720" w:rsidRPr="005B026B" w:rsidRDefault="004A61DD" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="5"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">We are also </w:t>
-      </w:r>
-      <w:r w:rsidR="00FE7720" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>constantly spreading the message through public education, to ensure that our shared spaces are used safely and graciously.</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="340CBBCA" w14:textId="412D7936" w:rsidR="00C4656D" w:rsidRPr="005B026B" w:rsidRDefault="005F70EE" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="5"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">Road safety is a collective responsibility for motorists, </w:t>
-      </w:r>
-      <w:proofErr w:type="gramStart"/>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>cyclis</w:t>
-      </w:r>
-      <w:r w:rsidR="00C4656D" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>ts</w:t>
-      </w:r>
-      <w:proofErr w:type="gramEnd"/>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> and pedestrians</w:t>
-      </w:r>
-      <w:r w:rsidR="000220CB" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cstheme="minorHAnsi"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（公路安全，人人有责）</w:t>
-      </w:r>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="SimSun" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>.</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="3174CF74" w14:textId="76396339" w:rsidR="007C5A58" w:rsidRPr="005B026B" w:rsidRDefault="004A61DD" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="5"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:lastRenderedPageBreak/>
-        <w:t>T</w:t>
-      </w:r>
-      <w:r w:rsidR="007C5A58" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">he Government </w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">will continue to </w:t>
-      </w:r>
-      <w:r w:rsidR="007C5A58" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>step up public education and outreach efforts, and partner stakeholders</w:t>
-      </w:r>
-      <w:r w:rsidR="007C5A58" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（与不同机构或社区组织合作）</w:t>
-      </w:r>
-      <w:r w:rsidR="00642088">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial" w:hint="eastAsia"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> </w:t>
-      </w:r>
-      <w:r w:rsidR="007C5A58" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">in raising public awareness </w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>of the</w:t>
-      </w:r>
-      <w:r w:rsidR="007C5A58" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> rules and guideline</w:t>
-      </w:r>
-      <w:r w:rsidR="007C5A58" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>s</w:t>
-      </w:r>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>.</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="115D3E08" w14:textId="46B52118" w:rsidR="007D20FC" w:rsidRPr="00642088" w:rsidRDefault="007C5A58" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="23"/>
-        </w:numPr>
-        <w:spacing w:after="160" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">We also have programmes to help equip active mobility users with practical riding skills such as “Confidence on </w:t>
-      </w:r>
-      <w:r w:rsidR="007D20FC" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>Wheels”</w:t>
-      </w:r>
-      <w:r w:rsidR="007D20FC" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="SimSun" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> </w:t>
-      </w:r>
-      <w:r w:rsidR="007D20FC" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（</w:t>
-      </w:r>
-      <w:r w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>骑行信心教育计划）</w:t>
-      </w:r>
-      <w:r w:rsidR="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial" w:hint="eastAsia"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>.</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="7B9CD24F" w14:textId="78DFAB29" w:rsidR="009D38E5" w:rsidRPr="005B026B" w:rsidRDefault="004A61DD" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="23"/>
-        </w:numPr>
-        <w:spacing w:after="160" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>Public</w:t>
-      </w:r>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> education</w:t>
-      </w:r>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> </w:t>
-      </w:r>
-      <w:r w:rsidR="007D20FC" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>c</w:t>
-      </w:r>
-      <w:r w:rsidR="00933BF6" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>ampaign</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>s</w:t>
-      </w:r>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（</w:t>
-      </w:r>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-          <w:lang w:val="en-US"/>
-        </w:rPr>
-        <w:t>公共宣传运动</w:t>
-      </w:r>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>）</w:t>
-      </w:r>
-      <w:r w:rsidR="00933BF6" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>such as</w:t>
-      </w:r>
-      <w:r w:rsidR="007D20FC" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> LTA’s annual</w:t>
-      </w:r>
-      <w:r w:rsidR="00933BF6" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> </w:t>
-      </w:r>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>“</w:t>
-      </w:r>
       <w:proofErr w:type="spellStart"/>
-      <w:r w:rsidR="00933BF6" w:rsidRPr="005B026B">
+      <w:r w:rsidRPr="00D73BE5">
         <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
+          <w:b/>
+          <w:bCs/>
         </w:rPr>
-        <w:t>MoveHappy</w:t>
+        <w:t>FluGoWhere</w:t>
       </w:r>
       <w:proofErr w:type="spellEnd"/>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="005B026B">
+      <w:r w:rsidRPr="00D73BE5">
         <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
+          <w:b/>
+          <w:bCs/>
         </w:rPr>
-        <w:t>”</w:t>
+        <w:t xml:space="preserve"> FAQ </w:t>
       </w:r>
-      <w:r w:rsidR="007D20FC" w:rsidRPr="005B026B">
+      <w:r w:rsidR="00D73BE5" w:rsidRPr="00D73BE5">
         <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
+          <w:b/>
+          <w:bCs/>
         </w:rPr>
-        <w:t xml:space="preserve"> and Traffic Police’s </w:t>
+        <w:t>– new question on Pre-Departure COVID-19 Test and Memo</w:t>
       </w:r>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="005B026B">
+    </w:p>
+    <w:p w14:paraId="5626A768" w14:textId="5CCAD9B2" w:rsidR="00AA7C31" w:rsidRPr="00C92DD4" w:rsidRDefault="00C92DD4">
+      <w:pPr>
         <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:b/>
+          <w:lang w:eastAsia="zh-CN"/>
         </w:rPr>
-        <w:t>“</w:t>
-      </w:r>
-      <w:r w:rsidR="007D20FC" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">Use Your </w:t>
-      </w:r>
+      </w:pPr>
       <w:proofErr w:type="spellStart"/>
-      <w:r w:rsidR="007D20FC" w:rsidRPr="005B026B">
+      <w:r w:rsidRPr="00C92DD4">
         <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
+          <w:b/>
+          <w:bCs/>
+          <w:lang w:eastAsia="zh-CN"/>
         </w:rPr>
-        <w:t>RoadSense</w:t>
+        <w:t>FluGoWhere</w:t>
       </w:r>
       <w:proofErr w:type="spellEnd"/>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="005B026B">
+      <w:r w:rsidRPr="00C92DD4">
         <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:b/>
+          <w:lang w:eastAsia="zh-CN"/>
         </w:rPr>
-        <w:t xml:space="preserve">”, </w:t>
+        <w:t>网站</w:t>
       </w:r>
-      <w:r w:rsidR="007D20FC" w:rsidRPr="005B026B">
+      <w:r>
         <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:b/>
+          <w:lang w:eastAsia="zh-CN"/>
         </w:rPr>
-        <w:t>as well as engagements with</w:t>
+        <w:t>的常见问题</w:t>
       </w:r>
-      <w:r w:rsidR="007C5A58" w:rsidRPr="005B026B">
+      <w:r>
         <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> stakeholders such as retailers</w:t>
-      </w:r>
-      <w:r w:rsidR="007C5A58" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（零售商）</w:t>
-      </w:r>
-      <w:r w:rsidR="007C5A58" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>, cycling interest groups</w:t>
-      </w:r>
-      <w:r w:rsidR="007C5A58" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（骑行兴趣小组）</w:t>
-      </w:r>
-      <w:r w:rsidR="007C5A58" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>and delivery companie</w:t>
-      </w:r>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>s</w:t>
-      </w:r>
-      <w:r w:rsidR="007C5A58" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cstheme="minorHAnsi"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（运货公司）</w:t>
-      </w:r>
-      <w:r w:rsidR="007C5A58" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:b/>
+          <w:lang w:eastAsia="zh-CN"/>
         </w:rPr>
         <w:t xml:space="preserve"> </w:t>
       </w:r>
-      <w:r w:rsidR="007C5A58" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>such as SingPost, to remind cyclists of safe riding habits</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="SimSun" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>.</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="3AA3AD19" w14:textId="3AA30FB5" w:rsidR="00AE20E4" w:rsidRPr="005B026B" w:rsidRDefault="004A61DD" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="23"/>
-        </w:numPr>
-        <w:spacing w:after="160" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>To help cyclists understand the perspective of bus captains</w:t>
-      </w:r>
-      <w:r w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（巴士车长）</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">better, </w:t>
-      </w:r>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">cyclists from the Singapore Cycling Federation </w:t>
-      </w:r>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="SimSun" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>（</w:t>
-      </w:r>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>新加坡脚踏车联合会）</w:t>
-      </w:r>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> </w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>tried</w:t>
-      </w:r>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> </w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>the</w:t>
-      </w:r>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> bus simulators</w:t>
-      </w:r>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（巴士模拟器）</w:t>
-      </w:r>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">at the Singapore Bus Academy </w:t>
-      </w:r>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（</w:t>
-      </w:r>
-      <w:r w:rsidR="001C6E60" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>新加坡巴士学院</w:t>
-      </w:r>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>）</w:t>
-      </w:r>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">, to better appreciate the challenges </w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>that</w:t>
-      </w:r>
-      <w:r w:rsidR="009D38E5" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> bus captains</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> face.</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="4E2C5509" w14:textId="77777777" w:rsidR="002A2E95" w:rsidRPr="005B026B" w:rsidRDefault="002A2E95" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:ind w:left="1440"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-    </w:p>
-    <w:p w14:paraId="68EA4E6A" w14:textId="16D16831" w:rsidR="000220CB" w:rsidRPr="00642088" w:rsidRDefault="002E07FB" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="1"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="DengXian" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>我知道当局长期致力于增加更多脚踏车道和骑行空间，但是有鉴于类似意外事故还是不少，是否表示增加空间的动作需要再加快？</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="7A96E7BB" w14:textId="77777777" w:rsidR="000220CB" w:rsidRPr="005B026B" w:rsidRDefault="000220CB" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-    </w:p>
-    <w:p w14:paraId="3C25B1C6" w14:textId="4E6B13B1" w:rsidR="00A65F08" w:rsidRPr="005B026B" w:rsidRDefault="00A65F08" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="7"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>As with all construction projects, the construction of cycling paths will take some time</w:t>
-      </w:r>
-      <w:r w:rsidR="001C6E60" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="SimSun" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>.</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="384A654C" w14:textId="4C900A3B" w:rsidR="00D563B1" w:rsidRPr="00642088" w:rsidRDefault="00E96312" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="7"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>S</w:t>
-      </w:r>
-      <w:r w:rsidR="000B45D8" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">o far, </w:t>
-      </w:r>
-      <w:r w:rsidR="007C5A58" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">we already have close to 500km of cycling paths, and </w:t>
-      </w:r>
-      <w:r w:rsidR="000B45D8" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>the construction works</w:t>
-      </w:r>
-      <w:r w:rsidR="000220CB" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（建筑工程）</w:t>
-      </w:r>
-      <w:r w:rsidR="000220CB" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>are</w:t>
-      </w:r>
-      <w:r w:rsidR="000B45D8" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> on track</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> to reach 800km within the next two to three years</w:t>
-      </w:r>
-      <w:r w:rsidR="00003EC4" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>,</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> and 1,300km by 2030</w:t>
-      </w:r>
-      <w:r w:rsidR="001C6E60" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="SimSun" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>.</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="4CE5616F" w14:textId="77777777" w:rsidR="00642088" w:rsidRPr="005B026B" w:rsidRDefault="00642088" w:rsidP="00642088">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:ind w:left="1440"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-    </w:p>
-    <w:p w14:paraId="1A4CA1E9" w14:textId="2810B689" w:rsidR="002E07FB" w:rsidRPr="00642088" w:rsidRDefault="002E07FB" w:rsidP="005B026B">
-      <w:pPr>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="1"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:lastRenderedPageBreak/>
-        <w:t>有人认为，</w:t>
-      </w:r>
-      <w:r w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-          <w:lang w:val="en-US"/>
-        </w:rPr>
-        <w:t>150</w:t>
-      </w:r>
-      <w:r w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>元的罚款太低，无法遏阻脚车和自动代步工具的违规行为。您认为呢？为什么不提高罚款？</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="76C673D2" w14:textId="0B274DAB" w:rsidR="00C5580A" w:rsidRPr="005B026B" w:rsidRDefault="00C5580A" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="19"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>Fines</w:t>
-      </w:r>
-      <w:r w:rsidR="000220CB" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（罚款）</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">have already been </w:t>
-      </w:r>
-      <w:r w:rsidR="00B12C8F" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">doubled </w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>from $75 previously, to $150 this yea</w:t>
-      </w:r>
-      <w:r w:rsidR="006C2519" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>r</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="07F5E7B8" w14:textId="6004047E" w:rsidR="000220CB" w:rsidRPr="005B026B" w:rsidRDefault="00C5580A" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="19"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>The $150 fine is also for common egregious offences</w:t>
-      </w:r>
-      <w:r w:rsidR="000220CB" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（违法行为）</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">, such as </w:t>
-      </w:r>
-      <w:r w:rsidR="000220CB" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">not cycling as near as practicable to the far-left edge of the road </w:t>
-      </w:r>
-      <w:r w:rsidR="000220CB" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>(没有尽可能靠近公路最左侧边缘骑行)</w:t>
-      </w:r>
-      <w:r w:rsidR="00E96D79" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>.</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="21AD8E2E" w14:textId="786F25EC" w:rsidR="00C5580A" w:rsidRPr="00642088" w:rsidRDefault="00C5580A" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="19"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">For more serious cases, the cyclist may be charged in Court and face a fine of up to $1,000 and/or a jail term of up to 3 months for the first </w:t>
-      </w:r>
-      <w:r w:rsidR="000220CB" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>offence and</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> </w:t>
-      </w:r>
-      <w:r w:rsidR="00B12C8F" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">double the penalty </w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>for the second or subsequent offence</w:t>
-      </w:r>
-      <w:r w:rsidR="000220CB" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（违例情节严重的骑士可能会被控上法庭，初犯者最高可被罚宽1000元，或监禁三个月，或两者兼施。重犯者最高可被罚款2000元，或监禁六个与，或或两者兼施。）</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="08EC1F52" w14:textId="17C6CD08" w:rsidR="002E07FB" w:rsidRPr="00642088" w:rsidRDefault="002E07FB" w:rsidP="005B026B">
-      <w:pPr>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="1"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="DengXian" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>追根究底，是不是因为就目前的条件而言，我国很难在人口最密集的地方，譬如组屋区，设立像丹那美拉那样的脚踏车专用道？</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="2A702970" w14:textId="2BF26C08" w:rsidR="00E96D79" w:rsidRPr="00642088" w:rsidRDefault="002A2E95" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="8"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>It</w:t>
-      </w:r>
-      <w:r w:rsidR="00F37212" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> i</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">s </w:t>
-      </w:r>
-      <w:r w:rsidR="000D5016" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">not always possible to have dedicated cycling paths in land-scarce Singapore, </w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>especially the mentioned densely populated areas such as HDB towns</w:t>
-      </w:r>
-      <w:r w:rsidR="000220CB" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（组屋区)</w:t>
-      </w:r>
-      <w:r w:rsidR="00E96D79" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>.</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="157EBD0E" w14:textId="613C43DB" w:rsidR="002A2E95" w:rsidRPr="005B026B" w:rsidRDefault="002A2E95" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="8"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>It would also be less efficient – as dedicated lanes or paths for each user would mean each user will have less space and our roads/paths will become more cramped</w:t>
-      </w:r>
-      <w:r w:rsidR="00E96D79" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">. </w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>When we share</w:t>
-      </w:r>
-      <w:r w:rsidR="00E96D79" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> the common spaces we have</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">, we have more </w:t>
-      </w:r>
-      <w:r w:rsidR="00E96D79" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>space to manoeuvre.</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="7D491457" w14:textId="44969FE4" w:rsidR="002A2E95" w:rsidRPr="005B026B" w:rsidRDefault="002A2E95" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="8"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>However, I am confident that we will achieve the vision of a safe and gracious active mobility landscape and commuting culture if we all look out for one another a little more on our shared spaces</w:t>
-      </w:r>
-      <w:r w:rsidR="000220CB" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> </w:t>
-      </w:r>
-      <w:r w:rsidR="000220CB" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>(在共用的空间内互相考虑和礼让）</w:t>
-      </w:r>
-      <w:r w:rsidR="000D5016" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">and abide with the prevailing rules and </w:t>
-      </w:r>
-      <w:r w:rsidR="000D5016" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:lastRenderedPageBreak/>
-        <w:t>guidelines</w:t>
-      </w:r>
-      <w:r w:rsidR="00B12C8F" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">. Cyclists should give way to pedestrians, and pedestrians should keep left. </w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="526AFA57" w14:textId="77777777" w:rsidR="00F37212" w:rsidRPr="00642088" w:rsidRDefault="002E07FB" w:rsidP="005B026B">
-      <w:pPr>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="1"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="DengXian" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>也有意见提出，让脚车骑士注册，有助于落实执法，从而产生遏阻的效用。只是当局至今似乎没有真正落实这项计划，就这点而言，当局的考量是什么？</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="0D9A2A3C" w14:textId="5C216B16" w:rsidR="000220CB" w:rsidRPr="005B026B" w:rsidRDefault="000220CB" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="8"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>During our on-road cycling review</w:t>
-      </w:r>
-      <w:r w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（在探讨公路上骑行的安全条例与惩时）</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>last year, AMAP</w:t>
-      </w:r>
-      <w:r w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（活跃通勤咨询小组）</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>had carefully studied the practices of overseas jurisdictions</w:t>
-      </w:r>
-      <w:r w:rsidR="006921FA" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（</w:t>
-      </w:r>
-      <w:r w:rsidR="00C57936" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>参考国外做法和本地经验</w:t>
-      </w:r>
-      <w:r w:rsidR="006921FA" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>）</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>and the trade-offs involved in introducing licensing of cyclists and registration of bicycles</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="0E9D0FD6" w14:textId="3D25A0EB" w:rsidR="00F37212" w:rsidRPr="005B026B" w:rsidRDefault="00F37212" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="8"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>There is little evidence from overseas jurisdictions that such resource-intensive regimes are effective in deterring errant cycling or enhancing road safety</w:t>
-      </w:r>
-      <w:r w:rsidR="000B6F48" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>. In fact, AMAP found that most jurisdictions do not license cyclists or register bicycles. Those that used to do so have repealed their regimes.</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="47443200" w14:textId="768BBD44" w:rsidR="00F37212" w:rsidRPr="005B026B" w:rsidRDefault="00F37212" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="8"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>On the contrary, such measures could raise barriers to the take-up of cycling in Singapore and disproportionately affect more vulnerable groups of cyclists, including seniors and individuals who rely on bicycles for work and commute</w:t>
-      </w:r>
-      <w:r w:rsidR="00E96D79" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>.</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="6C593B55" w14:textId="255866E4" w:rsidR="002A2E95" w:rsidRPr="005B026B" w:rsidRDefault="00F37212" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="8"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>These were also views raised during focus group discussions</w:t>
-      </w:r>
-      <w:r w:rsidR="00D563B1" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（小组讨论）</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>that AMAP conducted</w:t>
-      </w:r>
-      <w:r w:rsidR="00E96D79" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>.</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="1DC3E518" w14:textId="5EFF4C03" w:rsidR="002E07FB" w:rsidRPr="00642088" w:rsidRDefault="002E07FB" w:rsidP="005B026B">
-      <w:pPr>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="1"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="DengXian" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>如果让脚车骑士也像个人代步工具骑士一样接受考试，是否有帮助？</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="1AECB578" w14:textId="2646E33F" w:rsidR="00F37212" w:rsidRPr="005B026B" w:rsidRDefault="00F37212" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="12"/>
-        </w:numPr>
-        <w:spacing w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>PAB riders</w:t>
-      </w:r>
-      <w:r w:rsidR="00D563B1" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（电动脚踏车）</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>and E-scooter</w:t>
-      </w:r>
-      <w:r w:rsidR="00D563B1" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（电动滑板）</w:t>
-      </w:r>
-      <w:r w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> </w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">users </w:t>
-      </w:r>
-      <w:r w:rsidR="00B12C8F" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>are required to sit for the Mandatory Theory Test</w:t>
-      </w:r>
-      <w:r w:rsidR="00D563B1" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（理论考试）</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>because they were using motorised devices and can travel faster, thereby pose greater safety risks to themselves as well as other</w:t>
-      </w:r>
-      <w:r w:rsidR="008F5608" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> road and path users</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="45E3542B" w14:textId="77777777" w:rsidR="00F37212" w:rsidRPr="005B026B" w:rsidRDefault="00F37212" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="12"/>
-        </w:numPr>
-        <w:spacing w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:lastRenderedPageBreak/>
-        <w:t>It was especially important to ensure that the users of these motorised devices are aware of the active mobility rules, regulations, and code of conduct</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="0D9BF29B" w14:textId="3643BD59" w:rsidR="00F37212" w:rsidRPr="005B026B" w:rsidRDefault="00F37212" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="12"/>
-        </w:numPr>
-        <w:spacing w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">As a wide spectrum of our population cycles, a mandatory test could raise barriers to the take-up of cycling in Singapore and disproportionately affect more vulnerable groups of cyclists </w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="0313FC4B" w14:textId="7F4E8263" w:rsidR="00F37212" w:rsidRPr="005B026B" w:rsidRDefault="00B12C8F" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="12"/>
-        </w:numPr>
-        <w:spacing w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>But we have</w:t>
-      </w:r>
-      <w:r w:rsidR="00F37212" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> step</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>ped</w:t>
-      </w:r>
-      <w:r w:rsidR="00F37212" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> up public education </w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>efforts to cyclists</w:t>
-      </w:r>
-      <w:r w:rsidR="00F37212" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>,</w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> including practical courses like Confidence on Wheels and the </w:t>
-      </w:r>
-      <w:proofErr w:type="spellStart"/>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>MoveHappy</w:t>
-      </w:r>
-      <w:proofErr w:type="spellEnd"/>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> campaign,</w:t>
-      </w:r>
-      <w:r w:rsidR="00F37212" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> to encourage gracious and responsible sharing of road and path spaces</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="54845A7D" w14:textId="77777777" w:rsidR="00F37212" w:rsidRPr="005B026B" w:rsidRDefault="002E07FB" w:rsidP="005B026B">
-      <w:pPr>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="1"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="DengXian" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>活跃通勤咨询小组是否计划再推行其他新的措施，来减少意外事故的发生？</w:t>
-      </w:r>
-    </w:p>
-    <w:p w14:paraId="6A0A66B2" w14:textId="399CFB16" w:rsidR="001C2C1A" w:rsidRPr="005B026B" w:rsidRDefault="00F37212" w:rsidP="005B026B">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="14"/>
-        </w:numPr>
-        <w:spacing w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-      </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">This term, AMAP’s focus would be exactly that </w:t>
-      </w:r>
-      <w:r w:rsidR="001C2C1A" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
+      <w:r w:rsidRPr="00D73BE5">
+        <w:rPr>
+          <w:b/>
+          <w:bCs/>
+          <w:lang w:eastAsia="zh-CN"/>
         </w:rPr>
         <w:t>–</w:t>
       </w:r>
-      <w:r w:rsidRPr="005B026B">
+      <w:r>
         <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:b/>
+          <w:bCs/>
+          <w:lang w:eastAsia="zh-CN"/>
         </w:rPr>
         <w:t xml:space="preserve"> </w:t>
       </w:r>
-      <w:r w:rsidR="001C2C1A" w:rsidRPr="005B026B">
+      <w:r w:rsidR="00D3284B">
         <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:b/>
+          <w:bCs/>
+          <w:lang w:eastAsia="zh-CN"/>
         </w:rPr>
-        <w:t>to stay ahead of emerging trends that could shape the active mobility landscape and ensure safe use of active mobility devices</w:t>
+        <w:t>有关离境前冠病检测和证明单的</w:t>
       </w:r>
-      <w:r w:rsidR="00200547" w:rsidRPr="005B026B">
+      <w:r>
         <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:b/>
+          <w:lang w:eastAsia="zh-CN"/>
         </w:rPr>
-        <w:t xml:space="preserve">, </w:t>
-      </w:r>
-      <w:r w:rsidR="001C2C1A" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">we are looking at reviewing the appropriate and safe use of recumbent bikes </w:t>
-      </w:r>
-      <w:r w:rsidR="006921FA" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>（</w:t>
-      </w:r>
-      <w:r w:rsidR="000220CB" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>斜躺式脚踏车</w:t>
-      </w:r>
-      <w:r w:rsidR="006921FA" w:rsidRPr="00642088">
-        <w:rPr>
-          <w:rFonts w:asciiTheme="minorEastAsia" w:hAnsiTheme="minorEastAsia" w:cs="Arial"/>
-          <w:sz w:val="28"/>
-          <w:szCs w:val="28"/>
-        </w:rPr>
-        <w:t>）</w:t>
-      </w:r>
-      <w:r w:rsidR="001C2C1A" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">and personal mobility aids </w:t>
+        <w:t>新问题</w:t>
       </w:r>
     </w:p>
-    <w:p w14:paraId="53A2ABB8" w14:textId="2A551403" w:rsidR="00F37212" w:rsidRPr="005B026B" w:rsidRDefault="001C2C1A" w:rsidP="005B026B">
+    <w:p w14:paraId="6B44EF28" w14:textId="77777777" w:rsidR="00C92DD4" w:rsidRPr="00C92DD4" w:rsidRDefault="00C92DD4">
       <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:numPr>
-          <w:ilvl w:val="0"/>
-          <w:numId w:val="16"/>
-        </w:numPr>
-        <w:spacing w:before="100" w:beforeAutospacing="1" w:after="100" w:afterAutospacing="1" w:line="360" w:lineRule="auto"/>
-        <w:jc w:val="both"/>
         <w:rPr>
-          <w:rFonts w:ascii="Arial" w:eastAsia="Times New Roman" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
         </w:rPr>
       </w:pPr>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">As safety is a collective responsibility, we will </w:t>
+    </w:p>
+    <w:p w14:paraId="7A3A7FB6" w14:textId="4A466F9A" w:rsidR="00AA7C31" w:rsidRDefault="00AA7C31" w:rsidP="00AA7C31">
+      <w:r>
+        <w:t xml:space="preserve">Q: </w:t>
       </w:r>
-      <w:r w:rsidR="00F37212" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">continue </w:t>
-      </w:r>
-      <w:r w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">to </w:t>
-      </w:r>
-      <w:r w:rsidR="00F37212" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">strengthen our engagement and education efforts to collectively build a safe and gracious culture on Singapore’s roads and paths. This includes working closely with </w:t>
-      </w:r>
-      <w:r w:rsidR="008F5608" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve">various </w:t>
-      </w:r>
-      <w:r w:rsidR="00F37212" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>stakeholders</w:t>
-      </w:r>
-      <w:r w:rsidR="008F5608" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t>, including retailers, interest groups, business associations</w:t>
-      </w:r>
-      <w:r w:rsidR="008F5608" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-          <w:lang w:val="en-US"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> and delivery companies</w:t>
-      </w:r>
-      <w:r w:rsidR="00F37212" w:rsidRPr="005B026B">
-        <w:rPr>
-          <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
-          <w:sz w:val="24"/>
-          <w:szCs w:val="24"/>
-        </w:rPr>
-        <w:t xml:space="preserve"> </w:t>
+      <w:r>
+        <w:br/>
+        <w:t xml:space="preserve">“I require a pre-departure memo indicating that I have tested negative for COVID-19 for travel purposes. Would I need to pay for this swab test if I have acute respiratory infection (ARI) symptoms and can otherwise obtain a government-paid COVID-19 swab test? </w:t>
       </w:r>
     </w:p>
-    <w:sectPr w:rsidR="00F37212" w:rsidRPr="005B026B">
+    <w:p w14:paraId="314255EA" w14:textId="63A5400C" w:rsidR="00AA7C31" w:rsidRDefault="00DA589B" w:rsidP="00AA7C31">
+      <w:pPr>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:t>问：</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="5596EB25" w14:textId="602C9028" w:rsidR="00DA589B" w:rsidRDefault="00F000DE" w:rsidP="00AA7C31">
+      <w:pPr>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>我需要离境前证明单，证明我的冠病检测结果呈阴性</w:t>
+      </w:r>
+      <w:r w:rsidR="00D127A1">
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>，以便我可以旅行</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>。</w:t>
+      </w:r>
+      <w:r w:rsidR="004A0C34">
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>如果</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>我</w:t>
+      </w:r>
+      <w:r w:rsidR="0098783B">
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>因</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>急性呼吸道感染症状</w:t>
+      </w:r>
+      <w:r w:rsidR="004A0C34">
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>而可</w:t>
+      </w:r>
+      <w:r w:rsidR="0098783B">
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>以</w:t>
+      </w:r>
+      <w:r w:rsidR="004A0C34">
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>接受政府资助的冠病拭子检测</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>，我</w:t>
+      </w:r>
+      <w:r w:rsidR="004A0C34">
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>仍</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>须为这个拭子检测支付费用吗？</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="10DDB107" w14:textId="77777777" w:rsidR="00DA589B" w:rsidRDefault="00DA589B" w:rsidP="00AA7C31">
+      <w:pPr>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+      </w:pPr>
+    </w:p>
+    <w:p w14:paraId="58E6C1F5" w14:textId="0B3434B9" w:rsidR="00AA7C31" w:rsidRDefault="00AA7C31" w:rsidP="00AA7C31">
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="en-US"/>
+        </w:rPr>
+        <w:t xml:space="preserve">A: </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="en-US"/>
+        </w:rPr>
+        <w:br/>
+        <w:t xml:space="preserve">With effect from 1 Jan 2021, </w:t>
+      </w:r>
+      <w:proofErr w:type="spellStart"/>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="en-US"/>
+        </w:rPr>
+        <w:t>travellers</w:t>
+      </w:r>
+      <w:proofErr w:type="spellEnd"/>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="en-US"/>
+        </w:rPr>
+        <w:t xml:space="preserve"> have to pay for their travel-related costs, including the Pre-Departure COVID-19 Test and Pre-Departure COVID-19 Memo. This is regardless of whether they have an acute respiratory infection (ARI). A Pre-Departure Memo cannot be issued based on a Government-paid COVID-19 swab test. </w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="737A58B9" w14:textId="1A717D6C" w:rsidR="00AA7C31" w:rsidRDefault="00DA589B">
+      <w:pPr>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:t>答：</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0EE56198" w14:textId="24F61168" w:rsidR="00DA589B" w:rsidRDefault="006C6488">
+      <w:pPr>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>从</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>2021</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>年</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>1</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>月</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>1</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>日起，不论旅客是否有</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>急性呼吸道感染</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>，都必须支付与旅行相关（</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>包括离境前冠病检测和证明单</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>）的费用。</w:t>
+      </w:r>
+      <w:r w:rsidR="00AD4E62">
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>当局无法根据</w:t>
+      </w:r>
+      <w:bookmarkStart w:id="0" w:name="_GoBack"/>
+      <w:bookmarkEnd w:id="0"/>
+      <w:r w:rsidR="00AD4E62">
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>政府资助的冠病拭子检测</w:t>
+      </w:r>
+      <w:r w:rsidR="00AD4E62">
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>开具</w:t>
+      </w:r>
+      <w:r w:rsidR="00AD4E62">
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>离境前证明单</w:t>
+      </w:r>
+      <w:r w:rsidR="00AD4E62">
+        <w:rPr>
+          <w:rFonts w:hint="eastAsia"/>
+          <w:lang w:eastAsia="zh-CN"/>
+        </w:rPr>
+        <w:t>。</w:t>
+      </w:r>
+    </w:p>
+    <w:sectPr w:rsidR="00DA589B">
       <w:pgSz w:w="11906" w:h="16838"/>
       <w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440" w:header="708" w:footer="708" w:gutter="0"/>
       <w:cols w:space="708"/>

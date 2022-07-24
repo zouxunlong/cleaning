@@ -17,7 +17,7 @@ from combine_files import combine_files_in_dir
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 translator = Translator()
-bi_text_miner = Bi_text_miner(knn_neighbors=6, min_matching_score=1.06, min_cos_sim=0.7,
+bi_text_miner = Bi_text_miner(knn_neighbors=6, min_matching_score=0.99, min_cos_sim=0.65,
                               model_path_or_name='../model/labse_bert_model', sort_by_cos=False)
 
 model_fasttext = fasttext.load_model('../model/lid.176.bin')
@@ -191,7 +191,7 @@ def extend_texts_from_docx(docx_path, texts):
         items += get_all_paragraphs(header)
         items += get_all_paragraphs(footer)
 
-    texts.extend([item.text.strip() for item in items if item.text.strip()])
+    texts.extend([' '.join(item.text.split('\n')) for item in items if item.text.strip()])
 
 
 def extend_texts_from_file(file_path, texts):
@@ -214,7 +214,7 @@ def extend_texts_from_file(file_path, texts):
         extend_texts_from_docx(file_path, texts)
 
 
-rootdir = '/home/xuanlong/dataclean/data'
+rootdir = '/home/xuanlong/dataclean/data/en_ms/From Agencies'
 
 
 for root, dirs, files in os.walk(rootdir):
@@ -224,7 +224,8 @@ for root, dirs, files in os.walk(rootdir):
 
         file_path = os.path.join(root, file)
 
-        extend_texts_from_file(file_path, texts)
+        if file_path.endswith('.docx'):
+            extend_texts_from_file(file_path, texts)
 
         if i+1 < len(files) and os.path.splitext(file)[0][:-1].replace(' ', '') == os.path.splitext(files[i+1])[0][:-1].replace(' ', ''):
             continue
@@ -241,31 +242,31 @@ for root, dirs, files in os.walk(rootdir):
 
             with open(os.path.splitext(file_path)[0]+'.en-zh', 'w', encoding='utf8') as fOut:
                 for sentence_pair in en_zh_sentence_pair:
-                    fOut.write("{} | {}\n".format(
+                    fOut.write("{} ||| {}\n".format(
                         sentence_pair[0], sentence_pair[1]))
 
             with open(os.path.splitext(file_path)[0]+'.en-ms', 'w', encoding='utf8') as fOut:
                 for sentence_pair in en_ms_sentence_pair:
-                    fOut.write("{} | {}\n".format(
+                    fOut.write("{} ||| {}\n".format(
                         sentence_pair[0], sentence_pair[1]))
 
             with open(os.path.splitext(file_path)[0]+'.en-ta', 'w', encoding='utf8') as fOut:
                 for sentence_pair in en_ta_sentence_pair:
-                    fOut.write("{} | {}\n".format(
+                    fOut.write("{} ||| {}\n".format(
                         sentence_pair[0], sentence_pair[1]))
 
-            print(file_path)
+            print(file_path,flush=True)
             print('en_zh_sentence_pair number:{}'.format(
-                len(en_zh_sentence_pair)))
+                len(en_zh_sentence_pair)),flush=True)
             print('en_ms_sentence_pair number:{}'.format(
-                len(en_ms_sentence_pair)))
+                len(en_ms_sentence_pair)),flush=True)
             print('en_ta_sentence_pair number:{}'.format(
-                len(en_ta_sentence_pair)))
+                len(en_ta_sentence_pair)),flush=True)
 
             texts.clear()
 
 
-print('finished translated sentences mining')
+print('finished translated sentences mining',flush=True)
 
 
-combine_files_in_dir(rootdir)
+# combine_files_in_dir(rootdir)
