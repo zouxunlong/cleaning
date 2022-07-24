@@ -76,17 +76,18 @@ def lang_detect(text_for_lang_detect):
             if {'vi'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
                 lang_detected.add('vi')
 
-            if len(lang_detected)==0:
-                lang_by_google = translator.detect(
-                    text_for_lang_detect).lang[:2]
-                if lang_by_google in ['zh','ms','ta','en','th','vi']:
-                    lang_detected.add(lang_by_google)
+            # if len(lang_detected)==0:
+            #     lang_by_google = translator.detect(
+            #         text_for_lang_detect).lang[:2]
+            #     if lang_by_google in ['zh','ms','ta','en','th','vi']:
+            #         lang_detected.add(lang_by_google)
 
         except Exception as err:
             exception_type, exception_object, exception_traceback = sys.exc_info()
             filename = exception_traceback.tb_frame.f_code.co_filename
             line_number = exception_traceback.tb_lineno
 
+            print("text_for_lang_detect: ", text_for_lang_detect, flush=True)
             print("Exception type: ", exception_type, flush=True)
             print("File name: ", filename, flush=True)
             print("Line number: ", line_number, flush=True)
@@ -101,10 +102,11 @@ def allocate_text_by_lang(texts):
     texts_ms = []
     texts_zh = []
     texts_ta = []
-    lang_detected = ""
+    lang_detected = set()
     for text in texts:
-
-        lang_detected = lang_detect(text)
+        lang_detecting=lang_detect(text)
+        if len(lang_detecting)!=0:
+            lang_detected = lang_detecting
 
         if {"en"} & lang_detected:
             texts_en.append(text)
@@ -189,7 +191,7 @@ def extend_texts_from_docx(docx_path, texts):
         items += get_all_paragraphs(header)
         items += get_all_paragraphs(footer)
 
-    texts.extend([item.text for item in items if item.text.strip()])
+    texts.extend([item.text.strip() for item in items if item.text.strip()])
 
 
 def extend_texts_from_file(file_path, texts):
