@@ -45,7 +45,7 @@ class Prallel_miner:
 
             text_set = set(text_list)
             text_set_n_gram = set(
-                [*_2_gram_list, *_3_gram_list]) - text_set
+                [*_2_gram_list]) - text_set
 
             text_set_dict[lang] = (text_set, text_set_n_gram)
         return text_set_dict
