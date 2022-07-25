@@ -41,9 +41,7 @@ def split_files_in_dir(rootdir):
                 file = os.path.join(root, file)
                 split_file_by_lang(file, file+'.zh', file+'.en')
                 file_splited += 1
+        break
     print("Done. {} file splited".format(file_splited))
 
 
-if __name__ == '__main__':
-    rootdir = '/home/xuanlong/dataclean/extracted'
-    split_files_in_dir(rootdir)

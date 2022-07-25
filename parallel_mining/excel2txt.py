@@ -46,4 +46,3 @@ def main(input_path):
         print("invalid input_file")
 
 
-main(input_path="/home/xuanlong/dataclean/data")
