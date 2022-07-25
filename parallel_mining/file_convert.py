@@ -9,7 +9,7 @@ def pdf2docx_with_english_ocr_adobe(filepath):
         file_name = os.path.splitext(filepath)[0]
 
         returncode = subprocess.call(
-            ['node', 'src/exportpdf/export-pdf-to-docx.js', '{}.pdf'.format(file_name), '{}.docx'.format(file_name)])
+            ['node', 'src/exportpdf/export-pdf-to-docx.js', filepath, '{}.docx'.format(file_name)])
 
         if returncode != 0:
             print('failed convert {}'.format(filepath), flush=True)

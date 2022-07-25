@@ -1,0 +1,3 @@
+from parallel_mining.parallel_miner import Prallel_miner
+from parallel_mining.extract_texts import extract_texts
+from parallel_mining.combine_files import combine_files_in_dir
