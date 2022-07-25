@@ -45,5 +45,5 @@ def split_files_in_dir(rootdir):
 
 
 if __name__ == '__main__':
-    rootdir = '/home/xuanlong/dataclean/data/extract'
+    rootdir = '/home/xuanlong/dataclean/extracted'
     split_files_in_dir(rootdir)

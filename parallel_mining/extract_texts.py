@@ -1,5 +1,6 @@
 from pathlib import Path
 import plac
+import re
 from docx import Document
 from docx import Document
 from docx.oxml.shared import qn
@@ -81,6 +82,10 @@ def extract_texts(docx_path):
         items += get_all_paragraphs(header)
         items += get_all_paragraphs(footer)
 
-    texts = [' '.join(item.text.split('\n'))
-             for item in items if item.text.strip()]
+    texts = [
+        re.sub(
+            '^([0-9i]{1,3}\.|[•-])([^0-9])',
+            '\\2',
+            ' '.join(item.text.split())).replace('|||', ' ').strip()
+        for item in items if item.text.strip()]
     return texts

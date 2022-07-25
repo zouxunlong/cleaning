@@ -1,4 +1,5 @@
 import os
+import re
 import json
 import plac
 from pathlib import Path
@@ -12,9 +13,18 @@ def extract_sentences(input_path, output_path):
     df = pd.read_excel(input_path, header=None)
 
     with open(output_path, "w", encoding="utf8") as fOut:
-        for i, [sentence0, sentence1, sentence2, sentence3] in enumerate(df.loc[:,[0,1,2,3]].values):
+        for i, [sentence0, sentence1, sentence2, sentence3] in enumerate(df.loc[:, [0, 1, 2, 3]].values):
             if i > 0:
-                fOut.write('{} ||| {}'.format(' '.join(sentence1.split('\n')), ' '.join(sentence2.split('\n')))+"\n")
+                sentence1 = re.sub(
+                    '^([0-9i]{1,3}\.|[•-])([^0-9])',
+                    '\\2',
+                    ' '.join(sentence1.split())).replace('|||', ' ').strip()
+                sentence2 = re.sub(
+                    '^([0-9i]{1,3}\.|[•-])([^0-9])',
+                    '\\2',
+                    ' '.join(sentence2.split())).replace('|||', ' ').strip()
+                if sentence1 and sentence2:
+                    fOut.write('{} ||| {}\n'.format(sentence1, sentence2))
 
 
 def main(input_path):

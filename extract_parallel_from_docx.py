@@ -1,6 +1,5 @@
 import sys
 from pathlib import Path
-import plac
 import pycld2 as cld2
 import cld3
 import fasttext
@@ -8,19 +7,17 @@ import os
 import re
 import string
 from googletrans import Translator
-from parallel_mining import Prallel_miner, extract_texts
+from parallel_mining import Prallel_miner, extract_texts, combine_files_in_dir
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 translator = Translator()
+model_fasttext = fasttext.load_model('./model/lid.176.bin')
 
 parallel_miner = Prallel_miner(knn_neighbors=6, min_matching_score=0.99, min_cos_sim=0.65,
-                              model_path_or_name='../model/labse_bert_model', sort_by_cos=False)
-
-model_fasttext = fasttext.load_model('../model/lid.176.bin')
+                              model_path_or_name='./model/labse_bert_model', sort_by_cos=False)
 
 
-punctuation = r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~，。、‘’“”：；【】·！￥★…《》？！（）—"""
 pattern_punctuation = r"""[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~，。、‘’“”：；【】·！￥★…《》？！（）—]"""
 pattern_url = r"[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"
 pattern_email = r"[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}"
@@ -108,7 +105,7 @@ def allocate_text_by_lang(texts):
         elif {"id", "ms"} & lang_detected:
             texts_ms.append(text)
         elif {"zh"} & lang_detected:
-            texts_zh.append(text.replace(" ", ""))
+            texts_zh.append(text)
         elif {"ta"} & lang_detected:
             texts_ta.append(text)
         elif {"vi"} & lang_detected:
@@ -120,8 +117,7 @@ def allocate_text_by_lang(texts):
 
 
 
-@plac.opt('docx_path', "Input File", type=Path)
-def main(docx_path='/home/xuanlong/dataclean/4G leaders must show unity of purpose (YKC)(E-C) (post-edit, changes tracked & faired - ykc) 2022-03-01.docx'):
+def extract_docx(docx_path):
 
     if not str(docx_path).endswith('.docx'):
         return
@@ -171,5 +167,68 @@ def main(docx_path='/home/xuanlong/dataclean/4G leaders must show unity of purpo
     texts.clear()
 
 
-if __name__ == '__main__':
-    plac.call(main)
+def extract_dir(root_dir='./file_upload'):
+
+    if not os.path.isdir(root_dir):
+        return
+
+    texts = []
+
+    for root, dirs, files in os.walk(root_dir):
+        files.sort()
+
+        for i, file in enumerate(files):
+
+            file_path = os.path.join(root, file)
+
+            if file_path.endswith('.docx'):
+                texts.extend(extract_texts(file_path))
+
+            if i+1 < len(files) and os.path.splitext(file)[0][:-1].replace(' ', '') == os.path.splitext(files[i+1])[0][:-1].replace(' ', ''):
+                continue
+
+            if not texts:
+                continue
+
+            text_list_dict = allocate_text_by_lang(texts)
+
+            text_set_dict = parallel_miner.list_to_set(text_list_dict)
+
+            en_zh_sentence_pair = parallel_miner.sentence_matching(
+                text_set_dict['en'], text_set_dict['zh'])
+            en_ms_sentence_pair = parallel_miner.sentence_matching(
+                text_set_dict['en'], text_set_dict['ms'])
+            en_ta_sentence_pair = parallel_miner.sentence_matching(
+                text_set_dict['en'], text_set_dict['ta'])
+
+            if en_zh_sentence_pair:
+                with open(os.path.splitext(file_path)[0]+'.en-zh', 'w', encoding='utf8') as fOut:
+                    for sentence_pair in en_zh_sentence_pair:
+                        fOut.write("{} ||| {}\n".format(
+                            sentence_pair[0], sentence_pair[1]))
+
+            if en_ms_sentence_pair:
+                with open(os.path.splitext(file_path)[0]+'.en-ms', 'w', encoding='utf8') as fOut:
+                    for sentence_pair in en_ms_sentence_pair:
+                        fOut.write("{} ||| {}\n".format(
+                            sentence_pair[0], sentence_pair[1]))
+
+            if en_ta_sentence_pair:
+                with open(os.path.splitext(file_path)[0]+'.en-ta', 'w', encoding='utf8') as fOut:
+                    for sentence_pair in en_ta_sentence_pair:
+                        fOut.write("{} ||| {}\n".format(
+                            sentence_pair[0], sentence_pair[1]))
+
+            print(file_path, flush=True)
+            print('en_zh_sentence_pair number:{}'.format(
+                len(en_zh_sentence_pair)), flush=True)
+            print('en_ms_sentence_pair number:{}'.format(
+                len(en_ms_sentence_pair)), flush=True)
+            print('en_ta_sentence_pair number:{}'.format(
+                len(en_ta_sentence_pair)), flush=True)
+
+            texts.clear()
+
+
+extract_dir('/home/xuanlong/dataclean/data')
+combine_files_in_dir('/home/xuanlong/dataclean/data')
