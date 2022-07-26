@@ -88,4 +88,18 @@ def extract_texts(docx_path):
             '\\2',
             ' '.join(item.text.split())).replace('|||', ' ').strip()
         for item in items if item.text.strip()]
+
+    additional_texts=set()
+
+    for text in texts:
+        if re.search(r'[\(\[（【】）\]\)]', text):
+            # find all Brackets content and the words sequence in front of Brackets, 
+            # return format: ('words sequence','word infront','Brackets content')
+            results = re.findall(
+                r'(?=((\s[^\s】）\]\)]+){2,6})\s?[\(\[（【](.+?)[】）\]\)])', text)
+            for tuple in results:
+                additional_texts.update(tuple)
+    
+    texts.extend([text.strip() for text in additional_texts])
+
     return texts

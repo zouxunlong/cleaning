@@ -44,4 +44,5 @@ def split_files_in_dir(rootdir):
         break
     print("Done. {} file splited".format(file_splited))
 
-
+if __name__=="__main__":
+    split_files_in_dir('/home/xuanlong/dataclean/data')
