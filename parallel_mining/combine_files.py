@@ -27,3 +27,4 @@ def combine_files_in_dir(rootdir):
     print("Done. {} file combined".format(file_combined),flush=True)
 
 
+# combine_files_in_dir('/home/xuanlong/dataclean/data/Batch_15_extracted')

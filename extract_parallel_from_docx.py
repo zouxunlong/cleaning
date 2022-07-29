@@ -15,10 +15,9 @@ translator = Translator()
 model_fasttext = fasttext.load_model('./model/lid.176.bin')
 
 parallel_miner = Prallel_miner(knn_neighbors=6, min_matching_score=0.99, min_cos_sim=0.65,
-                              model_path_or_name='./model/labse_bert_model', sort_by_cos=False)
+                               model_path_or_name='./model/labse_bert_model', sort_by_cos=False)
 
-
-pattern_punctuation = r"""[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~，。、‘’“”：；【】·！￥★…《》？！（）—]"""
+pattern_punctuation = r"""[!?,.:;"#$£€%&'()+-/<≤=≠≥>@[\]^_{|}，。、—‘’“”：；【】￥…《》？！（）]"""
 pattern_url = r"[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"
 pattern_email = r"[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}"
 pattern_arabic = r"[\u0600-\u06FF]"
@@ -28,14 +27,18 @@ pattern_russian = r"[\u0400-\u04FF]"
 pattern_korean = r"[\uac00-\ud7a3]"
 pattern_japanese = r"[\u3040-\u30ff\u31f0-\u31ff]"
 pattern_vietnamese = r"[àáãạảăắằẳẵặâấầẩẫậèéẹẻẽêềếểễệđìíĩỉịòóõọỏôốồổỗộơớờởỡợùúũụủưứừửữựỳỵỷỹýÀÁÃẠẢĂẮẰẲẴẶÂẤẦẨẪẬÈÉẸẺẼÊỀẾỂỄỆĐÌÍĨỈỊÒÓÕỌỎÔỐỒỔỖỘƠỚỜỞỠỢÙÚŨỤỦƯỨỪỬỮỰỲỴỶỸÝ]"
+pattern_emoji = r'[\U0001F1E0-\U0001F1FF\U0001F300-\U0001F64F\U0001F680-\U0001FAFF\U00002702-\U000027B0]'
 
 
-def lang_detect(text_for_lang_detect):
+def lang_detect(text_for_lang_detect1):
 
     lang_detected = set()
 
-    text_for_lang_detect = ' '.join(re.sub("{}|{}|{}".format(
-        pattern_url, pattern_email, pattern_punctuation), " ", text_for_lang_detect, 0, re.I).split()).strip().lower()
+    text_for_lang_detect = ' '.join(re.sub(r"{}|{}|{}".format(
+        pattern_url,
+        pattern_email,
+        pattern_punctuation
+    ), " ", text_for_lang_detect1, 0, re.I).split()).strip().lower()
 
     if text_for_lang_detect:
         if re.search(pattern_arabic, text_for_lang_detect):
@@ -96,11 +99,13 @@ def allocate_text_by_lang(texts):
     texts_th = []
     lang_detected = set()
     for text in texts:
-        lang_detecting=lang_detect(text)
-        if len(lang_detecting)!=0:
+        lang_detecting = lang_detect(text)
+        if len(lang_detecting) != 0:
             lang_detected = lang_detecting
 
-        if {"en"} & lang_detected:
+        if {"en"} & lang_detected and {"zh"} & lang_detected:
+            continue
+        elif {"en"} & lang_detected:
             texts_en.append(text)
         elif {"id", "ms"} & lang_detected:
             texts_ms.append(text)
@@ -116,20 +121,20 @@ def allocate_text_by_lang(texts):
     return {'en': texts_en, 'ms': texts_ms, 'zh': texts_zh, 'ta': texts_ta, 'vi': texts_vi, 'th': texts_th}
 
 
-
 def extract_docx(docx_path):
 
     if not str(docx_path).endswith('.docx'):
         return
-    
-    texts=extract_texts(docx_path)
+
+    texts = extract_texts(docx_path)
 
     if not texts:
-        return 
+        return
 
     text_list_dict = allocate_text_by_lang(texts)
 
     text_set_dict = parallel_miner.list_to_set(text_list_dict)
+    print(text_set_dict['en'][0])
 
     en_zh_sentence_pair = parallel_miner.sentence_matching(
         text_set_dict['en'], text_set_dict['zh'])
@@ -156,13 +161,13 @@ def extract_docx(docx_path):
                 fOut.write("{} ||| {}\n".format(
                     sentence_pair[0], sentence_pair[1]))
 
-    print(docx_path,flush=True)
+    print(docx_path, flush=True)
     print('en_zh_sentence_pair number:{}'.format(
-        len(en_zh_sentence_pair)),flush=True)
+        len(en_zh_sentence_pair)), flush=True)
     print('en_ms_sentence_pair number:{}'.format(
-        len(en_ms_sentence_pair)),flush=True)
+        len(en_ms_sentence_pair)), flush=True)
     print('en_ta_sentence_pair number:{}'.format(
-        len(en_ta_sentence_pair)),flush=True)
+        len(en_ta_sentence_pair)), flush=True)
 
     texts.clear()
 
@@ -204,6 +209,7 @@ def extract_dir(root_dir='./file_upload'):
             if en_zh_sentence_pair:
                 with open(os.path.splitext(file_path)[0]+'.en-zh', 'w', encoding='utf8') as fOut:
                     for sentence_pair in en_zh_sentence_pair:
+
                         fOut.write("{} ||| {}\n".format(
                             sentence_pair[0], sentence_pair[1]))
 
@@ -232,3 +238,4 @@ def extract_dir(root_dir='./file_upload'):
 
 extract_dir('/home/xuanlong/dataclean/data')
 combine_files_in_dir('/home/xuanlong/dataclean/data')
+# print(lang_detect('decarbonisation'))
