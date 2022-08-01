@@ -16,7 +16,7 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 _HOST = 'localhost'
 _PORT = '19530'
-_DIM = 256
+_DIM = 768
 _INDEX_FILE_SIZE = 1024
 
 milvus = Milvus(host=_HOST, port=_PORT)
@@ -45,7 +45,7 @@ def _create_collection(collection_name):
 
 def retreive_data():
     results = collection.find(
-        {}, {'sentence_src': 1, 'sentence_tgt': 1, 'milvus_id': 1})
+        {}, {'sentence_src': 1, 'sentence_tgt': 1, 'milvus_id': 1}).limit(1000)
     sentences_src = []
     sentences_tgt = []
     milvus_ids = []
@@ -84,7 +84,7 @@ def _insert(collection_name, vectors, milvus_ids):
 
 def query(collection_name, query):
 
-    query_vector = model_sentence_transformers.encode(query,
+    query_vector = model_sentence_transformers.encode([query],
                                                       show_progress_bar=False,
                                                       convert_to_numpy=True,
                                                       normalize_embeddings=True)
@@ -93,7 +93,7 @@ def query(collection_name, query):
 
     param = {
         'collection_name': collection_name,
-        'query_records': query_vectors,
+        'query_records': query_vector,
         'top_k': 2,
         'params': search_param,
     }
@@ -101,14 +101,6 @@ def query(collection_name, query):
     status, results = milvus.search(**param)
 
     if status.OK():
-        # indicate search result
-        # also use by:
-        #   `results.distance_array[0][0] == 0.0 or results.id_array[0][0] == ids[0]`
-        if results[0][0].distance == 0.0 or results[0][0].id == ids[0]:
-            print('Query result is correct')
-        else:
-            print('Query result isn\'t correct')
-
         print(results)
     else:
         print("Search failed. ", status)
@@ -130,4 +122,11 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    results=query('tarun_test','He looked backed and smiled at the men behind them, who, as he was already aware')
+    print(results.id_array)
+    print(results.distance_array)
+    for (i, milvus_id), (j, distance) in zip(enumerate(results.id_array[0]), enumerate(results.distance_array[0])):
+        print(milvus_id)
+        print(distance)
+        sentence=collection.find_one({"milvus_id":milvus_id})["sentence_src"]
+        print(sentence)
