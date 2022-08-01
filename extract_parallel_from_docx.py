@@ -235,7 +235,6 @@ def extract_dir(root_dir='./file_upload'):
 
             texts.clear()
 
-
-extract_dir('/home/xuanlong/dataclean/data')
-combine_files_in_dir('/home/xuanlong/dataclean/data')
-# print(lang_detect('decarbonisation'))
+if __name__="__main__":
+    extract_dir('/home/xuanlong/dataclean/data')
+    combine_files_in_dir('/home/xuanlong/dataclean/data')
