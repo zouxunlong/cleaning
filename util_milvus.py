@@ -38,24 +38,10 @@ def _create_collection(collection_name):
 
         milvus.create_collection(param)
 
-    print(milvus.list_collections())
-    print(milvus.get_collection_info(collection_name))
-    print(milvus.get_collection_stats(collection_name))
-    print(milvus.get_index_info(collection_name))
-
-
-def retreive_data():
-    results = collection.find(
-        {"_id":{"$gt":1000000000001000000,"$lte":1000000000002000000}}, {'sentence_src': 1, 'sentence_tgt': 1, '_id': 1})
-    sentences_src = []
-    sentences_tgt = []
-    milvus_ids = []
-    for item in results:
-        sentences_src.append(item['sentence_src'])
-        sentences_tgt.append(item['sentence_tgt'])
-        milvus_ids.append(item['_id'])
-
-    return sentences_src, sentences_tgt, milvus_ids
+    print(milvus.list_collections(), flush=True)
+    print(milvus.get_collection_info(collection_name), flush=True)
+    print(milvus.get_collection_stats(collection_name), flush=True)
+    print(milvus.get_index_info(collection_name), flush=True)
 
 
 def _insert(collection_name, vectors, milvus_ids):
@@ -65,19 +51,14 @@ def _insert(collection_name, vectors, milvus_ids):
                                 ids=milvus_ids)
 
     if not status.OK():
-        print("Insert failed: {}".format(status))
+        print("Insert failed: {}".format(status), flush=True)
 
     milvus.flush([collection_name])
 
     status, result = milvus.count_entities(collection_name)
 
-    # index_param = {'nlist': 2048}
-    # status = milvus.create_index(collection_name,
-    #                              IndexType.IVF_FLAT,
-    #                              index_param)
-
-    print(milvus.get_collection_stats(collection_name))
-    print(milvus.get_index_info(collection_name))
+    print(milvus.get_collection_stats(collection_name), flush=True)
+    print(milvus.get_index_info(collection_name), flush=True)
 
 
 def query(collection_name, query):
@@ -99,9 +80,9 @@ def query(collection_name, query):
     status, results = milvus.search(**param)
 
     if status.OK():
-        print(results)
+        print(results, flush=True)
     else:
-        print("Search failed. ", status)
+        print("Search failed. ", status, flush=True)
 
     return results
 
@@ -110,25 +91,40 @@ def main():
 
     _create_collection('wukui')
 
-    sentences_src, sentences_tgt, ids = retreive_data()
+    results = collection.find({"_id": {"$gt": 1000000000000100000}}, {'sentence_src': 1, 'sentence_tgt': 1, '_id': 1})
+    sentences_src = []
+    sentences_tgt = []
+    milvus_ids = []
+    for item in results:
+        sentences_src.append(item['sentence_src'])
+        sentences_tgt.append(item['sentence_tgt'])
+        milvus_ids.append(item['_id'])
 
-    print('start embedding', flush = True)
+        if item['_id'] % 50000 == 0:
 
-    # embeddings = model_sentence_transformers.encode(
-    #     sentences_src, show_progress_bar=True, convert_to_numpy=True, normalize_embeddings=True)
+            embeddings = model_sentence_transformers.encode(
+                sentences_src, show_progress_bar=False, convert_to_numpy=True, normalize_embeddings=True)
+
+            assert len(embeddings) == len(milvus_ids), "length of embeddings and ids don't match"
+
+            _insert('wukui', embeddings, milvus_ids)
+
+            sentences_src.clear()
+            sentences_tgt.clear()
+            milvus_ids.clear()
+            print(item['_id'], flush=True)
+
+    embeddings = model_sentence_transformers.encode(
+        sentences_src, show_progress_bar=True, convert_to_numpy=True, normalize_embeddings=True)
+
+    assert len(embeddings) == len(milvus_ids), "length of embeddings and ids don't match"
     
-    pool = model_sentence_transformers.start_multi_process_pool()
-    embeddings = model_sentence_transformers.encode_multi_process(
-        sentences_src, pool)
-    model_sentence_transformers.stop_multi_process_pool(pool)
+    _insert('wukui', embeddings, milvus_ids)
 
-    print('end embedding', flush = True)
-
-    assert len(embeddings) == len(
-        ids), "length of embeddings and ids don't match"
-
-    _insert('wukui', embeddings, ids)
-
+    sentences_src.clear()
+    sentences_tgt.clear()
+    milvus_ids.clear()
+    print('all finished', flush=True)
 
 if __name__ == "__main__":
     # results=query('tarun_test','He looked backed and smiled at the men behind them, who, as he was already aware')
@@ -139,4 +135,14 @@ if __name__ == "__main__":
     #     print(distance)
     #     sentence=collection.find_one({"milvus_id":milvus_id})["sentence_src"]
     #     print(sentence)
+
     main()
+
+    # index_param = {'nlist': 2048}
+    # status = milvus.create_index('wukui',
+    #                              IndexType.IVF_FLAT,
+    #                              index_param)
+    print(milvus.list_collections(), flush=True)
+    print(milvus.get_collection_info('wukui'), flush=True)
+    print(milvus.get_collection_stats('wukui'), flush=True)
+    print(milvus.get_index_info('wukui'), flush=True)
