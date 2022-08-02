@@ -46,7 +46,7 @@ def _create_collection(collection_name):
 
 def retreive_data():
     results = collection.find(
-        {"_id":{"$lte":1000000000001000000}}, {'sentence_src': 1, 'sentence_tgt': 1, '_id': 1})
+        {"_id":{"$gt":1000000000001000000,"$lte":1000000000002000000}}, {'sentence_src': 1, 'sentence_tgt': 1, '_id': 1})
     sentences_src = []
     sentences_tgt = []
     milvus_ids = []
@@ -71,11 +71,10 @@ def _insert(collection_name, vectors, milvus_ids):
 
     status, result = milvus.count_entities(collection_name)
 
-    index_param = {'nlist': 2048}
-
-    status = milvus.create_index(collection_name,
-                                 IndexType.IVF_FLAT,
-                                 index_param)
+    # index_param = {'nlist': 2048}
+    # status = milvus.create_index(collection_name,
+    #                              IndexType.IVF_FLAT,
+    #                              index_param)
 
     print(milvus.get_collection_stats(collection_name))
     print(milvus.get_index_info(collection_name))
@@ -115,8 +114,13 @@ def main():
 
     print('start embedding', flush = True)
 
-    embeddings = model_sentence_transformers.encode(
-        sentences_src, show_progress_bar=True, convert_to_numpy=True, normalize_embeddings=True)
+    # embeddings = model_sentence_transformers.encode(
+    #     sentences_src, show_progress_bar=True, convert_to_numpy=True, normalize_embeddings=True)
+    
+    pool = model_sentence_transformers.start_multi_process_pool()
+    embeddings = model_sentence_transformers.encode_multi_process(
+        sentences_src, pool)
+    model_sentence_transformers.stop_multi_process_pool(pool)
 
     print('end embedding', flush = True)
 
