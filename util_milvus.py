@@ -116,7 +116,7 @@ def main():
             print(item['_id'], flush=True)
 
     embeddings = model_sentence_transformers.encode(
-        sentences_src, show_progress_bar=True, convert_to_numpy=True, normalize_embeddings=True)
+        sentences_src, show_progress_bar=False, convert_to_numpy=True, normalize_embeddings=True)
 
     assert len(embeddings) == len(milvus_ids), "length of embeddings and ids don't match"
     
