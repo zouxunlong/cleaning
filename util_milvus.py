@@ -143,6 +143,7 @@ if __name__ == "__main__":
     # status = milvus.create_index(milvus_collection_name,
     #                              IndexType.IVF_FLAT,
     #                              index_param)
+    # print(milvus.drop_collection('airflow'), flush=True)
     print(milvus.list_collections(), flush=True)
     print(milvus.get_collection_info(milvus_collection_name), flush=True)
     print(milvus.get_collection_stats(milvus_collection_name), flush=True)
