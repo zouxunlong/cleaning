@@ -23,7 +23,7 @@ _INDEX_FILE_SIZE = 2048
 milvus = Milvus(host=_HOST, port=_PORT)
 
 # model_sentence_transformers = SentenceTransformer('./model/labse_bert_model')
-# model_sentence_transformers = SentenceTransformer('all-mpnet-base-v2')
+model_sentence_transformers = SentenceTransformer('all-mpnet-base-v2')
 
 
 def _create_collection(collection_name):
