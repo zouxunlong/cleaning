@@ -10,7 +10,7 @@ MONGODB_CONNECTION_STRING = 'mongodb://localhost:27017/'
 mongo_client = MongoClient(MONGODB_CONNECTION_STRING)
 
 db = mongo_client['mlops']
-collection = db['wk']
+collection = db['airflow']
 
 
 def get_analyzer(lang):
@@ -87,6 +87,27 @@ def insert_data2(jl_path, lang_src, lang_tgt):
         print(err, flush=True)
 
 
+def insert_data3(jl_path):
+    try:
+        with open(jl_path, 'r', encoding='utf-8') as f_in:
+            i = 1000000000000000001
+            for j, line in enumerate(f_in):
+                item = json.loads(line)
+
+                result = collection.insert_one(
+                    {'_id': i+j,
+                     'sentence_src': item["sentence_src"].strip(),
+                     'sentence_tgt': item["sentence_tgt"].strip(),
+                     'lang_src': item["source_lang"],
+                     'lang_tgt': item["target_lang"],
+                     'data_source': 'airflow',
+                     'domain': ['full-domain', 'news']})
+
+        print("finished insert documents.", flush=True)
+    except Exception as err:
+        print(err, flush=True)
+
+
 def build_index_text():
 
     # collection.create_index(
@@ -143,14 +164,15 @@ def build_array():
 
 
 def build_int_index():
-    i=1000000000000000001
+    i = 1000000000000000001
     try:
-        result = collection.find({},{ "_id": 1 })
+        result = collection.find({}, {"_id": 1})
         for item in result:
-            collection.update_one({'_id':item['_id']}, {'$set':{'milvus_id':i}})
-            i+=1
-            if i%100000==0:
-                print(i,flush=True)
+            collection.update_one({'_id': item['_id']}, {
+                                  '$set': {'milvus_id': i}})
+            i += 1
+            if i % 100000 == 0:
+                print(i, flush=True)
     except Exception as err:
         print(err, flush=True)
         print(i, flush=True)
@@ -189,10 +211,10 @@ def search_query(query, lang):
 
 
 if __name__ == "__main__":
-    # insert_data('./data/full-domain.en', './data/full-domain.zh', 'en', 'zh')
+    insert_data3('./data/translated_sentence.en')
     # build_index_text()
     # build_array()
     # print(collection.index_information())
     # search_query("this is singapore's best food", "en")
-    build_int_index()
+    # build_int_index()
     print("finished", flush=True)
