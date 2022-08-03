@@ -15,7 +15,7 @@ milvus_collection_name = 'airflow'
 torch.cuda.set_device(0)
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
-_HOST = 'localhost'
+_HOST = '127.0.0.1'
 _PORT = '19530'
 _DIM = 768
 _INDEX_FILE_SIZE = 2048
