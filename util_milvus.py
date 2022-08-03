@@ -9,8 +9,8 @@ MONGODB_CONNECTION_STRING = 'mongodb://localhost:27017/'
 mongo_client = MongoClient(MONGODB_CONNECTION_STRING)
 
 db = mongo_client['mlops']
-collection_name = 'wukui'
-collection = db.collection_name
+collection = db['airflow']
+milvus_collection_name = 'airflow'
 
 torch.cuda.set_device(0)
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
@@ -18,7 +18,7 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 _HOST = 'localhost'
 _PORT = '19530'
 _DIM = 768
-_INDEX_FILE_SIZE = 1024
+_INDEX_FILE_SIZE = 2048
 
 milvus = Milvus(host=_HOST, port=_PORT)
 
@@ -90,9 +90,9 @@ def query(collection_name, query):
 
 def main():
 
-    _create_collection('wukui')
+    _create_collection(milvus_collection_name)
 
-    results = collection.find({"_id": {"$gt": 1000000000000100000}}, {'sentence_src': 1, 'sentence_tgt': 1, '_id': 1})
+    results = collection.find({}, {'sentence_src': 1, 'sentence_tgt': 1, '_id': 1})
     sentences_src = []
     sentences_tgt = []
     milvus_ids = []
@@ -108,7 +108,7 @@ def main():
 
             assert len(embeddings) == len(milvus_ids), "length of embeddings and ids don't match"
 
-            _insert('wukui', embeddings, milvus_ids)
+            _insert(milvus_collection_name, embeddings, milvus_ids)
 
             sentences_src.clear()
             sentences_tgt.clear()
@@ -120,7 +120,7 @@ def main():
 
     assert len(embeddings) == len(milvus_ids), "length of embeddings and ids don't match"
     
-    _insert('wukui', embeddings, milvus_ids)
+    _insert(milvus_collection_name, embeddings, milvus_ids)
 
     sentences_src.clear()
     sentences_tgt.clear()
@@ -129,21 +129,21 @@ def main():
 
 
 if __name__ == "__main__":
-    results=query(collection_name,"I'll have to let you know later what I think.")
-    print(results.id_array)
-    print(results.distance_array)
-    for (i, milvus_id), (j, distance) in zip(enumerate(results.id_array[0]), enumerate(results.distance_array[0])):
-        print(milvus_id)
-        print(distance)
-        sentence=collection.find_one({"_id":milvus_id})["sentence_src"]
-        print(sentence)
+    # results=query(collection_name,"I'll have to let you know later what I think.")
+    # print(results.id_array)
+    # print(results.distance_array)
+    # for (i, milvus_id), (j, distance) in zip(enumerate(results.id_array[0]), enumerate(results.distance_array[0])):
+    #     print(milvus_id)
+    #     print(distance)
+    #     sentence=collection.find_one({"_id":milvus_id})["sentence_src"]
+    #     print(sentence)
 
-    # main()
-    # index_param = {'nlist': 2048}
-    # status = milvus.create_index('wukui',
+    main()
+    # index_param = {'nlist': 10240}
+    # status = milvus.create_index(milvus_collection_name,
     #                              IndexType.IVF_FLAT,
     #                              index_param)
-    # print(milvus.list_collections(), flush=True)
-    # print(milvus.get_collection_info('wukui'), flush=True)
-    # print(milvus.get_collection_stats('wukui'), flush=True)
-    # print(milvus.get_index_info('wukui'), flush=True)
+    print(milvus.list_collections(), flush=True)
+    print(milvus.get_collection_info(milvus_collection_name), flush=True)
+    print(milvus.get_collection_stats(milvus_collection_name), flush=True)
+    print(milvus.get_index_info(milvus_collection_name), flush=True)
