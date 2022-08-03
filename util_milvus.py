@@ -9,7 +9,8 @@ MONGODB_CONNECTION_STRING = 'mongodb://localhost:27017/'
 mongo_client = MongoClient(MONGODB_CONNECTION_STRING)
 
 db = mongo_client['mlops']
-collection = db['wukui']
+collection_name = 'wukui'
+collection = db.collection_name
 
 torch.cuda.set_device(0)
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
@@ -68,12 +69,12 @@ def query(collection_name, query):
                                                       convert_to_numpy=True,
                                                       normalize_embeddings=True)
 
-    search_param = {"nprobe": 100}
+    search_param = {"nprobe": 1}
 
     param = {
         'collection_name': collection_name,
         'query_records': query_vector,
-        'top_k': 2,
+        'top_k': 10,
         'params': search_param,
     }
 
@@ -126,23 +127,23 @@ def main():
     milvus_ids.clear()
     print('all finished', flush=True)
 
+
 if __name__ == "__main__":
-    # results=query('tarun_test','He looked backed and smiled at the men behind them, who, as he was already aware')
-    # print(results.id_array)
-    # print(results.distance_array)
-    # for (i, milvus_id), (j, distance) in zip(enumerate(results.id_array[0]), enumerate(results.distance_array[0])):
-    #     print(milvus_id)
-    #     print(distance)
-    #     sentence=collection.find_one({"milvus_id":milvus_id})["sentence_src"]
-    #     print(sentence)
+    results=query(collection_name,"I'll have to let you know later what I think.")
+    print(results.id_array)
+    print(results.distance_array)
+    for (i, milvus_id), (j, distance) in zip(enumerate(results.id_array[0]), enumerate(results.distance_array[0])):
+        print(milvus_id)
+        print(distance)
+        sentence=collection.find_one({"_id":milvus_id})["sentence_src"]
+        print(sentence)
 
-    main()
-
+    # main()
     # index_param = {'nlist': 2048}
     # status = milvus.create_index('wukui',
     #                              IndexType.IVF_FLAT,
     #                              index_param)
-    print(milvus.list_collections(), flush=True)
-    print(milvus.get_collection_info('wukui'), flush=True)
-    print(milvus.get_collection_stats('wukui'), flush=True)
-    print(milvus.get_index_info('wukui'), flush=True)
+    # print(milvus.list_collections(), flush=True)
+    # print(milvus.get_collection_info('wukui'), flush=True)
+    # print(milvus.get_collection_stats('wukui'), flush=True)
+    # print(milvus.get_index_info('wukui'), flush=True)
