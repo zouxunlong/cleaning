@@ -12,7 +12,7 @@ db = mongo_client['mlops']
 collection = db['airflow']
 milvus_collection_name = 'airflow'
 
-torch.cuda.set_device(0)
+torch.cuda.set_device(1)
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 _HOST = '127.0.0.1'
@@ -23,7 +23,7 @@ _INDEX_FILE_SIZE = 2048
 milvus = Milvus(host=_HOST, port=_PORT)
 
 # model_sentence_transformers = SentenceTransformer('./model/labse_bert_model')
-model_sentence_transformers = SentenceTransformer('all-mpnet-base-v2')
+# model_sentence_transformers = SentenceTransformer('all-mpnet-base-v2')
 
 
 def _create_collection(collection_name):
@@ -138,12 +138,13 @@ if __name__ == "__main__":
     #     sentence=collection.find_one({"_id":milvus_id})["sentence_src"]
     #     print(sentence)
 
-    main()
-    # index_param = {'nlist': 10240}
-    # status = milvus.create_index(milvus_collection_name,
-    #                              IndexType.IVF_FLAT,
-    #                              index_param)
-    # print(milvus.drop_collection('airflow'), flush=True)
+    # main()
+    index_param = {'nlist': 4096}
+    status = milvus.create_index(milvus_collection_name,
+                                 IndexType.IVF_FLAT,
+                                 index_param)
+    print('success', flush=True)
+    # print(milvus.drop_index(milvus_collection_name), flush=True)
     print(milvus.list_collections(), flush=True)
     print(milvus.get_collection_info(milvus_collection_name), flush=True)
     print(milvus.get_collection_stats(milvus_collection_name), flush=True)
