@@ -143,7 +143,8 @@ def main(input_1,
                 continue
             f_out_en.write(sentence_en)
             f_out_id.write(sentence_id)
-    print("finished", flush=True)
+
+    print("finished {}".format(i), flush=True)
     print("--- %s seconds ---" % (time.time() - start_time), flush=True)
 
 

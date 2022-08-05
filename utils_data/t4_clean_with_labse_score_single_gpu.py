@@ -23,7 +23,7 @@ def embedding_saving(sentences_src, sentences_tgt, file_path_out):
         for k in range(len(cosine_scores)):
             cosine_score = cosine_scores[k][k]
             if cosine_score >= 0.7:
-                f_out.write("{:.4f} | {} | {}\n".format(
+                f_out.write("{:.4f} | {} ||| {}\n".format(
                     cosine_score, sentences_src[k].replace("|", " "), sentences_tgt[k].replace("|", " ")))
 
 
