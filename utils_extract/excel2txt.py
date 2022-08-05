@@ -1,10 +1,5 @@
 import os
 import re
-import json
-import plac
-from pathlib import Path
-from sentsplit.segment import SentSplit
-import html
 import pandas as pd
 
 
@@ -32,7 +27,7 @@ def main(input_path):
     if os.path.isfile(input_path):
         if input_path.endswith('.xlsx'):
             output_file = input_path.replace('.xlsx', '.txt')
-            extract_sentences(str(input_path), str(output_path))
+            extract_sentences(str(input_path), str(output_file))
 
     elif os.path.isdir(input_path):
         for rootdir, dirs, files in os.walk(input_path):

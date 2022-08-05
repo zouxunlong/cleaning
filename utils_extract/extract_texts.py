@@ -1,12 +1,10 @@
-from pathlib import Path
-import plac
 import re
 from docx import Document
 from docx import Document
 from docx.oxml.shared import qn
 from docx.text.paragraph import Paragraph
 from docx.text.run import Run, _Text
-
+from utils_extract import Reg_Exp
 
 def get_paragraph_runs(paragraph):
     def _get(node):
@@ -69,17 +67,6 @@ def get_all_paragraphs(node):
     return list(_get(node._element))
 
 
-pattern_punctuation = r"""[!?,.:;"#$£€%&'()+-_/<≤=≠≥>@[\]^{|}，。、—‘’“”：；【】￥…《》？！（）]"""
-pattern_arabic = r"[\u0600-\u06FF]"
-pattern_chinese = r"[\u4e00-\u9fff]"
-pattern_tamil = r"[\u0B80-\u0BFF]"
-pattern_russian = r"[\u0400-\u04FF]"
-pattern_korean = r"[\uac00-\ud7a3]"
-pattern_japanese = r"[\u3040-\u30ff\u31f0-\u31ff]"
-pattern_vietnamese = r"[àáãạảăắằẳẵặâấầẩẫậèéẹẻẽêềếểễệđìíĩỉịòóõọỏôốồổỗộơớờởỡợùúũụủưứừửữựỳỵỷỹýÀÁÃẠẢĂẮẰẲẴẶÂẤẦẨẪẬÈÉẸẺẼÊỀẾỂỄỆĐÌÍĨỈỊÒÓÕỌỎÔỐỒỔỖỘƠỚỜỞỠỢÙÚŨỤỦƯỨỪỬỮỰỲỴỶỸÝ]"
-pattern_emoji = r'[\U0001F1E0-\U0001F1FF\U0001F300-\U0001F64F\U0001F680-\U0001FAFF\U00002702-\U000027B0]'
-
-
 def extract_texts(docx_path):
 
     if not str(docx_path).endswith('.docx'):
@@ -95,22 +82,23 @@ def extract_texts(docx_path):
 
     texts = [
         re.sub(
-            r'[^a-zA-Z0-9\s\t{}{}{}{}{}{}{}{}{}]'.format(
-                pattern_punctuation[1:-1],
-                pattern_arabic[1:-1],
-                pattern_chinese[1:-1],
-                pattern_tamil[1:-1],
-                pattern_russian[1:-1],
-                pattern_korean[1:-1],
-                pattern_japanese[1:-1],
-                pattern_vietnamese[1:-1],
-                pattern_emoji[1:-1],
+            r'[^a-zA-Z0-9\s\t{}{}{}{}{}{}{}{}{}{}]'.format(
+                Reg_Exp.pattern_punctuation[1:-1],
+                Reg_Exp.pattern_arabic[1:-1],
+                Reg_Exp.pattern_chinese[1:-1],
+                Reg_Exp.pattern_tamil[1:-1],
+                Reg_Exp.pattern_thai[1:-1],
+                Reg_Exp.pattern_russian[1:-1],
+                Reg_Exp.pattern_korean[1:-1],
+                Reg_Exp.pattern_japanese[1:-1],
+                Reg_Exp.pattern_vietnamese[1:-1],
+                Reg_Exp.pattern_emoji[1:-1],
             ), ' ', item.text.strip()).strip()
         for item in items if item.text.strip()]
 
     texts = [
         re.sub(
-            r'^([0-9i]{1,3}\.)([^0-9])',
+            r'^([0-9i]{1,3}\.|[•-])([^0-9])',
             '\\2',
             ' '.join(text.split())
         ).replace('|||', ' ').strip()
