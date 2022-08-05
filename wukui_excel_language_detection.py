@@ -53,6 +53,7 @@ def lang_detect(text_for_lang_detect1):
         try:
             lang_by_cld2 = cld2.detect(text_for_lang_detect)[2][0][1][:2]
             lang_by_cld3 = cld3.get_language(text_for_lang_detect)[0][:2]
+            
             # lang_by_fasttext = model_fasttext.predict(
             #     text_for_lang_detect)[0][0][-2:]
             # lang_detected.add(lang_by_cld2)
