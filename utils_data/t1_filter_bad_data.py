@@ -3,7 +3,7 @@ import string
 import time
 import plac
 from pathlib import Path
-from utils_data import Reg_Exp
+from _shared import Reg_Exp
 
 
 def load_english_words():
