@@ -7,7 +7,7 @@ import os
 torch.cuda.set_device(0)
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
-milvus_collection_name = 'airflow'
+milvus_collection_name = 'wukui'
 
 _HOST = 'localhost'
 _PORT = '19530'
@@ -50,8 +50,7 @@ def _insert(collection_name, vectors, milvus_ids):
 
     milvus.flush([collection_name])
 
-    status, result = milvus.count_entities(collection_name)
-
+    print(milvus.count_entities(collection_name), flush=True)
     print(milvus.get_collection_stats(collection_name), flush=True)
     print(milvus.get_index_info(collection_name), flush=True)
 
@@ -86,13 +85,13 @@ def main():
 
     _create_collection(milvus_collection_name)
 
-    results = collection_wukui.find({}, {'sentence_src': 1, 'sentence_tgt': 1, '_id': 1})
+    results = collection_wukui.find({}, {'sentence_src': 1, '_id': 1})
     sentences_src = []
-    sentences_tgt = []
+    # sentences_tgt = []
     milvus_ids = []
     for item in results:
         sentences_src.append(item['sentence_src'])
-        sentences_tgt.append(item['sentence_tgt'])
+        # sentences_tgt.append(item['sentence_tgt'])
         milvus_ids.append(item['_id'])
 
         if item['_id'] % 50000 == 0:
@@ -100,28 +99,28 @@ def main():
             embeddings_src = model_sentence_transformers.encode(
                 sentences_src, show_progress_bar=False, convert_to_numpy=True, normalize_embeddings=True)
 
-            embeddings_tgt = model_sentence_transformers.encode(
-                sentences_tgt, show_progress_bar=False, convert_to_numpy=True, normalize_embeddings=True)
+            # embeddings_tgt = model_sentence_transformers.encode(
+            #     sentences_tgt, show_progress_bar=False, convert_to_numpy=True, normalize_embeddings=True)
 
             assert len(embeddings_src) == len(milvus_ids), "length of embeddings_src and ids don't match"
-            assert len(embeddings_tgt) == len(milvus_ids), "length of embeddings_tgt and ids don't match"
+            # assert len(embeddings_tgt) == len(milvus_ids), "length of embeddings_tgt and ids don't match"
 
-            _insert(milvus_collection_name, embeddings, milvus_ids)
+            _insert(milvus_collection_name, embeddings_src, milvus_ids)
 
             sentences_src.clear()
-            sentences_tgt.clear()
+            # sentences_tgt.clear()
             milvus_ids.clear()
             print(item['_id'], flush=True)
 
-    embeddings = model_sentence_transformers.encode(
+    embeddings_src = model_sentence_transformers.encode(
         sentences_src, show_progress_bar=False, convert_to_numpy=True, normalize_embeddings=True)
 
-    assert len(embeddings) == len(milvus_ids), "length of embeddings and ids don't match"
+    assert len(embeddings_src) == len(milvus_ids), "length of embeddings and ids don't match"
     
-    _insert(milvus_collection_name, embeddings, milvus_ids)
+    _insert(milvus_collection_name, embeddings_src, milvus_ids)
 
     sentences_src.clear()
-    sentences_tgt.clear()
+    # sentences_tgt.clear()
     milvus_ids.clear()
     print('all finished', flush=True)
 
@@ -136,7 +135,7 @@ if __name__ == "__main__":
     #     sentence=collection.find_one({"_id":milvus_id})["sentence_src"]
     #     print(sentence)
 
-    # main()
+    main()
     # index_param = {'nlist': 4096}
     # status = milvus.create_index(milvus_collection_name,
     #                              IndexType.IVF_FLAT,
@@ -144,6 +143,6 @@ if __name__ == "__main__":
     # print('success', flush=True)
     # print(milvus.drop_index(milvus_collection_name), flush=True)
     print(milvus.list_collections(), flush=True)
-    # print(milvus.get_collection_info(milvus_collection_name), flush=True)
-    # print(milvus.get_collection_stats(milvus_collection_name), flush=True)
-    # print(milvus.get_index_info(milvus_collection_name), flush=True)
+    print(milvus.get_collection_info(milvus_collection_name), flush=True)
+    print(milvus.get_collection_stats(milvus_collection_name), flush=True)
+    print(milvus.get_index_info(milvus_collection_name), flush=True)
