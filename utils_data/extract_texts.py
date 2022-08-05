@@ -4,7 +4,7 @@ from docx import Document
 from docx.oxml.shared import qn
 from docx.text.paragraph import Paragraph
 from docx.text.run import Run, _Text
-from utils_extract import Reg_Exp
+from utils_data import Reg_Exp
 
 def get_paragraph_runs(paragraph):
     def _get(node):

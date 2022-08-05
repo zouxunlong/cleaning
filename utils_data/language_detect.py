@@ -3,7 +3,7 @@ import pycld2 as cld2
 import cld3
 import fasttext
 import re
-from utils_extract import Reg_Exp
+from utils_data import Reg_Exp
 
 
 model_fasttext = fasttext.load_model('./model/lid.176.bin')
