@@ -67,7 +67,7 @@ def get_all_paragraphs(node):
     return list(_get(node._element))
 
 
-def extract_texts(docx_path):
+def texts_extract(docx_path):
 
     if not str(docx_path).endswith('.docx'):
         return []

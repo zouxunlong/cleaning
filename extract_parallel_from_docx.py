@@ -1,17 +1,13 @@
 import sys
-from pathlib import Path
 import pycld2 as cld2
 import cld3
 import fasttext
 import os
 import re
-import string
-from googletrans import Translator
-from parallel_mining import Prallel_miner, extract_texts, combine_files_in_dir
+from utils_data import Prallel_miner, texts_extract, files_combine
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
-translator = Translator()
 model_fasttext = fasttext.load_model('./model/lid.176.bin')
 
 parallel_miner = Prallel_miner(knn_neighbors=6, min_matching_score=0.99, min_cos_sim=0.65,
@@ -126,7 +122,7 @@ def extract_docx(docx_path):
     if not str(docx_path).endswith('.docx'):
         return
 
-    texts = extract_texts(docx_path)
+    texts = texts_extract(docx_path)
 
     if not texts:
         return
@@ -187,7 +183,7 @@ def extract_dir(root_dir='./file_upload'):
             file_path = os.path.join(root, file)
 
             if file_path.endswith('.docx'):
-                texts.extend(extract_texts(file_path))
+                texts.extend(texts_extract(file_path))
 
             if i+1 < len(files) and os.path.splitext(file)[0][:-1].replace(' ', '') == os.path.splitext(files[i+1])[0][:-1].replace(' ', ''):
                 continue
@@ -235,6 +231,6 @@ def extract_dir(root_dir='./file_upload'):
 
             texts.clear()
 
-if __name__="__main__":
+if __name__=="__main__":
     extract_dir('/home/xuanlong/dataclean/data')
-    combine_files_in_dir('/home/xuanlong/dataclean/data')
+    files_combine('/home/xuanlong/dataclean/data')
