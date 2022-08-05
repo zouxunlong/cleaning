@@ -4,13 +4,11 @@ from jieba.analyse import ChineseAnalyzer
 from pymongo import MongoClient, TEXT
 import json
 import pandas as pd
-import streamlit as st
 
 MONGODB_CONNECTION_STRING = 'mongodb://localhost:27017/'
 mongo_client = MongoClient(MONGODB_CONNECTION_STRING)
 
-db = mongo_client['mlops']
-collection = db['airflow']
+collection_wukui = mongo_client['mlops']['wukui']
 
 
 def get_analyzer(lang):
@@ -44,7 +42,7 @@ def insert_data(file_path_src, file_path_tgt, lang_src, lang_tgt):
                     token.text for token in analyzer_src(line_src.strip())]
                 tokens_tgt = [
                     token.text for token in analyzer_tgt(line_tgt.strip())]
-                result = collection.insert_one(
+                result = collection_wukui.insert_one(
                     {'sentence_src': line_src.strip(),
                      'sentence_tgt': line_tgt.strip(),
                      'lang_src': lang_src,
@@ -72,7 +70,7 @@ def insert_data2(jl_path, lang_src, lang_tgt):
                 tokens_tgt = [
                     token.text for token in analyzer_tgt(item["sentence_tgt"].strip())]
 
-                result = collection.insert_one(
+                result = collection_wukui.insert_one(
                     {'sentence_src': item["sentence_src"].strip(),
                      'sentence_tgt': item["sentence_tgt"].strip(),
                      'source_lang': item["source_lang"],
@@ -94,7 +92,7 @@ def insert_data3(jl_path):
             for j, line in enumerate(f_in):
                 item = json.loads(line)
 
-                result = collection.insert_one(
+                result = collection_wukui.insert_one(
                     {'_id': i+j,
                      'sentence_src': item["sentence_src"].strip(),
                      'sentence_tgt': item["sentence_tgt"].strip(),
@@ -110,49 +108,24 @@ def insert_data3(jl_path):
 
 def build_index_text():
 
-    # collection.create_index(
-    #     [
-    #         ('tokens_zh', TEXT),
-    #         ('tokens_en', TEXT),
-    #         ('tokens_ms', TEXT),
-    #         ('tokens_id', TEXT),
-    #         ('tokens_ta', TEXT),
-    #         ('tokens_vi', TEXT),
-    #         ('tokens_th', TEXT)
-    #     ],
-    #     default_language='none'
-    # )
 
-    collection.create_index(
+    collection_wukui.create_index(
         [
             ('tokens_tgt', 1),
         ]
     )
-    collection.create_index(
+    collection_wukui.create_index(
         [
             ('tokens_src', 1),
         ]
     )
 
-    # for document in collection.find({}):
-    #     tokens_en = [token.text for token in analyzer_en(document['en'])]
-    #     tokens_zh = [token.text for token in analyzer_zh(document['zh'])]
-    #     collection.update_one(
-    #         {'_id': document['_id']},
-    #         {
-    #             '$set': {
-    #                 'index_en': ' '.join(tokens_en),
-    #                 'index_zh': ' '.join(tokens_zh)
-    #             }
-    #         }
-    #     )
-
 
 def build_array():
 
-    for document in collection.find():
+    for document in collection_wukui.find():
 
-        collection.update_one(
+        collection_wukui.update_one(
             {'_id': document['_id']},
             {
                 '$set': {
@@ -166,9 +139,9 @@ def build_array():
 def build_int_index():
     i = 1000000000000000001
     try:
-        result = collection.find({}, {"_id": 1})
+        result = collection_wukui.find({}, {"_id": 1})
         for item in result:
-            collection.update_one({'_id': item['_id']}, {
+            collection_wukui.update_one({'_id': item['_id']}, {
                                   '$set': {'milvus_id': i}})
             i += 1
             if i % 100000 == 0:
@@ -178,7 +151,6 @@ def build_int_index():
         print(i, flush=True)
 
 
-@st.experimental_memo
 def search_query(query, lang):
 
     analyzer = get_analyzer(lang)
@@ -193,7 +165,7 @@ def search_query(query, lang):
 
     pipeline.append({"$limit": 20000})
 
-    results = collection.aggregate(pipeline)
+    results = collection_wukui.aggregate(pipeline)
 
     retrieved_items = [result for result in results]
     items_df = pd.DataFrame.from_records(data=retrieved_items, columns=['sentence_src',
@@ -214,7 +186,7 @@ if __name__ == "__main__":
     insert_data3('./data/translated_sentence.en')
     # build_index_text()
     # build_array()
-    # print(collection.index_information())
+    # print(collection_wukui.index_information())
     # search_query("this is singapore's best food", "en")
     # build_int_index()
     print("finished", flush=True)

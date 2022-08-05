@@ -1,19 +1,13 @@
 from sentence_transformers import SentenceTransformer, util
 from milvus import Milvus, IndexType, MetricType, Status
-import numpy as np
+from util_mongo import collection_wukui
 import torch
 import os
-from pymongo import MongoClient, TEXT
 
-MONGODB_CONNECTION_STRING = 'mongodb://localhost:27017/'
-mongo_client = MongoClient(MONGODB_CONNECTION_STRING)
-
-db = mongo_client['mlops']
-collection = db['airflow']
-milvus_collection_name = 'airflow'
-
-torch.cuda.set_device(1)
+torch.cuda.set_device(0)
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
+
+milvus_collection_name = 'airflow'
 
 _HOST = 'localhost'
 _PORT = '19530'
@@ -92,7 +86,7 @@ def main():
 
     _create_collection(milvus_collection_name)
 
-    results = collection.find({}, {'sentence_src': 1, 'sentence_tgt': 1, '_id': 1})
+    results = collection_wukui.find({}, {'sentence_src': 1, 'sentence_tgt': 1, '_id': 1})
     sentences_src = []
     sentences_tgt = []
     milvus_ids = []
@@ -103,10 +97,14 @@ def main():
 
         if item['_id'] % 50000 == 0:
 
-            embeddings = model_sentence_transformers.encode(
+            embeddings_src = model_sentence_transformers.encode(
                 sentences_src, show_progress_bar=False, convert_to_numpy=True, normalize_embeddings=True)
 
-            assert len(embeddings) == len(milvus_ids), "length of embeddings and ids don't match"
+            embeddings_tgt = model_sentence_transformers.encode(
+                sentences_tgt, show_progress_bar=False, convert_to_numpy=True, normalize_embeddings=True)
+
+            assert len(embeddings_src) == len(milvus_ids), "length of embeddings_src and ids don't match"
+            assert len(embeddings_tgt) == len(milvus_ids), "length of embeddings_tgt and ids don't match"
 
             _insert(milvus_collection_name, embeddings, milvus_ids)
 
@@ -139,13 +137,13 @@ if __name__ == "__main__":
     #     print(sentence)
 
     # main()
-    index_param = {'nlist': 4096}
-    status = milvus.create_index(milvus_collection_name,
-                                 IndexType.IVF_FLAT,
-                                 index_param)
-    print('success', flush=True)
+    # index_param = {'nlist': 4096}
+    # status = milvus.create_index(milvus_collection_name,
+    #                              IndexType.IVF_FLAT,
+    #                              index_param)
+    # print('success', flush=True)
     # print(milvus.drop_index(milvus_collection_name), flush=True)
     print(milvus.list_collections(), flush=True)
-    print(milvus.get_collection_info(milvus_collection_name), flush=True)
-    print(milvus.get_collection_stats(milvus_collection_name), flush=True)
-    print(milvus.get_index_info(milvus_collection_name), flush=True)
+    # print(milvus.get_collection_info(milvus_collection_name), flush=True)
+    # print(milvus.get_collection_stats(milvus_collection_name), flush=True)
+    # print(milvus.get_index_info(milvus_collection_name), flush=True)
