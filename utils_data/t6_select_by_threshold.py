@@ -1,24 +1,32 @@
 import time
 
 
-def select(file_path):
+def select(file_in, file_out1, file_out2):
     start_time = time.time()
-
-    with open(file_path, encoding='utf8') as f_in, \
-        open(file_path+'.seleted', 'w', encoding='utf8') as f_out:
-        for line in f_in:
-            sentences=line.split('|')
-            if len(sentences)!=3:
+    n = 0
+    k = 0
+    with open(file_in, encoding='utf8') as f_in, \
+        open(file_out1, 'w', encoding='utf8') as f_out1, \
+            open(file_out2, 'w', encoding='utf8') as f_out2:
+        for i, line in enumerate(f_in):
+            sentences = line.split('|||')
+            if len(sentences) != 3:
                 continue
-            if float(sentences[0]) > 0.9:
-                f_out.write(line)
+            if float(sentences[0].strip()) > 0.625:
+                f_out1.write(line)
+                n += 1
             else:
-                break
+                f_out2.write(line)
+                k += 1
 
-    print("finished " + file_path)
+    print("total {}".format(i))
+    print("select {}".format(n))
+    print("filter {}".format(k))
     print("--- %s seconds ---" % (time.time() - start_time))
 
 
 if __name__ == '__main__':
 
-    select('/home/xuanlong/dataclean/data/cleaned/clean_sorted.en-zh')
+    select('/home/xuanlong/dataclean/cleaning/data/V4.en-th',
+           '/home/xuanlong/dataclean/cleaning/data/V4_selected.en-th',
+           '/home/xuanlong/dataclean/cleaning/data/V4_filtered.en-th')
