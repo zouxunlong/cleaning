@@ -23,14 +23,16 @@ def main(input_1,
         for (sentence_en, sentence_id) in sentences_tuple_set:
             f_out_en.write(sentence_en+'\n')
             f_out_id.write(sentence_id+'\n')
+
+    print("finished {}".format(len(sentences_tuple_set)))
+
     sentences_tuple_set.clear()
 
-    print("finished ")
     print("--- %s seconds ---" % (time.time() - start_time))
 
 
 if __name__ == '__main__':
-    main('/home/xuanlong/dataclean/data/cleaned/clean_sorted3.en-zh.en',
-         '/home/xuanlong/dataclean/data/cleaned/clean_sorted3.en-zh.zh',
-         '/home/xuanlong/dataclean/data/cleaned/clean_sorted2.en-zh.en',
-         '/home/xuanlong/dataclean/data/cleaned/clean_sorted2.en-zh.zh')
+    main('/home/xuanlong/dataclean/cleaning/data/V4_t1.en',
+         '/home/xuanlong/dataclean/cleaning/data/V4_t1.th',
+         '/home/xuanlong/dataclean/cleaning/data/V4_t2.en',
+         '/home/xuanlong/dataclean/cleaning/data/V4_t2.th')
