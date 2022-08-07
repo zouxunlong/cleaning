@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/home/xuanlong/dataclean/cleaning/util_mongo.py", line 3, in <module>
+    from jieba.analyse import ChineseAnalyzer
+  File "/home/xuanlong/anaconda3/envs/dataclean_env/lib/python3.9/site-packages/jieba/analyse/__init__.py", line 2, in <module>
+    from .tfidf import TFIDF
+  File "/home/xuanlong/anaconda3/envs/dataclean_env/lib/python3.9/site-packages/jieba/analyse/tfidf.py", line 5, in <module>
+    import jieba.posseg
+  File "/home/xuanlong/anaconda3/envs/dataclean_env/lib/python3.9/site-packages/jieba/posseg/__init__.py", line 38, in <module>
+    from .char_state_tab import P as char_state_tab_P
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 978, in get_code
+  File "<frozen importlib._bootstrap_external>", line 647, in _compile_bytecode
+KeyboardInterrupt

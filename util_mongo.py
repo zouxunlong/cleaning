@@ -9,6 +9,7 @@ MONGODB_CONNECTION_STRING = 'mongodb://localhost:27017/'
 mongo_client = MongoClient(MONGODB_CONNECTION_STRING)
 
 collection_wukui = mongo_client['mlops']['wukui']
+collection_wk = mongo_client['mlops']['wk']
 
 
 def get_analyzer(lang):
@@ -106,8 +107,27 @@ def insert_data3(jl_path):
         print(err, flush=True)
 
 
-def build_index_text():
+def insert_data4():
+    try:
+        i = 10000000000001
+        result = collection_wukui.find({})
+        for item in result:
+            result = collection_wk.insert_one({'_id': i,
+                                               'sentence_src': item["sentence_src"],
+                                               'sentence_tgt': item["sentence_tgt"],
+                                               'lang_src': item["lang_src"],
+                                               'lang_tgt': item["lang_tgt"],
+                                               'tokens_src': item["tokens_src"],
+                                               'tokens_tgt': item["tokens_tgt"],
+                                               'domain': item["domain"]})
+            i += 1
 
+        print("finished insert {} documents.".format(i), flush=True)
+    except Exception as err:
+        print(err, flush=True)
+
+
+def build_index_text():
 
     collection_wukui.create_index(
         [
@@ -142,7 +162,7 @@ def build_int_index():
         result = collection_wukui.find({}, {"_id": 1})
         for item in result:
             collection_wukui.update_one({'_id': item['_id']}, {
-                                  '$set': {'milvus_id': i}})
+                '$set': {'milvus_id': i}})
             i += 1
             if i % 100000 == 0:
                 print(i, flush=True)
@@ -183,10 +203,10 @@ def search_query(query, lang):
 
 
 if __name__ == "__main__":
-    insert_data3('./data/translated_sentence.en')
     # build_index_text()
     # build_array()
     # print(collection_wukui.index_information())
     # search_query("this is singapore's best food", "en")
     # build_int_index()
+    insert_data4()
     print("finished", flush=True)
