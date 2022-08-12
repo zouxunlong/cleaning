@@ -47,7 +47,7 @@ class Prallel_miner:
             text_set_n_gram = set(
                 [*_2_gram_list]) - text_set
 
-            text_set_dict[lang] = (text_set, text_set_n_gram)
+            text_set_dict[lang] = (text_set, set())
         return text_set_dict
 
     def sentence_matching(self, tuple_src, tuple_tgt):

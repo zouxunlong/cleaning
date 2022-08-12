@@ -40,4 +40,5 @@ def main(input_path):
     else:
         print("invalid input_file")
 
-
+if __name__=="__main__":
+    main('data/Duplicate_MCI Master TM_Tam_27Nov21-30Apr22.xlsx')

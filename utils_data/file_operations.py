@@ -72,3 +72,6 @@ def files_split(rootdir):
                 file_splited += 1
         break
     print("Done. {} file splited".format(file_splited))
+
+if __name__=="__main__":
+    files_split('./data')

@@ -232,5 +232,5 @@ def extract_dir(root_dir='./file_upload'):
             texts.clear()
 
 if __name__=="__main__":
-    extract_dir('/home/xuanlong/dataclean/data')
-    files_combine('/home/xuanlong/dataclean/data')
+    extract_dir('/home/xuanlong/dataclean/data/batch12')
+    files_combine('/home/xuanlong/dataclean/data/batch12')
