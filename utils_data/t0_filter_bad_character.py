@@ -58,5 +58,5 @@ def main(input_1,
 
 
 if __name__ == '__main__':
-    main('./data/batch12_combined.en-ta',
-         './data/batch12_combined_1.en-ta')
+    main('./data/Duplicate_MCI Master TM_Mal_15Dec21-30Apr22.en-ms',
+         './data/Duplicate_MCI Master TM_Mal_15Dec21-30Apr22_1.en-ms')

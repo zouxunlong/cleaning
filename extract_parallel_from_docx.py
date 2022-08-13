@@ -4,13 +4,13 @@ import cld3
 import fasttext
 import os
 import re
-from utils_data import Prallel_miner, texts_extract, files_combine
+from utils_data import Prallel_miner, texts_extract, files_combine, files_split
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 model_fasttext = fasttext.load_model('./model/lid.176.bin')
 
-parallel_miner = Prallel_miner(knn_neighbors=6, min_matching_score=0.99, min_cos_sim=0.65,
+parallel_miner = Prallel_miner(knn_neighbors=6, min_matching_score=0.99, min_cos_sim=0.675,
                                model_path_or_name='./model/labse_bert_model', sort_by_cos=False)
 
 pattern_punctuation = r"""[!?,.:;"#$£€%&'()+-/<≤=≠≥>@[\]^_{|}，。、—‘’“”：；【】￥…《》？！（）]"""
@@ -232,5 +232,6 @@ def extract_dir(root_dir='./file_upload'):
             texts.clear()
 
 if __name__=="__main__":
-    extract_dir('/home/xuanlong/dataclean/data/batch12')
-    files_combine('/home/xuanlong/dataclean/data/batch12')
+    # extract_dir('/home/xuanlong/dataclean/data/Batch8(CD8)_extracted')
+    # files_combine('/home/xuanlong/dataclean/data/Batch8(CD8)_extracted')
+    files_split('/home/xuanlong/dataclean/data')
