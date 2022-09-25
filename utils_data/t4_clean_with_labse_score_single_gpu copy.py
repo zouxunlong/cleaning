@@ -51,8 +51,8 @@ def clean_with_score(file_path_in, file_path_out):
 
 def main():
 
-    clean_with_score('./data/Duplicate_MCI Master TM_Mal_15Dec21-30Apr22.en-ms',
-                     './data/Duplicate_MCI Master TM_Mal_15Dec21-30Apr22_1.en-ms')
+    clean_with_score('./data/Batch8(CD8)_extracted_combined1.en-ms',
+                     './data/Batch8(CD8)_extracted_combined2.en-ms')
 
 
 

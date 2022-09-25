@@ -10,10 +10,10 @@ def split_file_by_lang(file, output_file1, output_file2):
             open(output_file2, 'w', encoding='utf8') as f_out2:
         for i, line in enumerate(f_in):
             sentences = line.split('|||')
-            if len(sentences) != 3:
+            if len(sentences) != 2:
                 return
-            f_out1.write(sentences[1].strip()+'\n')
-            f_out2.write(sentences[2].strip()+'\n')
+            f_out1.write(sentences[0].strip()+'\n')
+            f_out2.write(sentences[1].strip()+'\n')
 
 
 @plac.opt('rootdir', "Src Input File", type=Path)
@@ -87,4 +87,4 @@ def main(rootdir):
 
 
 if __name__ == '__main__':
-    main('/home/xuanlong/dataclean/cleaning/data/clean')
+    main('/home/xuanlong/dataclean/cleaning/data')

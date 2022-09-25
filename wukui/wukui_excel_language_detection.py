@@ -4,10 +4,8 @@ import pycld2 as cld2
 import cld3
 import fasttext
 import re
-from googletrans import Translator
 
 
-translator = Translator()
 model_fasttext = fasttext.load_model('./model/lid.176.bin')
 
 

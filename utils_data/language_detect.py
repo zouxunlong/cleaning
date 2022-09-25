@@ -38,20 +38,18 @@ def lang_detect(text_for_lang_detect):
         try:
             lang_by_cld2 = cld2.detect(text_for_lang_detect)[2][0][1][:2]
             lang_by_cld3 = cld3.get_language(text_for_lang_detect)[0][:2]
-            lang_by_fasttext = model_fasttext.predict(
-                text_for_lang_detect)[0][0][-2:]
 
-            if {"en"} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
+            if {"en"} & {lang_by_cld2, lang_by_cld3}:
                 lang_detected.add('en')
-            if {'ms'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
+            if {'ms'} & {lang_by_cld2, lang_by_cld3}:
                 lang_detected.add('ms')
-            if {'id'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
+            if {'id'} & {lang_by_cld2, lang_by_cld3}:
                 lang_detected.add('id')
-            if {'th'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
+            if {'th'} & {lang_by_cld2, lang_by_cld3}:
                 lang_detected.add('th')
-            if {'vi'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
+            if {'vi'} & {lang_by_cld2, lang_by_cld3}:
                 lang_detected.add('vi')
-            if {'ta'} & {lang_by_cld2, lang_by_cld3, lang_by_fasttext}:
+            if {'ta'} & {lang_by_cld2, lang_by_cld3}:
                 lang_detected.add('ta')
 
         except Exception as err:

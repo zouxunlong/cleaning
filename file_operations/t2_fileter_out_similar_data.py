@@ -5,7 +5,7 @@ from simhash import Simhash, SimhashIndex
 
 def filter_most_similar(lines):
 
-    en_sentences = [line.split('|')[1].strip() for line in lines]
+    en_sentences = lines
     objs = [(str(k), Simhash(v)) for k, v in enumerate(en_sentences)]
     index = SimhashIndex(objs, k=15)
 
@@ -47,6 +47,6 @@ def main(file_path):
 
 if __name__ == '__main__':
     start_time = time.time()
-    file_path = '/home/xuanlong/dataclean/data/parallel/en-ms/CCAligned.en-ms.filtered1'
+    file_path = '/home/xuanlong/dataclean/data/Batch8(CD8)_extracted_combined.en-ms'
     main(file_path)
     print("--- %s seconds ---" % (time.time() - start_time), flush=True)
