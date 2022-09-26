@@ -73,5 +73,13 @@ def files_split(rootdir):
         break
     print("Done. {} file splited".format(file_splited))
 
+
+def count(file):
+    n=0
+    with open(file,'r',encoding='utf8') as f_in:
+        for line in f_in:
+            n+=1
+    print(n)
+
 if __name__=="__main__":
-    files_split('./data')
+    count('/home/xuanlong/parallel/en-zh/clean_sorted.en-zh')
