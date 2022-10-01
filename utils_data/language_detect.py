@@ -1,12 +1,8 @@
 import sys
 import pycld2 as cld2
 import cld3
-import fasttext
 import re
 from utils_data import Reg_Exp
-
-
-model_fasttext = fasttext.load_model('./model/lid.176.bin')
 
 
 def lang_detect(text_for_lang_detect):
@@ -41,10 +37,8 @@ def lang_detect(text_for_lang_detect):
 
             if {"en"} & {lang_by_cld2, lang_by_cld3}:
                 lang_detected.add('en')
-            if {'ms'} & {lang_by_cld2, lang_by_cld3}:
-                lang_detected.add('ms')
-            if {'id'} & {lang_by_cld2, lang_by_cld3}:
-                lang_detected.add('id')
+            if {'ms', 'id'} & {lang_by_cld2, lang_by_cld3}:
+                lang_detected.add('ms', 'id')
             if {'th'} & {lang_by_cld2, lang_by_cld3}:
                 lang_detected.add('th')
             if {'vi'} & {lang_by_cld2, lang_by_cld3}:

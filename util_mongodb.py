@@ -1,8 +1,7 @@
-from pymongo import MongoClient, TEXT
+from pymongo import MongoClient
 from custom_analyzers import ThAnalyzer, ViAnalyzer, TaAnalyzer
 from whoosh.analysis import StemmingAnalyzer, SimpleAnalyzer
 from jieba.analyse import ChineseAnalyzer
-from whoosh.analysis import StemmingAnalyzer
 from pymongo import MongoClient
 import json
 import pandas as pd
@@ -10,6 +9,7 @@ import pandas as pd
 
 MONGODB_CONNECTION_STRING = 'mongodb://localhost:27017/'
 mongo_client = MongoClient(MONGODB_CONNECTION_STRING)
+
 
 db = mongo_client['mlops']
 
