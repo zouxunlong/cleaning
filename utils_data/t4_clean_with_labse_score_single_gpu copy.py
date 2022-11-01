@@ -6,6 +6,7 @@ from sentence_transformers import SentenceTransformer, util
 
 model_sentence_transformers = SentenceTransformer('./model/labse_bert_model')
 
+
 def embedding_saving(sentences_src, sentences_tgt, file_path_out):
 
     source_embedding = model_sentence_transformers.encode(
@@ -23,8 +24,9 @@ def embedding_saving(sentences_src, sentences_tgt, file_path_out):
         for k in range(len(cosine_scores)):
             cosine_score = cosine_scores[k][k]
             if cosine_score >= 0.7:
-                f_out.write("{} ||| {}\n".format(
-                    sentences_src[k].replace("|", " "), sentences_tgt[k].replace("|", " ")))
+                f_out.write("{} ||| {} ||| {}\n".format(cosine_score,
+                                                        sentences_src[k].replace("|", " "),
+                                                        sentences_tgt[k].replace("|", " ")))
 
 
 def clean_with_score(file_path_in, file_path_out):
@@ -33,11 +35,11 @@ def clean_with_score(file_path_in, file_path_out):
         sentences_src = []
         sentences_tgt = []
         for i, line in enumerate(file_in):
-            sentences=line.split('|||')
-            sentences_src.append(sentences[0].strip())
-            sentences_tgt.append(sentences[1].strip())
+            sentences = line.split('|')
+            sentences_src.append(sentences[1].strip())
+            sentences_tgt.append(sentences[2].strip())
 
-            if (i+1) % 500 == 0:
+            if (i+1) % 5000 == 0:
                 embedding_saving(sentences_src, sentences_tgt,
                                  file_path_out)
                 sentences_src.clear()
@@ -51,11 +53,9 @@ def clean_with_score(file_path_in, file_path_out):
 
 def main():
 
-    clean_with_score('./data/Batch8(CD8)_extracted_combined1.en-ms',
-                     './data/Batch8(CD8)_extracted_combined2.en-ms')
-
+    clean_with_score('/home/xuanlong/dataclean/cleaning/utils_data/wikimedia.en-ms',
+                     '/home/xuanlong/dataclean/cleaning/utils_data/wikimedia2.en-ms')
 
 
 if __name__ == '__main__':
     main()
-

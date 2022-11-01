@@ -2,7 +2,7 @@ from sentence_transformers import SentenceTransformer, util
 from pymongo import MongoClient
 import time
 import torch
-torch.cuda.set_device(1)
+torch.cuda.set_device(0)
 
 model_sentence_transformers = SentenceTransformer('./model/labse_bert_model')
 
@@ -63,15 +63,13 @@ def clean_with_score(collection):
     print(i, flush=True)
 
 
-def main():
+def main(collection):
 
     start_time = time.time()
 
-    clean_with_score('en||vi')
-    print("finished en||vi", flush=True)
+    clean_with_score(collection)
+    print("finished {}".format(collection), flush=True)
 
-    clean_with_score('en||id')
-    print("finished en||id", flush=True)
     
     print("--- {} seconds ---".format(time.time() - start_time), flush=True)
 
