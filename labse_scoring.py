@@ -6,10 +6,11 @@ torch.cuda.set_device(0)
 
 model_sentence_transformers = SentenceTransformer('./model/labse_bert_model')
 
-MONGO_CONNECTION_STRING = "mongodb://localhost:27017/"
+MONGO_CONNECTION_STRING = "mongodb://localhost:27047/"
 mongo_client = MongoClient(MONGO_CONNECTION_STRING)
 
 db_data_pool = mongo_client['mlops']
+
 
 def score_sentences(sentences_src, sentences_tgt):
 
