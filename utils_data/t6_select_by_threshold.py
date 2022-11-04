@@ -1,7 +1,7 @@
 import time
 
 
-def select(file_in, file_out1, file_out2):
+def select(file_in, file_out1, file_out2, thre):
     start_time = time.time()
     n = 0
     k = 0
@@ -12,7 +12,7 @@ def select(file_in, file_out1, file_out2):
             sentences = line.split('|||')
             if len(sentences) != 3:
                 continue
-            if float(sentences[0].strip()) > 0.625:
+            if float(sentences[0].strip()) > thre:
                 f_out1.write(line)
                 n += 1
             else:
@@ -29,4 +29,5 @@ if __name__ == '__main__':
 
     select('/home/xuanlong/dataclean/cleaning/data/V4.en-th',
            '/home/xuanlong/dataclean/cleaning/data/V4_selected.en-th',
-           '/home/xuanlong/dataclean/cleaning/data/V4_filtered.en-th')
+           '/home/xuanlong/dataclean/cleaning/data/V4_filtered.en-th',
+           0.625)

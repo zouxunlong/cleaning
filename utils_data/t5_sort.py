@@ -3,15 +3,15 @@ import time
 
 def sort(file_path):
     start_time = time.time()
-    with open(file_path) as fIN:
-        list = fIN.readlines()
+    with open(file_path) as f_in:
+        list = f_in.readlines()
         list.sort(reverse=True)
-    with open(file_path, 'w', encoding='utf8') as fOUT:
+    with open(file_path, 'w', encoding='utf8') as f_out:
         for sentence in list:
-            fOUT.write(sentence)
+            f_out.write(sentence)
     list.clear()
     print("finished " + file_path)
-    print("--- %s seconds ---" % (time.time() - start_time))
+    print("--- {} seconds ---".format(time.time() - start_time))
 
 
 if __name__ == '__main__':
