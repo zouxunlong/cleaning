@@ -64,7 +64,7 @@ def clean_with_score(collection):
     print(i, flush=True)
 
 
-def main(collection):
+def main(collection="en||ms"):
 
     start_time = time.time()
 
