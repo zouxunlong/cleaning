@@ -1,4 +1,4 @@
-log.txt
+*.txt
 *.log
 /__pycache__
 /adobe-dc-pdf-services-sdk-node-samples
