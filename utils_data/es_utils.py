@@ -200,6 +200,7 @@ def transfer_kaskus_id(input_path):
 def put_bt_data(input_path):
     for rootdir, dirs, files in os.walk(input_path):
         source = rootdir.split("/")[-1]
+        source = source.split("_")[-1]+'_'+source.split("_")[0]
         files.sort(reverse=True)
         index = 'bt_data'
         for file in files:
