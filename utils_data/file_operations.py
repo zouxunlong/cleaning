@@ -81,5 +81,17 @@ def count(file):
             n+=1
     print(n)
 
+
+
+def count_files(rootdir):
+
+    file_counts = 0
+
+    for root, dirs, files in os.walk(rootdir):
+        for file in files:
+            file_counts+=1
+    print("total {} files.".format(file_counts))
+
+
 if __name__=="__main__":
-    count('/home/xuanlong/parallel/en-zh/clean_sorted.en-zh')
+    count_files('/home/xuanlong/dataclean/data/stage5')
