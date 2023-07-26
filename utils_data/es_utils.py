@@ -202,7 +202,7 @@ def transfer_kaskus_id(input_path):
 
 
 def put_bt_data(input_path):
-    i = 0
+
     for rootdir, dirs, files in os.walk(input_path):
         source = rootdir.split("/")[-1]
         source = source.split("_")[-1]+'_'+source.split("_")[0]
@@ -215,11 +215,7 @@ def put_bt_data(input_path):
             input_file = os.path.join(rootdir, file)
             with open(input_file, encoding='utf8') as file_in:
                 for line in file_in:
-                    i += 1
-                    if i % 50000 == 0:
-                        print(i, flush=True)
-                    if i < 12499751:
-                        continue
+                  
                     item = {}
                     score, sentence_src, sentence_tgt = line.split('|||')
 
@@ -249,7 +245,7 @@ def put_bt_data(input_path):
 
 
 res = bulk(client=es,
-           actions=put_bt_data("/home/xuanlong/dataclean/data/stage5"),
+           actions=put_bt_data("/home/xuanlong/dataclean/data/stage5/abc_en"),
            )
 
 print(res, flush=True)
