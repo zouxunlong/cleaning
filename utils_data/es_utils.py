@@ -138,8 +138,10 @@ def put_forum_detik_id(input_path):
                                 continue
                             item = json.loads(line)
 
-                            item['text'] = unwanted_character_filtered(item.pop('post_text'))
-                            item['title'] = item.pop('channel_title')+' / '+item.pop('thread_title')
+                            item['text'] = unwanted_character_filtered(
+                                item.pop('post_text'))
+                            item['title'] = item.pop(
+                                'channel_title')+' / '+item.pop('thread_title')
 
                             item['source'] = source
                             item['language_type'] = language_type
@@ -171,7 +173,7 @@ def put_forum_detik_id(input_path):
 
 
 def transfer_kaskus_id(input_path):
-    
+
     source = 'id_kaskus'
     language_type = 'id'
     # index = 'social_media_id'
@@ -181,23 +183,26 @@ def transfer_kaskus_id(input_path):
 
             files.sort()
             for file in files:
-                item={}
+                item = {}
 
                 input_file = os.path.join(rootdir, file)
-                text=open(input_file, encoding='utf8').read()
+                text = open(input_file, encoding='utf8').read()
 
                 text = unwanted_character_filtered(text).strip()
-                item['text'] = '\n\n---POST---\n\n'.join([post for i, post in enumerate(text.split('\n\n---POST---\n\n')) if (i==0 or i%21!=0) and not post.startswith('Quote:')])
-                item['thread_id']=file.split('.')[0]
-                item['source']=source
-                item['language_type']=language_type
-                item['url']='https://www.kaskus.co.id/thread/'+item['thread_id']
+                item['text'] = '\n\n---POST---\n\n'.join([post for i, post in enumerate(text.split(
+                    '\n\n---POST---\n\n')) if (i == 0 or i % 21 != 0) and not post.startswith('Quote:')])
+                item['thread_id'] = file.split('.')[0]
+                item['source'] = source
+                item['language_type'] = language_type
+                item['url'] = 'https://www.kaskus.co.id/thread/' + \
+                    item['thread_id']
 
                 if item['text'] and item['thread_id']:
                     file_out.write(json.dumps(item)+"\n")
 
 
 def put_bt_data(input_path):
+    i = 0
     for rootdir, dirs, files in os.walk(input_path):
         source = rootdir.split("/")[-1]
         source = source.split("_")[-1]+'_'+source.split("_")[0]
@@ -205,13 +210,18 @@ def put_bt_data(input_path):
         index = 'bt_data'
         for file in files:
             language_type = file.split('.')[-1]
-            lang_src, lang_tgt=language_type.split('2')
-            domain='news'
+            lang_src, lang_tgt = language_type.split('2')
+            domain = 'news'
             input_file = os.path.join(rootdir, file)
             with open(input_file, encoding='utf8') as file_in:
                 for line in file_in:
-                    item={}
-                    score, sentence_src, sentence_tgt=line.split('|||')
+                    i += 1
+                    if i % 50000 == 0:
+                        print(i, flush=True)
+                    if i < 12499751:
+                        continue
+                    item = {}
+                    score, sentence_src, sentence_tgt = line.split('|||')
 
                     item['lang_src'] = lang_src
                     item['lang_tgt'] = lang_tgt
@@ -240,8 +250,6 @@ def put_bt_data(input_path):
 
 res = bulk(client=es,
            actions=put_bt_data("/home/xuanlong/dataclean/data/stage5"),
-           chunk_size=100,
-           max_chunk_bytes=10485760
            )
 
 print(res, flush=True)
